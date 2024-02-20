@@ -1,0 +1,31 @@
+<!-- <button (click)="getDetail()">getData</button>
+{{data | json}}
+<router-outlet></router-outlet> -->
+
+<div class="container">
+    <h3 class="text-center mt-5 mb-5">Angular Basic Pagination Example</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let post of POSTS| paginate: {
+                    itemsPerPage: tableSize,
+                    currentPage: page,
+                    totalItems: count
+                  };
+            let i = index
+          ">
+                <th scope="row">{{ post.id }}</th>
+                <td>{{ post.title }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+        <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)" (pageBoundsCorrection)="onTableSizeChange($event)"   maxSize:any =9>
+        </pagination-controls>
+    </div>
+</div>

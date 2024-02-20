@@ -1,0 +1,56 @@
+{
+  "posts": [
+    {
+      "firstname": "rohit",
+      "lastname": "kumar",
+      "birthdate": "2022-06-22",
+      "gender": "m",
+      "education": "10th pass",
+      "company": "life9@system",
+      "jobExperience": 1,
+      "salary": 5,
+      "profile": "Profile-01.jpg",
+      "id": 1
+    },
+    {
+      "firstname": "john",
+      "lastname": "smith",
+      "birthdate": "2022-06-20",
+      "gender": "m",
+      "education": "10th pass",
+      "company": "cisco",
+      "jobExperience": 5,
+      "salary": 8,
+      "profile": "Profile-04.jpg",
+      "id": 4
+    },
+    {
+      "firstname": "rakesh",
+      "lastname": "kumar",
+      "birthdate": "2022-06-20",
+      "gender": "m",
+      "education": "post-graduate",
+      "company": "mayntra",
+      "jobExperience": 4,
+      "salary": 6,
+      "profile": "Profile-06.jpg",
+      "id": 6
+    },
+    {
+      "firstname": "mohit",
+      "lastname": "kumar",
+      "birthdate": "2022-06-20",
+      "gender": "m",
+      "education": "graduate",
+      "company": "maruti",
+      "jobExperience": 2,
+      "salary": 5,
+      "profile": "Profile-02.jpg",
+      "id": 7
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,22 @@
+<div class="container mt-3" style="width: 80%; height: 80%">
+    <div style="
+      width: 100%;
+      height: 100%;
+      overscroll-behavior-x: scroll;
+      position: relative;
+    " class="chart-container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end ">
+        <button class="btn btn-primary me-3" (click)="resetZoomChart()">
+            <i class="bi bi-arrow-clockwise"></i>Reset
+        </button>
+        <button class="btn btn-primary me-3" (click)="zoombutton(1.1)">
+            <i class="bi bi-zoom-in"></i> Zoom In
+        </button>
+        <button class="btn btn-primary me-3" (click)="zoombutton(0.9)">
+            <i class="bi bi-zoom-out"></i> Zoom Out
+        </button>
+    </div>
+</div>
