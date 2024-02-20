@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+.cont {
+    padding: 15px;
+    margin: 15px;
+}
+
+.content-section {
+    /* background: #ffffff; */
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.is-invalid {
+    border: 2px solid red;
+}
+
+.invalid-feedback {
+    color: red;
+}
+
+.danger {
+    color: red;
+}
+
+.breadcrumb {
+    background-color: white!important;
+    text-align: right;
+}
+
+.redbackgroundColor {
+    background-color: #FFC7CE!important;
+}
+
+.cursor {
+    cursor: pointer;
+}

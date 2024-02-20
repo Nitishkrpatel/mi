@@ -1,0 +1,165 @@
+<app-session-layout></app-session-layout>
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Employee ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email Id</th>
+                <th scope="col">Mobile Number</th>
+                <th scope="col">Address</th>
+                <th scope="col">Active Status</th>
+                <th scope="col">Edit</th>
+                <th *ngIf="Role == 'Admin'" scope="col">Activate / Deactivate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of employeeListArray">
+                <td [ngClass]="{ 'redbackgroundColor': emp.activeStatus == 'inActive'}">{{emp?.employeeID}}</td>
+                <td [ngClass]="{ 'redbackgroundColor': emp.activeStatus == 'inActive'}">{{emp?.employeeName}}</td>
+                <td [ngClass]="{ 'redbackgroundColor': emp.activeStatus == 'inActive'}">{{emp?.userID}}</td>
+                <td [ngClass]="{ 'redbackgroundColor': emp.activeStatus == 'inActive'}">{{emp?.mobileNumber}}</td>
+                <td [ngClass]="{ 'redbackgroundColor': emp.activeStatus == 'inActive'}">{{emp?.address}}</td>
+                <td [ngClass]="{ 'redbackgroundColor': emp.activeStatus == 'inActive'}">{{emp?.activeStatus}}</td>
+                <td [ngClass]="{ 'redbackgroundColor': emp.activeStatus == 'inActive'}"><a (click)="editUser(emp.employeeID)" data-bs-toggle="modal" data-bs-target="#editModel" class="cursor"><i class="material-icons">edit</i></a></td>
+                <td [ngClass]="{ 'redbackgroundColor': emp.activeStatus == 'inActive'}" *ngIf="Role == 'Admin'" class="cursor">
+                    <a *ngIf="emp.activeStatus == 'active'" (click)="activateordeactive(emp.employeeID, emp.activeStatus)"><i
+                            class="material-icons">block</i></a>
+                    <a *ngIf="emp.activeStatus == 'inActive'" (click)="activateordeactive(emp.employeeID, emp.activeStatus)"><i
+                            class="material-icons">beenhere</i></a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addModel">
+       Add New Employee
+    </button>
+</div>
+
+<div class="modal fade" id="editModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Employee</h5>
+                <button type="button" id="closeusermodel" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form" (ngSubmit)="updateEmployee()">
+
+                    <div class="form-group">
+                        <label for="userID">Employee ID<span class="danger">*</span></label>
+                        <input formControlName="employeeID" id="userID" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.employeeID.invalid }" readonly>
+                        <div *ngIf="submitted && f.employeeID.invalid" class="invalid-feedback">
+                            <div *ngIf="f.employeeID.errors?.required">Employee id is required.</div>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName">Employee Name<span class="danger">*</span></label>
+                        <input formControlName="employeeName" id="firstName" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.employeeName.invalid }">
+                        <div *ngIf="submitted && f.employeeName.invalid" class="invalid-feedback">
+                            <div *ngIf="f.employeeName.errors?.required">Name is required.</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="userID">Email ID</label>
+                        <input formControlName="userID" id="userID" type="text" class="form-control">
+                        <div *ngIf="addsubmitted && f.userID.invalid" class="invalid-feedback">
+                            <div *ngIf="f.userID.errors?.email">Please, enter valid email address.</div>
+                            <div *ngIf="f.userID.errors?.duplicate">Email ID already exits.</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobileNumber">Mobile Number<span class="danger">*</span></label>
+                        <input formControlName="mobileNumber" id="mobileNumber" type="tel" maxlength=10 class="form-control" (keypress)="onlyNumberKey($event)" [ngClass]="{ 'is-invalid': addsubmitted && f.mobileNumber.invalid }">
+                        <div *ngIf="addsubmitted && f.mobileNumber.invalid" class="invalid-feedback">
+                            <div *ngIf="f.mobileNumber.errors?.required">Mobile number is required.</div>
+                            <div *ngIf="f.mobileNumber.errors?.minlength">Mobile number should be 10 character.</div>
+                            <div *ngIf="f.mobileNumber.errors?.maxlength">Mobile number should be 10 character.</div>
+                            <div *ngIf="f.mobileNumber.errors?.pattern">Enter only numbers .</div>
+                            <div *ngIf="f.mobileNumber.errors?.duplicate">Mobile number already exits.</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address<span class="danger">*</span></label>
+                        <input formControlName="address" id="address" type="text" class="form-control" [ngClass]="{ 'is-invalid': addsubmitted && f.address.invalid }">
+                        <div *ngIf="addsubmitted && f.address.invalid" class="invalid-feedback">
+                            <div *ngIf="f.address.errors?.required">Address is required.</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <button class="btn btn-info" type="submit">Update</button>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Employee</h5>
+                <button type="button" id="closemodel" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="addform" (ngSubmit)="addEmployee()">
+
+                    <div class="form-group">
+                        <label for="userID">Employee ID<span class="danger">*</span></label>
+                        <input formControlName="employeeID" id="userID" type="text" class="form-control" [ngClass]="{ 'is-invalid': addsubmitted && a.employeeID.invalid }">
+                        <div *ngIf="addsubmitted && a.employeeID.invalid" class="invalid-feedback">
+                            <div *ngIf="a.employeeID.errors?.required">Employee id is required.</div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="empname">Employee Name<span class="danger">*</span></label>
+                        <input formControlName="employeeName" id="empname" type="text" class="form-control" [ngClass]="{ 'is-invalid': addsubmitted && a.employeeName.invalid }">
+                        <div *ngIf="addsubmitted && a.employeeName.invalid" class="invalid-feedback">
+                            <div *ngIf="a.employeeName.errors?.required">Employee name is required.</div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userID">Email ID</label>
+                        <input formControlName="userID" id="userID" type="text" class="form-control">
+                        <div *ngIf="addsubmitted && a.userID.invalid" class="invalid-feedback">
+                            <div *ngIf="a.userID.errors?.email">Please, enter valid email address.</div>
+                            <div *ngIf="a.userID.errors?.duplicate">Email ID already exits.</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobileNumber">Mobile Number<span class="danger">*</span></label>
+                        <input formControlName="mobileNumber" id="mobileNumber" type="tel" maxlength=10 class="form-control" (keypress)="onlyNumberKey($event)" [ngClass]="{ 'is-invalid': addsubmitted && a.mobileNumber.invalid }">
+                        <div *ngIf="addsubmitted && a.mobileNumber.invalid" class="invalid-feedback">
+                            <div *ngIf="a.mobileNumber.errors?.required">Mobile number is required.</div>
+                            <div *ngIf="a.mobileNumber.errors?.minlength">Mobile number should be 10 character.</div>
+                            <div *ngIf="a.mobileNumber.errors?.maxlength">Mobile number should be 10 character.</div>
+                            <div *ngIf="a.mobileNumber.errors?.pattern">Enter only numbers .</div>
+                            <div *ngIf="a.mobileNumber.errors?.duplicate">Mobile number already exits.</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address<span class="danger">*</span></label>
+                        <input formControlName="address" id="address" type="text" class="form-control" [ngClass]="{ 'is-invalid': addsubmitted && a.address.invalid }">
+                        <div *ngIf="addsubmitted && a.address.invalid" class="invalid-feedback">
+                            <div *ngIf="a.address.errors?.required">Address is required.</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <button class="btn btn-info" type="submit">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

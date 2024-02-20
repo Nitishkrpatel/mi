@@ -1,0 +1,106 @@
+<app-navbar></app-navbar>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-md-4 content-section">
+            <div *ngIf="otpSent == 'false' && validatedotp == 'false'">
+                <h4>Register</h4>
+                <hr />
+                <form [formGroup]="registerWith">
+                    <div class="form-group">
+                        <div class="form-check">
+                            <label style="margin-right: 15px;">
+                                <input type="radio" value="userID" formControlName="options"
+                                    (click)="registerWithuserID()">
+                                <span>Email ID</span>
+                            </label>
+                            <label>
+                                <input type="radio" value="mobileNumber" formControlName="options"
+                                    (click)="registerWithmobileNumber()">
+                                <span>Mobile number</span>
+                            </label><br />
+                            <br />
+
+                            <form [formGroup]="preregisterationForm">
+                                <div *ngIf="registerWithUserID == 'true'">
+                                    <div class="mb-3">
+                                        <label for="emailId" class="form-label">Email Id<span
+                                                class="danger">*</span></label>
+                                        <input type="email" class="form-control" id="emailId" formControlName="userID" [ngClass]="{ 'is-invalid': submitted && f.userID.invalid }">
+                                        <div *ngIf="submitted && f.userID.invalid" class="invalid-feedback">
+                                            <div *ngIf="f.userID.errors?.required">Email is required.</div>
+                                            <div *ngIf="f.userID.errors?.pattern">Please, enter valid email address.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div *ngIf="registerWithMobileNumber == 'true'">
+                                    <div class="mb-3">
+                                        <label for="mobileNumber" class="form-label">Mobile Number<span
+                                                class="danger">*</span></label>
+                                        <input type="tel" class="form-control" id="mobileNumber" formControlName="mobileNumber" (keypress)="onlyNumberKey($event)" [ngClass]="{ 'is-invalid': submitted && f.mobileNumber.invalid }">
+                                        <div *ngIf="submitted && f.mobileNumber.invalid" class="invalid-feedback">
+                                            <div *ngIf="f.mobileNumber.errors?.required">Mobile Number is required.
+                                            </div>
+                                            <div *ngIf="f.mobileNumber.errors?.pattern">Only numbers.</div>
+                                            <div *ngIf="f.mobileNumber.errors?.minlength">Minimum length 10</div>
+                                            <div *ngIf="f.mobileNumber.errors?.maxlength">Maximum length 10</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <button class="button-color btn btn-info" (click)="preRegister()" type="submit">Get
+                                Verification Code</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div *ngIf="otpSent == 'true' && validatedotp == 'false'">
+                <form [formGroup]="otpValidationForm" (ngSubmit)="validateOTP()">
+                    <div class="text-left">
+                        <h3>Enter Verification Code</h3>
+                        <hr />
+                    </div>
+                    <div class="form-group">
+                        <div class="mb-3">
+                            <label for="otpsent" class="form-label">Enter Your OTP<span class="danger">*</span></label>
+                            <input type="tel" class="form-control" id="otpsent" formControlName="otp">
+                            <div *ngIf="submitted && o.otp.invalid" class="invalid-feedback">
+                                <div *ngIf="o.otp.errors?.required">OTP required</div>
+                                <div *ngIf="o.otp.errors?.invalidOTP">Invalid OTP, Please Enter a valid OTP.</div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <button class="button-color btn btn-info" type="submit">Validate OTP</button>
+                </form>
+            </div>
+
+            <div *ngIf="otpSent == 'true' && validatedotp == 'true'">
+                <form [formGroup]="registerationForm" (ngSubmit)="registerUser()">
+                    <div class="text-left">
+                        <h3>Set Password</h3>
+                        <hr />
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password<span class="danger">*</span></label>
+                            <input type="password" class="form-control" id="password" formControlName="password" [ngClass]="{ 'is-invalid': submittedRegister && r.password.invalid }">
+                            <div *ngIf="submittedRegister && r.password.invalid" class="invalid-feedback">
+                                <div *ngIf="r.password.errors?.required">Password is required.</div>
+                                <div *ngIf="r.password.errors?.minlength">Password should be 6 character.</div>
+                                <div *ngIf="r.password.errors?.maxlength">Maximum character 20.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <span>6 to 20 characters, including letters and digits</span><br>
+                    <button class="button-color btn btn-info" type="submit">Confirm</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

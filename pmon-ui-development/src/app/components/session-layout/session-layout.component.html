@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <nav class="navbar  bg-light navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand"><img src="../../../assets/logo.png" class="img-size"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                </ul>
+                <form class="d-flex">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item" [routerLinkActive]="['active']">
+                            <a class="nav-link" [routerLink]="['/user']">User</a>
+                        </li>
+                        <li class="nav-item" [routerLinkActive]="['active']">
+                            <a class="nav-link" aria-current="page" [routerLink]="['/employee']">Employee</a>
+                        </li>
+                        <li class="nav-item" [routerLinkActive]="['active']">
+                            <a class="nav-link" aria-current="page" [routerLink]="['/team']">Team</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Profile
+                        </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Reset Password</a></li>
+                                <li><a class="dropdown-item" href="#">LogOut</a></li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9"></div>
+            <div class="col-sm-3">
+                <p><b>User Name:</b> {{ this. userName}} - {{this.Role}}</p>
+            </div>
+        </div>
+    </div>
+</div>

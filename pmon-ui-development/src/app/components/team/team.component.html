@@ -1,0 +1,121 @@
+<app-session-layout></app-session-layout>
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Team ID</th>
+                <th scope="col">Team Name</th>
+                <th scope="col">Supervisor</th>
+                <th scope="col">Active Status</th>
+                <th scope="col">Edit</th>
+                <th *ngIf="Role == 'Admin'" scope="col">Activate / Deactivate</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let team of teamListArray">
+                <td [ngClass]="{ 'redbackgroundColor': team.activeStatus == 'inActive'}">{{team?.teamID}}</td>
+                <td [ngClass]="{ 'redbackgroundColor': team.activeStatus == 'inActive'}">{{team?.teamName}}</td>
+                <td [ngClass]="{ 'redbackgroundColor': team.activeStatus == 'inActive'}">{{team?.supervisor}}</td>
+                <td [ngClass]="{ 'redbackgroundColor': team.activeStatus == 'inActive'}">{{team?.activeStatus}}</td>
+                <td [ngClass]="{ 'redbackgroundColor': team.activeStatus == 'inActive'}"><a (click)="editUser(team.teamID)" data-bs-toggle="modal" data-bs-target="#editModel" class="cursor"><i class="material-icons">edit</i></a></td>
+                <td [ngClass]="{ 'redbackgroundColor': team.activeStatus == 'inActive'}" *ngIf="Role == 'Admin'" class="cursor">
+                    <a *ngIf="team.activeStatus == 'active'" (click)="activateordeactive(team.teamID, team.activeStatus)"><i
+                            class="material-icons">block</i></a>
+                    <a *ngIf="team.activeStatus == 'inActive'" (click)="activateordeactive(team.teamID, team.activeStatus)"><i
+                            class="material-icons">beenhere</i></a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addModel">
+       Add New Team
+    </button>
+</div>
+
+<div class="modal fade" id="editModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Team</h5>
+                <button type="button" id="closeusermodel" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form" (ngSubmit)="updateTeams()">
+
+                    <div class="form-group">
+                        <label for="id">Team ID<span class="danger">*</span></label>
+                        <input formControlName="teamID" id="id" type="text" class="form-control" [ngClass]="{ 'is-invalid': addsubmitted && a.teamID.invalid }" readonly>
+                        <div *ngIf="addsubmitted && a.teamID.invalid" class="invalid-feedback">
+                            <div *ngIf="a.teamID.errors?.required">Team id is required.</div>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Team Name<span class="danger">*</span></label>
+                        <input formControlName="teamName" id="name" type="text" class="form-control" [ngClass]="{ 'is-invalid': addsubmitted && a.teamName.invalid }">
+                        <div *ngIf="addsubmitted && a.teamName.invalid" class="invalid-feedback">
+                            <div *ngIf="a.teamName.errors?.required">Name is required.</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="supervisor">Supervisor<span class="danger">*</span></label>
+                        <input formControlName="supervisor" id="supervisor" type="text" class="form-control" [ngClass]="{ 'is-invalid': addsubmitted && a.supervisor.invalid }">
+                        <div *ngIf="addsubmitted && a.supervisor.invalid" class="invalid-feedback">
+                            <div *ngIf="a.supervisor.errors?.required">Supervisor is required.</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <button class="btn btn-info" type="submit">Update</button>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Team</h5>
+                <button type="button" id="closemodel" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="addform" (ngSubmit)="addTeam()">
+
+                    <div class="form-group">
+                        <label for="id">Team ID<span class="danger">*</span></label>
+                        <input formControlName="teamID" id="id" type="text" class="form-control" [ngClass]="{ 'is-invalid': addsubmitted && a.teamID.invalid }">
+                        <div *ngIf="addsubmitted && a.teamID.invalid" class="invalid-feedback">
+                            <div *ngIf="a.teamID.errors?.required">Team id is required.</div>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Team Name<span class="danger">*</span></label>
+                        <input formControlName="teamName" id="name" type="text" class="form-control" [ngClass]="{ 'is-invalid': addsubmitted && a.teamName.invalid }">
+                        <div *ngIf="addsubmitted && a.teamName.invalid" class="invalid-feedback">
+                            <div *ngIf="a.teamName.errors?.required">Name is required.</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="supervisor">Supervisor<span class="danger">*</span></label>
+                        <input formControlName="supervisor" id="supervisor" type="text" class="form-control" [ngClass]="{ 'is-invalid': addsubmitted && a.supervisor.invalid }">
+                        <div *ngIf="addsubmitted && a.supervisor.invalid" class="invalid-feedback">
+                            <div *ngIf="a.supervisor.errors?.required">Supervisor is required.</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <button class="btn btn-info" type="submit">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
