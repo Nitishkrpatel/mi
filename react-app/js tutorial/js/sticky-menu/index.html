@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Navbar</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+        h1{
+            text-decoration: underline;
+        }
+        #header{
+            text-align: center;
+        }
+        #logo{
+            width: 250px;
+            height: auto;
+        }
+        #menu-bar{
+            text-align: center;
+            background-color:cadetblue ;
+            padding: 15px 10px;
+        }
+        #menu-bar li{
+            display: inline;
+            padding: 15px 10px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #container{
+            text-align: center;
+            padding: 50px 100px;
+        }
+        #about-img{
+            width: 100%;
+            height: auto;
+        }
+        .sticky{
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <img src="https://www.logodesign.net/logo/line-art-house-roof-and-buildings-4485ld.png" alt="" id="logo">
+    </div>
+    <nav id="menu-bar">
+        <li>Home</li>
+        <li>About Us</li>
+        <li>Our Team</li>
+        <li>Client</li>
+        <li>Contact Us</li>
+    </nav>
+    <div id="container">
+        <h1>About Us</h1>
+        <img src="https://static8.depositphotos.com/1000423/1012/i/600/depositphotos_10128291-stock-photo-three-successful-young-business-persons.jpg"
+            alt="" id="about-img">
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque totam at molestias eos ipsa praesentium ut
+            dolore id assumenda in, corrupti perferendis voluptates sapiente aut sit tenetur adipisci quae error?
+            Numquam impedit veniam dolore doloremque nisi odio magni autem, provident placeat aspernatur nesciunt sequi
+            hic. Dolorem libero quod minus eos dicta pariatur ut assumenda saepe, ipsam dolor consectetur! Excepturi
+            illum eos corrupti, nisi provident eveniet amet accusantium, libero quod necessitatibus omnis ut debitis aut
+            deserunt odit aspernatur dolores! Iure excepturi provident vel hic a aliquam cumque recusandae ducimus magni
+            perferendis ipsam exercitationem quasi voluptatem quia minima quisquam blanditiis pariatur, officiis dolores
+            non consectetur atque quibusdam. Repellat officiis error molestiae natus assumenda sapiente aspernatur
+            dolorum rem neque quaerat inventore, quos illo obcaecati doloremque nemo nobis possimus labore aperiam totam
+            laudantium rerum? Perferendis deleniti excepturi quos ab ipsam tempora, praesentium accusamus iusto adipisci
+            dolores vero autem sint, nam ad vitae veritatis asperiores itaque. Itaque distinctio minus incidunt,
+            molestiae, suscipit fugit ab, laudantium architecto perspiciatis quod dolores? Nulla, quia aliquam ab
+            quisquam recusandae impedit, ut libero et ex possimus architecto dignissimos velit voluptates praesentium
+            amet. Similique reiciendis eligendi alias, laborum, et vel, eveniet numquam quasi recusandae nam sed iure
+            earum quae eum quo fuga! Quis, deserunt. Quaerat recusandae necessitatibus ut, officiis expedita dignissimos
+            totam animi ab quibusdam culpa sunt magni, libero ducimus pariatur odit qui explicabo ad impedit harum saepe
+            ea? Quae, a. Nihil libero suscipit aperiam nisi facere sapiente unde odio consequuntur repellat dolore, hic
+            repudiandae dicta cupiditate itaque eligendi optio ex quaerat, vero beatae nemo ab et asperiores rerum in!
+            Quasi vel laboriosam autem perspiciatis et incidunt dolore minus fugiat, fugit itaque consequatur hic
+            maxime, doloremque blanditiis accusamus voluptates rerum tenetur aut, ipsa totam. Delectus iusto earum nobis
+            temporibus voluptates provident recusandae amet deleniti, in totam tenetur deserunt nisi facilis adipisci
+            eum dolorem commodi, sed quo itaque ullam praesentium consequatur quos accusantium. Totam accusamus eos
+            iusto architecto perferendis velit, iste doloribus ratione optio, maxime enim excepturi iure. Incidunt eius
+            nihil deleniti, fugit sint magnam dolores quae adipisci sequi consequatur suscipit quidem facilis nam
+            consectetur hic. Numquam, minus in? Ut esse aliquam delectus reiciendis reprehenderit, quae eaque accusamus
+            sapiente dolor laudantium ad libero officia voluptatibus dolorem repellat ipsa at vel dignissimos obcaecati
+            architecto nisi voluptas eveniet maiores recusandae. Sint aperiam fugit illo enim? Ratione non ab nisi,
+            commodi nihil quo cupiditate eum earum maiores quis accusantium quasi laboriosam dolore corporis iusto ullam
+            provident. Provident, cupiditate. Libero voluptatibus dolores esse minima harum est et fugit amet nam
+            tenetur distinctio, tempora, qui maiores quia dolorum ab ex dolor corporis accusantium assumenda. Explicabo
+            fugit aspernatur amet deleniti praesentium, hic saepe mollitia quae cum sequi exercitationem quidem deserunt
+            nisi beatae cumque eius numquam repellat, illo omnis esse temporibus eum ipsa consequatur? Nobis impedit
+            libero deserunt ab possimus, animi aperiam perferendis mollitia iste laudantium soluta ad aspernatur
+            voluptatem velit quas in. Ea vitae quidem in cum. Totam quis perspiciatis incidunt et deserunt iure fugiat
+            magni perferendis quaerat commodi explicabo, at earum? Earum eum quos laborum dolore minima.
+        </p>
+    </div>
+    <script>
+        window.addEventListener('scroll',function(){
+
+            let navbar = document.getElementById("menu-bar")
+ 
+            if(window.pageYOffset >= 190){
+                navbar.classList.add("sticky")
+            }else{
+                navbar.classList.remove("sticky")
+            }
+        })
+    </script>
+
+</body>
+
+</html>

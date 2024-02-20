@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Changer</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 20px 100px;
+
+        }
+
+        h1 {
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        p {
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        .btn {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            border: 2px solid grey;
+            border-radius: 100%;
+            cursor: pointer;
+        }
+
+        #white {
+            background-color: white;
+        }
+
+        #aqua {
+            background-color: aqua;
+        }
+
+        #violet {
+            background-color: violet;
+        }
+
+        #black {
+            background-color: black;
+        }
+
+        .color-switcher {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="color-switcher">
+        <span class="btn" id="white" onclick="changeBg('white')"></span>
+        <span class="btn" id="aqua" onclick="changeBg('aqua')"></span>
+        <span class="btn" id="violet" onclick="changeBg('violet')"></span>
+        <span class="btn" id="black" onclick="changeBg('black')"></span>
+    </div>
+    <h1 class="text">About Us</h1>
+    <img src="https://static8.depositphotos.com/1000423/1012/i/600/depositphotos_10128291-stock-photo-three-successful-young-business-persons.jpg"
+        alt="">
+    <p class="text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed ab quidem error, atque esse nostrum. Nemo quia
+        dicta saepe ab optio autem, vitae dolor odit, magni tempora ex illum facilis non obcaecati! Soluta iure vero
+        deserunt laudantium non ipsam dolore ratione porro dolorem fuga aspernatur, debitis corrupti unde distinctio ea?
+        A, at amet natus odio quo saepe. Quis eaque expedita sint voluptas minima repellat mollitia error tenetur.
+        Itaque esse dicta, aut ullam architecto atque delectus quas veritatis aliquam? Dolores, alias eos. Quas quam
+        reprehenderit quasi explicabo quidem error perspiciatis, doloremque magnam obcaecati vitae quis. Ullam voluptate
+        quod quo excepturi quaerat magni minima ducimus sed rerum, veniam debitis facilis accusantium praesentium
+        corporis nesciunt saepe alias aliquid eius repudiandae. Nihil voluptas illum excepturi quasi. Nulla accusamus
+        doloribus placeat saepe neque porro, vel cumque corporis eos nisi, at voluptates optio asperiores, accusantium
+        distinctio pariatur soluta provident minima! Quasi ea repellendus, omnis, id ratione officia corporis accusamus
+        nesciunt inventore suscipit error rerum quaerat odio alias porro iste, quisquam doloribus illo! Tempora velit
+        fuga illum nam recusandae illo? Omnis enim amet mollitia blanditiis atque dolorum alias odio velit eligendi
+        officia similique ad asperiores aliquam explicabo, quia, exercitationem quis error minima doloribus?
+        Consequuntur vel deserunt perferendis maxime neque delectus voluptatum. Dolorum excepturi quasi, cumque
+        voluptatibus autem neque temporibus vel aliquam pariatur aspernatur sit quod provident illo ex, natus
+        perferendis eligendi odio id? Quisquam, rerum inventore repellat est soluta suscipit asperiores eligendi
+        excepturi aspernatur sapiente nihil aut dignissimos pariatur assumenda debitis expedita nemo, nostrum
+        perspiciatis id aliquid provident quis ab ipsa! Provident nesciunt at, voluptatem cupiditate velit maiores
+        ducimus eius perferendis, iure soluta explicabo odio labore. Ea labore tenetur nemo iste quisquam eum est,
+        corrupti atque eveniet quia error quos, quod accusantium aspernatur. Ab aut animi voluptates exercitationem, ad
+        deleniti reiciendis quis? Quibusdam blanditiis asperiores et suscipit vero saepe? Deleniti, porro facilis.
+        Itaque atque dignissimos quidem eaque quaerat et molestias nihil autem alias recusandae, ratione vel debitis
+        inventore est optio minima. Eveniet neque quod natus aperiam iusto in quas sint placeat veritatis, quae
+        consequuntur minima deleniti optio ab officiis facere distinctio non ea eligendi voluptas nostrum reprehenderit.
+        Quasi tempore distinctio dicta consequatur incidunt voluptatum eos nihil voluptates! Repellendus perferendis
+        dignissimos magni maiores rerum obcaecati ratione suscipit tempora fugit iste omnis officiis numquam sunt
+        voluptate soluta at voluptatem, nulla possimus, iusto, laborum id! Nemo cupiditate quis quaerat qui animi dolor
+        distinctio placeat sunt excepturi numquam iste, aperiam veritatis quidem consequuntur architecto, repudiandae
+        libero dolorem sapiente modi dolore? Quam voluptatibus blanditiis omnis facere accusantium neque, iste
+        voluptates dicta error quas voluptatum soluta in officia iure est ea molestias excepturi dolorem perspiciatis,
+        fugit et commodi dolorum? Officia excepturi incidunt quas, fugit officiis id et. Amet doloremque quibusdam, quam
+        aut cum adipisci accusantium dignissimos repellat accusamus deserunt blanditiis voluptas, eos nisi esse facere,
+        nostrum neque optio dicta dolorum officiis. Totam, odit atque rem error deleniti sequi ut id ipsa, eum magni
+        voluptatem obcaecati eius tempore amet, architecto laborum! Ipsam dolores doloribus consequuntur soluta
+        consectetur eaque! Nesciunt, tempore! Eveniet quisquam quod vero?
+
+    </p>
+    <script>
+        function changeBg(color) {
+            document.body.style.backgroundColor = color;
+            let txt = document.getElementsByClassName("text");
+            if (color === 'black') {
+                for (let elm of txt) {
+                    elm.style.color = "white"
+
+                }
+
+            } else {
+                for (let elm of txt) {
+                    elm.style.color = "black"
+                }
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

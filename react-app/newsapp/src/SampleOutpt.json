@@ -1,0 +1,97 @@
+{
+    "status": "ok",
+    "totalResults": 7,
+    "articles": [
+        {
+            "source": {
+                "id": "buzzfeed",
+                "name": "Buzzfeed"
+            },
+            "author": "justanobserver",
+            "title": "Classic Films Checklist Quiz",
+            "description": "And yes, On Golden Pond is from 1981, but it's just too good not to include!",
+            "url": "https://www.buzzfeed.com/justanobserver/classic-films-checklist-quiz",
+            "urlToImage": "https://img.buzzfeed.com/buzzfeed-static/static/2023-08/9/20/enhanced/159b38fa24f6/original-719-1691612658-8.jpg?crop=2861:1498;0,0%26downsize=1250:*",
+            "publishedAt": "2023-08-12T00:37:15.2497588Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "entertainment-weekly",
+                "name": "Entertainment Weekly"
+            },
+            "author": "Jessica Wang",
+            "title": "Jodie Sweetin is 'disappointed' her upcoming film was sold to Great American Family",
+            "description": "Her former <em>Full House </em>costar Candace Cameron Bure stirred controversy for comments she made as the network's chief creative officer last year.",
+            "url": "https://ew.com/movies/jodie-sweetin-disappointed-film-sold-great-american-family/",
+            "urlToImage": "https://imagesvc.meredithcorp.io/v3/mm/image?q=60&c=sc&rect=35%2C1%2C1941%2C954&poi=%5B1080%2C333%5D&w=2000&h=1000&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2023%2F08%2F11%2Fjodie-sweetin-081123.jpg",
+            "publishedAt": "2023-08-11T23:16:04Z",
+            "content": "Oh my lanta. Jodie Sweetin is none too pleased that one of her upcoming films has been sold to Candace Cameron Bure's Great American Family.\r\nIn a statement issued to PEOPLE, Sweetin said she was sur… [+2455 chars]"
+        },
+        {
+            "source": {
+                "id": "le-monde",
+                "name": "Le Monde"
+            },
+            "author": "Brieuc Beckers, Marceau Bretonnier, Elisa Bellanger et Adrien Sahli",
+            "title": "Vidéo. De « Star Wars » à « Indiana Jones », la technique qui rend ces musiques de film inoubliables",
+            "description": "Vidéo - A 91 ans, le compositeur John Williams signe la bande-son du dernier « Indiana Jones », en salles le 28 juin. Le service vidéo du « Monde » a tenté de percer ses secrets de fabrication, avec l’aide d’un jeune orchestre symphonique.",
+            "url": "https://www.lemonde.fr/culture/video/2023/06/26/de-star-wars-a-indiana-jones-la-technique-qui-rend-ces-musiques-de-film-inoubliables_6179298_3246.html",
+            "urlToImage": "https://img.lemde.fr/2023/06/21/0/131/1620/1080/1440/960/60/0/5eba91f_1687333721261-thumbnail-john-williams-site.png",
+            "publishedAt": "2023-06-26T15:00:05Z",
+            "content": "Êtes-vous capable de fredonner la musique des films Star Wars,Indiana Jones, Jurassic Park ou Harry Potter ? Derrière leur célébrité quasi universelle, ces thèmes musicaux partagent un point commun :… [+678 chars]"
+        },
+        {
+            "source": {
+                "id": "rtl-nieuws",
+                "name": "RTL Nieuws"
+            },
+            "author": "RTL Nieuws",
+            "title": "Kijk onbeperkt series en films - home",
+            "description": "Kijk onbeperkt series en films. Geniet altijd en overal van de beste series en films vanaf 4,99 per maand. Probeer nu de eerste 2 weken gratis!",
+            "url": "https://www.videoland.com?utm_source=rtlnieuws&utm_medium=web&utm_campaign=headerbrandlink",
+            "urlToImage": "https://videoland.com/welkom-app/uploads/2023/05/Group-20.png",
+            "publishedAt": "2023-06-16T13:07:22.1063147Z",
+            "content": "Videoland heeft met duizenden films en series uit binnen- en buitenland het grootste en meest gevarieerde online aanbod van Nederland. Hier vind je een overzicht van het aanbod. Daarnaast biedt Video… [+624 chars]"
+        },
+        {
+            "source": {
+                "id": "abc-news-au",
+                "name": "ABC News (AU)"
+            },
+            "author": "Chris Calcino",
+            "title": "Cairns artist David Hudson recalls Island of Dr Moreau experience with Marlon Brando and Val Kilmer",
+            "description": "David Hudson has led an extraordinary life, but his stint as a half-human, half-bison hybrid alongside the Godfather star and Val Kilmer while filming The Island of Dr Moreau remains his strangest claim to fame.",
+            "url": "http://www.abc.net.au/news/2023-04-03/david-hudson-bison-man-brando-island-doctor-moreau-cairns/102171602",
+            "urlToImage": "https://live-production.wcms.abc-cdn.net.au/80c7fd8e780bcaa4cddfa095c6fdf2a1?impolicy=wcms_crop_resize&cropH=1080&cropW=1920&xPos=0&yPos=0&width=862&height=485",
+            "publishedAt": "2023-04-03T00:40:54Z",
+            "content": "David Hudson has led an extraordinary life, but a three-month stint working as a human-bison hybrid alongside Marlon Brando and Val Kilmer in Far North Queensland stands as his strangest claim to fam… [+5646 chars]"
+        },
+        {
+            "source": {
+                "id": "techradar",
+                "name": "TechRadar"
+            },
+            "author": "Tom Power, Becca Caddy, Richard Edwards",
+            "title": "The best Max family movies: 18 great films to stream in August 2023",
+            "description": "Searching for the best Max family movies to stream right now? We're here to help",
+            "url": "https://www.techradar.com/best/the-best-hbo-max-family-movies-the-best-films-for-all-ages",
+            "urlToImage": "https://cdn.mos.cms.futurecdn.net/fW5BNXAKzEkpETY4WsCpz3-1200-80.jpg",
+            "publishedAt": "2022-12-22T17:00:39Z",
+            "content": "Looking for the best Max family movies? You're in the right place. In our guide below, you'll find a whole range of options, from Studio Ghibli animations through to cult classic kid's films and supe… [+18138 chars]"
+        },
+        {
+            "source": {
+                "id": "ign",
+                "name": "IGN"
+            },
+            "author": "Collier Jennings",
+            "title": "Best Action Movies on Netflix Right Now (September 2022) - IGN",
+            "description": "These are the best action movies on Netflix right now -- blockbusters, fight films, animated adventures and shootouts galore.",
+            "url": "https://www.ign.com/articles/best-action-movies-on-netflix-right-now",
+            "urlToImage": "https://assets-prd.ignimgs.com/2022/07/28/rrr-1659047262112.jpg?width=1280",
+            "publishedAt": "2022-09-01T18:03:14Z",
+            "content": "There is nothing like a good action movie on Netflix. The perfectly choreographed fight scenes that let you feel every punch and kick on screen; the shootouts that see bullets and bodies hitting the … [+11394 chars]"
+        }
+    ]
+}

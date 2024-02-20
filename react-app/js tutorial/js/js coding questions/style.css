@@ -1,0 +1,11 @@
+.heading{
+    text-align: center;
+    text-decoration: underline;
+    color: red;
+}
+
+#result{
+    font-weight: 800;
+    color: green;
+    font-size: 40px;
+}
