@@ -1,0 +1,39 @@
+.dashboard-outerbox {
+    padding: 24px 32px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin: 24px 0px;
+}
+
+.title {
+    font-family: Charlie Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 4px 0px;
+    display: block;
+}
+
+
+.subtitle {
+    font-family: Charlie Text;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 4px 0px;
+}
+
+.dashboard-btn {
+    font-family: CharlieText-Bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px !important;
+    color: #FFFFFF;
+    padding: 10px;
+}

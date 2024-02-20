@@ -1,0 +1,22 @@
+********************
+System Requirements
+********************
+
+
+
+
+ .. _Systems_requirements:
+
+ .. figure:: img/system_requirements/Systems_requirements.png
+     :align: center
+     :figwidth: 60%
+
+     Systems requirements
+
+
+ :term:`Click here for more information on RAM <RAM>`
+ 
+ :term:`Click here for more information on Memory <Memory>`
+
+ :term:`Click here for more information on Giga Byte <Giga Byte>`
+

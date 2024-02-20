@@ -1,0 +1,131 @@
+.title-admin {
+    font-family: 'Charlie Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.01em;
+}
+
+.sub-title-admin {
+    font-family: 'CharlieText-bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 10px;
+    // text-transform: uppercase;
+}
+
+.notification-image {
+    border: 1px solid transparent;
+    padding: 10px;
+    border-radius: 20px;
+    margin-right: 2em;
+}
+
+.content {
+    font-family: 'Charlie Text';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.font-size14px {
+    font-size: 14px !important;
+}
+.bold {
+    font-family: 'CharlieText-bold';
+}
+
+.time {
+    font-family: 'Charlie Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.admin-button {
+    font-family: 'CharlieText-bold';
+    font-size: 10px;
+    line-height: 10px;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: static;
+    width: 104px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    margin-bottom: 5px;
+ }
+
+
+.cancel-button {
+    border-radius: 0px;
+    border: none;
+    font-family: CharlieText-Bold;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  
+.add-button{
+    border-radius: 4px;
+    font-family: CharlieText-Bold;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 12px;
+}
+
+.note {
+    font-family: Charlie Text;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    margin: 16px 0px;
+}
+
+.forgotusername-name {
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.queue-requests-tab .nav-link.active{
+    font-family: 'CharlieText-bold';
+    background-color: transparent !important;
+    font-weight: bolder;
+    border-radius: 0px;
+}
+
+.queue-requests-tab .nav-link {
+    font-family: 'Charlie Text';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.nav-link-count {
+    font-family: 'Charlie Text';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;    
+    color: #FFFFFF;
+    margin: 0px 8px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 12px;
+}
+
+.margin-bottom-10px {
+    margin-bottom: 10px;
+}

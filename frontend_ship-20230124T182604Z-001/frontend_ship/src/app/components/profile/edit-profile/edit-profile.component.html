@@ -1,0 +1,123 @@
+
+<div *ngIf="editProfile == true">
+    <div class='row' >
+        <div class="col-sm-9">
+           <h1 class="title-admin">
+            Edit Your Profile
+           </h1> 
+        </div>
+    </div>
+    <hr/>
+
+    <form style="padding-left: 15px;" [formGroup]="profileForm">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="content">Username</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <mat-form-field  style="width: inherit;" appearance="outline">
+                    <mat-label>User Name*</mat-label>
+                    <input style="cursor: not-allowed;" type="text" id="userid" formControlName="userid" matInput readonly>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="content">General Information</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <mat-form-field style="width: inherit;" appearance="outline">
+                    <mat-label>First Name*</mat-label>
+                    <input style="cursor: not-allowed;" type="text" id="fname" formControlName="fname" matInput readonly>
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+                <mat-form-field style="width: inherit;" appearance="outline">
+                    <mat-label>Last Name*</mat-label>
+                    <input style="cursor: not-allowed;" type="text" id="lname" formControlName="lname" matInput readonly>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <mat-form-field style="width: inherit;" appearance="outline">
+                    <mat-label>Email Address *</mat-label>
+                    <input type="text" id="email" formControlName="email" matInput >
+                    <mat-icon matSuffix>
+                        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="strokecolor" id="imageColors" d="M18.1656 1.83418L18.1661 1.83474C19.0224 2.69013 19.5005 3.84295 19.5005 5.05V12.95C19.5005 15.4625 17.4557 17.5 14.9395 17.5H5.06049C2.54441 17.5 0.500488 15.4626 0.500488 12.95V5.05C0.500488 2.53672 2.53505 0.5 5.06049 0.5H14.9395C16.1489 0.5 17.3112 0.978001 18.1656 1.83418ZM16.1205 4.70251L16.1086 4.70131L16.0966 4.70068C15.7626 4.68319 15.436 4.79416 15.1849 5.01934L10.6885 8.60926L10.6885 8.60919L10.6813 8.61513C10.2878 8.94145 9.72313 8.94459 9.31675 8.61273L9.31676 8.61271L9.31284 8.60957L4.81284 5.00957L4.80542 5.00364L4.79779 4.99799C4.29666 4.62738 3.5857 4.66272 3.14326 5.12013C2.70195 5.56506 2.65011 6.27303 3.03205 6.77338L3.0529 6.8007L3.07729 6.8249L3.20829 6.95491L3.22943 6.97589L3.25292 6.99421L7.80158 10.5432C7.80178 10.5433 7.80198 10.5435 7.80219 10.5436C8.44814 11.051 9.23516 11.33 10.0605 11.33C10.8822 11.33 11.682 11.052 12.3287 10.5429L12.3288 10.5429L12.3319 10.5404L16.8429 6.93038L16.8645 6.91311L16.884 6.89355L16.964 6.81355L16.981 6.79655L16.9963 6.77799C17.3883 6.30234 17.3891 5.61016 16.9782 5.13353L16.9718 5.1261L16.9651 5.11893C16.7402 4.87785 16.4355 4.73417 16.1205 4.70251Z" />
+                        </svg>
+                    </mat-icon>
+                    <mat-hint class="danger" *ngIf="p.email.errors?.email">Email address is in wrong
+                        format.
+                    </mat-hint>
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+                <mat-form-field style="width: inherit;" appearance="outline">
+                    <mat-label>Phone Number</mat-label>
+                    <input maxlength='10' class="mobile-number-input" (keypress)="onlyNumberKey($event)" type="text" id="mobile" formControlName="mobile" matInput >
+                    <mat-icon matSuffix>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="imageColors" d="M12.3561 0.00792976C12.133 -0.0240483 11.9089 0.0419064 11.7307 0.183809C11.5474 0.32771 11.4329 0.535567 11.408 0.768408C11.3552 1.23908 11.6948 1.66479 12.1649 1.71776C15.4065 2.07951 17.9262 4.60477 18.2907 7.85654C18.3395 8.29224 18.705 8.62101 19.1412 8.62101C19.174 8.62101 19.2059 8.61902 19.2388 8.61502C19.4668 8.59004 19.67 8.47711 19.8134 8.29724C19.9558 8.11736 20.0206 7.89351 19.9947 7.66467C19.5405 3.60746 16.4005 0.45862 12.3561 0.00792976Z" />
+                            <path id="imageColors" d="M12.4183 3.48988C11.9422 3.40194 11.505 3.70573 11.4144 4.17041C11.3238 4.6351 11.6285 5.08878 12.0916 5.17972C13.4859 5.45153 14.5624 6.53079 14.8353 7.92983C14.913 8.33256 15.2675 8.62635 15.6759 8.62635C15.7306 8.62635 15.7854 8.62136 15.8412 8.61136C16.3043 8.51843 16.609 8.06574 16.5184 7.60006C16.1111 5.51049 14.5027 3.8966 12.4183 3.48988Z"/>
+                            <path id="imageColors" d="M13.6378 12.3543C12.5152 12.7476 11.2506 13.1906 9.03174 10.9724C6.81304 8.75431 7.255 7.48904 7.64729 6.36597C7.96031 5.46983 8.24171 4.66423 7.11449 3.53733C6.80949 3.23241 6.535 2.94351 6.28214 2.67738C4.50501 0.806958 3.79649 0.061244 1.07397 2.78395C1.05361 2.80927 1.01862 2.84345 0.973396 2.88761C0.324873 3.52102 -2.42781 6.20951 5.6846 14.3197C13.7947 22.4275 16.4815 19.6749 17.1153 19.0256C17.1596 18.9802 17.1938 18.9451 17.2192 18.9247C19.9403 16.2044 19.1921 15.4928 17.3149 13.7072C17.0519 13.457 16.7666 13.1857 16.4656 12.8848C15.3385 11.7585 14.5334 12.0406 13.6378 12.3543Z"/>
+                        </svg>  
+                    </mat-icon>
+
+                    <mat-hint class="danger" *ngIf="p.mobile.errors?.minlength"> Invalid phone
+                        number.
+                    </mat-hint>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="content">Change Password</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <mat-form-field style="width: inherit;" appearance="outline">
+                    <mat-label>Password *</mat-label>
+                    <input  maxlength='12' type="password" id="pwd" formControlName="pwd" matInput >
+                    <mat-icon matSuffix class="showPassword" (click)="showPassword()">
+                        <img class="img-vertical-align"
+                            src='{{"../../../../assets/login/" + passwordicon +".svg"}}'
+                            alt="password" />
+                    </mat-icon>
+                    <mat-hint class="danger"
+                        *ngIf="p.pwd.errors?.minlength">
+                        password should be atleast 6 characters.
+                    </mat-hint>
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+                <span class="note"><b>Note:</b> Password must be atleast 6-12 characters long and can contain
+                    numbers or special character.</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <button class="btn btn-dark add-button submitaddnewuser-button" type="submit" (click)="submitEditProfile()">
+                    Save changes
+                  </button>
+            </div>
+        </div>
+
+    </form>
+</div>

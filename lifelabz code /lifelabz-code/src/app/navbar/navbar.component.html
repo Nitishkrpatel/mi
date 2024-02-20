@@ -1,0 +1,36 @@
+<div class="header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a [routerLink]="['']">
+            <img src="assets\Logo.svg" alt="navbar-brand" class="navbar-brand">
+        </a>
+        <button class="navbar-toggler mr-4" type="button" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+
+        <div class="collapse navbar-collapse" #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" ngbDropdown class="dropdown">
+                    <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/product/overview']" role="button">PRODUCT </a>
+                    <div ngbDropdownMenu class="dropdownMenu">
+                        <a (click)="collapsemethod()" ngbDropdownItem [routerLink]="['/product/overview/']">Overview</a>
+                        <a (click)="collapsemethod()" ngbDropdownItem [routerLink]="['/product/features/']">Features</a>
+                        <a (click)="collapsemethod()" ngbDropdownItem [routerLink]="['/product/apps/']">Apps</a>
+                        <a (click)="collapsemethod()" ngbDropdownItem [routerLink]="['/product/specification/']">Specification</a>
+                    </div>
+                </li>
+                <li class="nav-item" (click)="collapsemethod()">
+                    <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/faqs/']">SUPPORT</a>
+                </li>
+                <li class="nav-item" (click)="collapsemethod()">
+                    <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/about-us/']">ABOUT US</a>
+                </li>
+                <li class="nav-item" (click)="collapsemethod()">
+                    <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/contact-us/']">CONTACT US</a>
+                </li>
+                <li class="nav-item" (click)="collapsemethod()">
+                    <button class="btn btn-sm buy-avi" [routerLink]="['/pricing/']">BUY NOW</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>

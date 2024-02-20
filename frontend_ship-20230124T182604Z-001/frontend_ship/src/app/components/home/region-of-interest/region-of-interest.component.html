@@ -1,0 +1,352 @@
+<!-- <p *ngIf="featureSelectedROI == 'true' && featureSelectedROISidenav == true " class='roi'>region-of-interest works!</p> -->
+
+<div id="roi-Overall">
+  <div id="roi-top-pannel" *ngIf="featureSelectedROI == 'true' && featureSelectedROISidenav == true " class='roi'>
+    <h3>Region of Interest</h3>
+    <button id="markarea-color" type="button" class="btn markarea" (click)="addInteraction()">
+      <img src="../../../assets/roi/mark_area.svg" alt="mark" />
+      MARK AREA ON MAP</button>
+    <div class="regionlist">
+      <div class="row" *ngFor="let roi of usersroi">
+        <div class="col-sm-8 word-break">
+          <label class="regionname dotted_wrap " matTooltip="{{roi.Region_ID}}"
+          [ngClass]="{ 'active_text': selectedregion[roi.Region_ID] == true }">
+            <input type="checkbox" [value]=roi [checked]=selectedregion[roi.Region_ID] class="getShipsForSelectedRegion-checkbox" (change)="getShipsForSelectedRegion($event, roi)" />
+            {{roi.Region_ID}}
+          </label>
+        </div>
+        <div class="col-sm-2">
+          <a class="editRoI" (click)="editRoI(roi)">
+            <img src="../../../assets/roi/edit_roi.svg" alt='edit' />
+          </a>
+        </div>
+        <div class="col-sm-1">
+          <a class="deleteRoI" (click)=deleteRoI(roi)>
+            <img src="../../../assets/roi/delete_roi.svg" alt='delete' />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="roi-bottom-pannel" class="row roipannel" *ngIf="featureSelectedROI == 'true' ">
+    <mat-accordion>
+      <mat-expansion-panel id="roipannel-header">
+        <mat-expansion-panel-header>
+
+          <mat-panel-title class="roipannelheader">
+            Statistical, Timeline & Anomaly Info
+          </mat-panel-title>
+          <!-- <img src="../../../assets/roi/Collapse.svg" alt="collapse" /> -->
+        </mat-expansion-panel-header>
+        <span class="trackandanomaly">
+          <ul class="nav nav-pills" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="pill" href="#statisticalinfo" >Statistical & Timeline Info</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="pill" href="#anomalyinfo">Anomaly Info</a>
+            </li>
+          </ul>
+  
+        </span>
+        <div class="tab-content scroll" style="min-height:400px;max-height: 500px; overflow-y: auto;">
+          <div id="statisticalinfo" class="container tab-pane active">
+            <div class="scroll scroll-limit-roi">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="roiinfopannel">
+                    <span *ngFor="let c of allCategory">
+                      <button type="button" id={{c.vessel_category}} class="btn timelineinfo_category"
+                        (click)='ChangeTimelineCriteria(c.vessel_category)'>
+                        <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path id={{c.vessel_category}}_img class="defaultshipImg"
+                            d="M2.6665 5.66663C1.51429 8.17367 0.957779 11.5609 0.668598 13.4538C0.637498 13.6573 0.961432 13.7506 1.068 13.5712C1.94403 12.0965 5.03687 9.55595 5.85169 9.55595C6.6665 9.55595 9.75934 12.0965 10.6354 13.5712C10.7419 13.7506 11.0659 13.6573 11.0348 13.4538C10.7456 11.5609 10.1521 8.17367 8.99984 5.66663C8.20092 3.92831 6.51143 1.14176 6.00784 0.413864C5.93348 0.306381 5.7699 0.306381 5.69554 0.413864C5.19195 1.14176 3.46542 3.92831 2.6665 5.66663Z"
+                            fill="white" />
+                        </svg>
+                        {{c.vessel_category}}</button>
+                    </span>
+                  </div>
+    
+    
+                </div>
+              </div>
+    
+              <div class="row">
+                <div class="col-sm-5">
+                  <div class="roiinfomainpannel">
+                    <div class="roiinfopannel" *ngFor="let s of statinfo">
+                      <div class="row">
+                        <div class="col-sm-6"><h5 class="regionname">Region: {{ s.region_id }}</h5> </div>
+                        <div class="col-sm-6">
+                          <span class="showtraj">Show Trajectory</span>
+                          <a>
+                            <img width="30px" class="showRoITrajectory" (click)='showRoITrajectory(s.region_id)' id= {{s.region_id}}_traj src={{s.src}} value={{s.value}}/>
+                          </a>
+                          </div>
+                      </div>
+                      <div style="max-height: 200px; overflow-y: auto; overflow-x: hidden;" class="scroll" >
+                        <div class="roistatsbackground" *ngFor="let d of s.details">
+                          <div class="row roishipinfo">
+                            <div class="col-sm-6">
+                              <img src="../../../assets/roi/ship.svg" alt="ship" /> <span
+                                class="shipname">{{d.type}}</span>
+                            </div>
+                            <div class="col-sm-6">
+                              <img src="../../../assets/roi/play_history.svg"
+                                alt="play history" />
+                              <span class="roipannelsubheader">Play history</span>
+                            </div>
+                          </div>
+                          <div class="divider-line" ></div>
+                          <div class="roishipdetialinfo">
+                            <p><span class="shipcountheading">Unique MMSI Count: </span> <span class="shipcount">
+                                {{d.Unique_MMSI_Count}}</span></p>
+                            <p><span class="shipcountheading">Total Trips in {{minValue}} - {{maxValue}}: </span>
+                              <span class="shipcount"> {{d.Total_Trips}} </span>
+                            </p>
+                            <p><span class="shipcountheading">No. of MMSI having transmission anomaly: </span> <span
+                                class="shipcount"> {{ d.trans}}</span></p>
+                            <p><span class="shipcountheading">No. of MMSI having speed anomaly: </span> <span
+                                class="shipcount"> {{ d.speed}}</span></p>
+                          </div>
+                        </div>
+                      </div>
+    
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-7">
+                  <div class="roiinfopannel">
+                    <ngx-slider class="slider" [(value)]="minValue" [(highValue)]="maxValue" [options]="yearslideroptions"
+                      (mouseup)=sliderChanged(minValue,maxValue)></ngx-slider>
+                    <div class="roitimelinepannel">
+                      <div class="roicharts" *ngFor="let s of selectedregionid">
+                        <div id={{s}}_highcharts></div>
+                      </div>
+                      <div id="container"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="anomalyinfo" class="container tab-pane fade anomalyinfo">
+            <div class="row">
+              <ul class="nav nav-pills" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="pill" href="#pathdeviation">Path Deviation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#destinationdeviation">Destination
+                    Deviation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#shiptypedeviation"
+                    >Ship Type Deviation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#choiceofanchorage"
+                    >Choice of Anchorage</a>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-content scroll" style="max-height: 350px; overflow-y: auto; overflow-x: hidden;">
+              <div id="pathdeviation" class="container tab-pane active">
+                <mat-card class="example-card">
+                  Under Development
+                </mat-card>
+              </div>
+              <div id="destinationdeviation" class="container tab-pane fade ">
+                <mat-card class="example-card">
+                  Under Development
+                </mat-card>
+              </div>
+              <div id="shiptypedeviation" class="container tab-pane fade ">
+                <mat-card class="example-card" *ngFor="let s of roishiptypedeviation">
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <h3 style="font-family: CharlieText-Bold;"><b>Region Name: {{s.region_id}}</b></h3>
+                    </div>
+                    <div class="col-sm-4">
+                      <!-- <h3 *ngIf= 's.type_anomaly_length !== 0'> 
+                        <b><a style="color: white !important;" (click)="playHistoryForGroup(s.type_anomaly, 'shiptype')">
+                        <img style="margin-top: -5px;margin-right: 5px;" src="../../../assets/soi/Play.svg" />
+                        <span class="roipannelsubheader">Play history</span>
+                       </a></b>
+                    </h3> -->
+                    </div>
+                  </div>
+                  <div style="max-height: 200px; overflow-y: auto" class="scroll">
+                    <mat-card-content *ngIf= 's.type_anomaly_length === 0' id="trackinfo-content">
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <span class="trackinfoheading">No ship type anomaly in selected region</span>
+                        </div>
+                      </div>
+                    </mat-card-content>
+                    <div *ngFor="let sa of s.type_anomaly">
+                      <mat-card class="goitrack" style="margin:10px;" >
+                        <div id="trackinfo-header" class="row">
+                          <div class="col-sm-8 padding-lr-0" style="font-size: 16px;">
+                            <img class="img-vertical-align-baseline" src="../../../assets/soi/ship.svg" />
+                            <span style="margin-right: 25px;"> {{sa.Ship_name}} ({{sa.mmsi}})  <img
+                                class="img-vertical-align-baseline" style="margin-left:10px" height="15"
+                                src="../../../assets/soi/login-image.svg" /> {{sa.sc}}</span>
+                          </div>
+                          <div class="col-sm-4">
+                            <a *ngIf= 'sa.detailslength !== 0' style="color: white !important;" (click)="playHistory(sa.mmsi, sa.type_anomalies)">
+                              <img src="../../../assets/soi/Play.svg" />
+                              <span class="roipannelsubheader">Play history</span>
+                            </a>
+                          </div>
+                        </div>
+                        <div style="max-height: 200px; overflow-y: auto" class="scroll">
+                          <mat-card-content *ngIf= 'sa.detailslength === 0' id="trackinfo-content">
+                            <div class="row">
+                              <div class="col-sm-12">
+                                <span class="trackinfoheading"> No Ship Type Anomaly </span>
+                              </div>
+                            </div>
+                          </mat-card-content>
+                          <mat-card-content *ngFor="let d of sa.type_anomalies" id="trackinfo-content">
+                            <div class="row">
+                              <div class="col-sm-8">
+                                <span class="trackinfoindex"> {{d.index}} </span>
+                                <span class="trackinfoheading">Trajectory ID: </span>
+                                <span class="trackinfodetails"> {{d.tj}}</span>
+                              </div>
+    
+                              <div class="col-sm-4 padding-lr-0" style="font-size: 16px;font-family: Charlie Text;">
+                                <span style="margin-right: 25px;" class="trackinfoheading"> Show Trajectory
+                                  <img width="30px" class="img-vertical-align-sub" src={{d.src}} value={{d.value}}
+                                    id={{s.group_name}}_{{sa.mmsi}}_{{d.tj}}_goishiptypedeviation
+                                    (click)='showGoiShiptypeDeviationTracjectory(s.group_name,sa.mmsi,d.tj)' />
+                                </span>
+                              </div>
+                            </div>
+                            <mat-card-content id="trackinfo-subcontent" style="min-height: 7em;">
+                              
+                              <div id={{s.group_name}}_{{sa.mmsi}}_{{d.tj}}_goishiptypedeviation_anomaly_Linegraph>
+                                <div style="height: 10px;background-color: black;position: relative;">
+                                  <span style="top:-5px;position:absolute;left:0">
+                                    <img height=20 src="../../assets/anomaly/dot-circle.svg" alt="start"/> </span>
+                                  <!-- anomaly -->
+                                    <a *ngFor="let a of d.an" matTooltip={{a.message}} style="top:-5px;position:absolute;" [ngStyle]="{'left.%' : + a.percentage}"> 
+                                              <img height=20 src="../../assets/anomaly/alert.svg" alt="anomaly"/></a>
+                                  <span style="top:-5px;position:absolute;right:0">
+                                    <img height=20 src="../../assets/anomaly/dot-circle.svg" alt="end"/> </span>
+                                    <p style="top:10px;position:absolute;left:0;font-family: CharlieText-Bold;">{{d.sp}}<br> 
+                                      <span style="font-size:10px">ATD: {{d.ATD}}</span> </p>
+          
+                                    <p style="top:10px;position:absolute;right:0;font-family: CharlieText-Bold;text-align: right">
+                                        {{d.ep}} <br> <span style="font-size:10px">ETA: {{d.ETA}}</span></p>
+                                </div>
+                              </div>
+                            </mat-card-content>
+                          </mat-card-content>
+                        </div>
+                      </mat-card>
+                    </div>
+                </div>
+                </mat-card>
+              </div>
+              <div id="choiceofanchorage" class="container tab-pane fade ">
+                <mat-card class="example-card" *ngFor="let g of roianchoragedeviation">
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <h3 style="font-family: CharlieText-Bold;"><b>Region Name: {{g.region_id}}</b></h3>
+                    </div>
+                    <div class="col-sm-4">
+                      <!-- <h3 *ngIf= 'g.anch_anomaly_length !== 0'> 
+                        <b><a style="color: white !important;" (click)="playHistoryForGroup(g.anch_anomaly, 'anchorage')">
+                        <img style="margin-top: -5px;margin-right: 5px;" src="../../../assets/soi/Play.svg" />
+                        <span class="roipannelsubheader">Play history</span>
+                       </a></b>
+                    </h3> -->
+                    </div>
+                  </div>
+
+                  
+                  <div style="max-height: 200px; overflow-y: auto" class="scroll">
+                    <mat-card-content *ngIf= 'g.anch_anomaly_length === 0' id="trackinfo-content">
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <span class="trackinfoheading">No anchorage anomaly in selected region</span>
+                        </div>
+                      </div>
+                    </mat-card-content>
+                    <div *ngFor="let gd of g.anch_anomaly">
+                      <mat-card class="goitrack" style="margin:10px;" >
+                        <div id="trackinfo-header" class="row">
+                          <div class="col-sm-8 padding-lr-0" style="font-size: 16px;">
+                            <img class="img-vertical-align-baseline" src="../../../assets/soi/ship.svg" />
+                            <span style="margin-right: 25px;"> {{gd.Ship_name}} ({{gd.mmsi}})  <img
+                                class="img-vertical-align-baseline" style="margin-left:10px" height="15"
+                                src="../../../assets/soi/login-image.svg" /> {{gd.sc}}</span>
+                          </div>
+                          <div class="col-sm-4">
+                            <a *ngIf= 'gd.detailslength !== 0' style="color: white !important;" (click)="playHistory(gd.mmsi, gd.anch_anomalies)">
+                              <img src="../../../assets/soi/Play.svg" />
+                              <span class="roipannelsubheader">Play history</span>
+                             </a>
+                          </div>
+                        </div>
+                        
+                          <mat-card-content *ngIf= 'gd.detailslength === 0' id="trackinfo-content">
+                            <div class="row">
+                              <div class="col-sm-12">
+                                <span class="trackinfoheading"> No Anchorage Anomaly </span>
+                              </div>
+                            </div>
+                          </mat-card-content>
+                          <div style="max-height: 200px; overflow-y: auto" class="scroll">
+                          <mat-card-content *ngFor="let d of gd.anch_anomalies" id="trackinfo-content">
+                            <div class="row">
+                              <div class="col-sm-8">
+                                <span class="trackinfoindex"> {{d.index}} </span>
+                                <span class="trackinfoheading">Trajectory ID: </span>
+                                <span class="trackinfodetails"> {{d.tj}}</span>
+                              </div>
+    
+                              <div class="col-sm-4 padding-lr-0" style="font-size: 16px;font-family: Charlie Text;">
+                                <span style="margin-right: 25px;" class="trackinfoheading"> Show Trajectory
+                                  <img width="30px" class="img-vertical-align-sub" src={{d.src}} value={{d.value}}
+                                    id={{g.group_name}}_{{gd.mmsi}}_{{d.tj}}_goianchorageanomaly
+                                    (click)='showGoiAnchorageanomalyTracjectory(g.group_name,gd.mmsi,d.tj)' />
+                                </span>
+                              </div>
+                            </div>
+                            <mat-card-content id="trackinfo-subcontent" style="min-height: 7em;">
+                              <div id={{g.group_name}}_{{gd.mmsi}}_{{d.tj}}_goianchorageanomaly_anomaly_Linegraph>
+                                <div style="height: 10px;background-color: black;position: relative;">
+                                  <span style="top:-5px;position:absolute;left:0">
+                                    <img height=20 src="../../assets/anomaly/dot-circle.svg" alt="start"/> </span>
+                                  <!-- anomaly -->
+                                    <a *ngFor="let a of d.an" matTooltip={{a.message}} style="top:-5px;position:absolute;" [ngStyle]="{'left.%' : + a.percentage}"> 
+                                              <img height=20 src="../../assets/anomaly/alert.svg" alt="anomaly"/></a>
+                                  <span style="top:-5px;position:absolute;right:0">
+                                    <img height=20 src="../../assets/anomaly/dot-circle.svg" alt="end"/> </span>
+                                    <p style="top:10px;position:absolute;left:0;font-family: CharlieText-Bold;">{{d.sp}}<br> 
+                                      <span style="font-size:10px">ATD: {{d.ATD}}</span> </p>
+          
+                                    <p style="top:10px;position:absolute;right:0;font-family: CharlieText-Bold;text-align: right">
+                                        {{d.ep}} <br> <span style="font-size:10px">ETA: {{d.ETA}}</span></p>
+                                </div>
+                              </div>
+                            </mat-card-content>
+                          </mat-card-content>
+                        </div>
+                      </mat-card>
+                  </div>
+                  </div>
+                </mat-card>
+              </div>
+          </div>
+          </div>
+      </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

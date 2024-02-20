@@ -1,0 +1,313 @@
+.row{
+  margin-left:0px;
+  margin-right:0px;
+}
+
+.sidebar-nav a{
+text-decoration: none!important;
+}
+
+.img-verical-text-top{
+  vertical-align: text-top;
+}
+// Popup
+.navrow {
+  margin-top: 1em;
+  margin-left:-15px !important;
+  margin-right: -15px !important;
+  // background: #E6E5E5;
+  // padding:0px!important;
+}
+// Popup End
+#popup_tabContent{
+    margin: 4px -10px 4px -10px;
+    min-height: 266px;
+}
+.collapse-sidenav{
+  position: absolute;
+  z-index: 1;
+  display: none;
+}
+
+
+// side buttons on map
+.ol-custom{
+position: fixed;
+z-index: 1000;
+bottom: 1em;
+right: 1em;
+background-color: transparent;
+}
+
+
+.ol-custom button {
+color: #827D7D;
+background-color: black;
+padding: 20px;
+border-radius: 5px;
+//margin: 1em;
+}
+
+.ol-custom button :focus {
+  border: none !important;
+  outline: none !important;
+}
+
+.ol-custom button svg {
+margin-top: -10px;
+margin-left: -10px;
+}
+
+.customZoomIn {
+border-radius: 5px 5px 0px 0px!important;
+margin-bottom: 2px!important;
+}
+
+.customZoomOut {
+border-radius: 0px 0px 5px 5px!important;
+margin-top: 0.1em!important;
+}
+
+
+// side buttons on map
+
+// popover om map
+::ng-deep .popover,::ng-deep .popover-body{
+  width: 180px!important;
+  // background-color: black!important;
+  color: white !important;
+  border-radius: 10px!important;
+  top: -1.8em !important;
+}
+
+::ng-deep .popover .arrow {
+display: none!important;
+}
+
+.popoverheader {
+font-family: CharlieText-Bold;
+font-style: normal;
+font-weight: bold;
+font-size: 10px;
+line-height: 10px;
+text-transform: uppercase;
+// color: #827D7D;
+color: white;
+// margin-top: 2em;
+}
+.popoverheader img {
+padding-right: 5px;
+}
+.popoverul {
+padding-left: 0px!important;
+margin-bottom: 0px!important;
+}
+.popoverul li {
+font-family: Charlie Text;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 24px;
+color: #FFFFFF;
+list-style-type: none;
+}
+
+.popoverul li img{
+padding-right:0.5em;
+}
+
+.popoverul li input{
+vertical-align: bottom;
+}
+.check-box-styling {
+height: 20px;
+width: 20px;
+margin: 0px;
+position: unset;
+margin-right: 0.5em;
+}
+
+.scroll_soi{
+  max-height: 20em;
+  overflow-y: auto;
+}
+
+// SOI
+.trackinfoheading {
+  font-family: CharlieText-Bold;
+}
+.trackinfodetails {
+  font-family: Charlie Text;
+  font-size: 12px;
+}
+.trackinfoindex {
+  font-family: Charlie Text;
+  font-size: 12px;
+}
+.trackandanomaly-header {
+  font-size: 20px;
+  font-family: CharlieText-Bold;
+}
+
+.trackandanomaly .nav-pills{
+  font-family: Charlie Text;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+ .anomalyinfo .nav-pills {
+  font-family: Charlie Text;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.trackandanomaly .nav-pills .nav-link.active, .anomalyinfo .nav-pills .nav-link.active {
+  background-color: transparent;
+  border-radius: 0px; 
+  font-family: CharlieText-Bold;
+}
+
+// End Soi
+
+// ROI
+
+ .vf {
+//background: #4E4B4B;
+height: calc(100vh - 100px);
+padding: 1em;
+}
+
+.vf h3 {
+  font-family: Charlie Display;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 40px;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+}
+
+
+.add-button, .cancel-button{
+  border-radius: 4px;
+  font-family: CharlieText-Bold;
+  font-size: 14px;
+  line-height: 16px;
+  margin: 16px 0px;
+  padding: 12px;
+}
+.cancel-button{
+  margin-left: 5px;
+  border: 1px solid gray;
+}
+
+.coordinates {
+font-family: Charlie Text;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+color: #343232;
+}
+
+.margin-tb-1em {
+margin-top: 1em;
+margin-bottom: 1em;
+}
+
+.trackinfopanel{
+  height: 225px;
+  overflow-y: auto;
+}
+
+.word-break {
+  word-break: break-all;
+}
+
+::ng-deep .ngx-slider .ngx-slider-pointer {
+  background-color:black !important;
+}
+::ng-deep .ngx-slider .ngx-slider-selection{
+  background:  black !important;
+}
+::ng-deep .ngx-slider .ngx-slider-bubble{
+  color: white !important;
+  font-family: Charlie Text;
+}
+// roi end
+
+
+
+// anomaly 
+.lineforanomaly {
+  height: 6px;
+  position: relative;
+  background-color: black;
+}
+
+.explain-btn {
+  font-family: CharlieText-Bold;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 8px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 5px !important;
+  color: #FFFFFF;
+  padding: 5px;
+}
+
+.input-btn {
+  font-size: 14px;
+  line-height: 14px;
+  padding: 10px;
+}
+
+.input-btn a {
+  color: white;
+}
+
+.ol-custom-colors-button {
+  position: fixed;
+  z-index: 1000;
+  top: 40vh;
+  right: 1em;
+  background-color: transparent;
+}
+  
+.range-value-box {
+  width: 88px;
+  height: 56px;
+  border-radius: 4px 0px 0px 0px;
+  text-align: center;
+}
+
+.range-value {
+  font-family: CharlieText-Bold;
+  font-size: 14px;
+  line-height: 40px;
+  text-transform: uppercase;
+  color: #343232;
+}
+
+.cancel-roi-button {
+  border-radius: 0px;
+  border: none;
+  font-family: CharlieText-Bold;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.add-roi-button{
+  border-radius: 4px;
+  font-family: CharlieText-Bold;
+  font-size: 14px;
+  line-height: 16px;
+  // margin: 16px 0px;
+  padding: 12px 0px;
+}

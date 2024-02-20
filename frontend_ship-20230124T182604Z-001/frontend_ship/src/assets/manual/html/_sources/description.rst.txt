@@ -1,0 +1,367 @@
+************
+Description
+************
+
+
+Navika has been developed to analyse on live stream of data as well as it enables the end-user to analyse the historical data also.
+
+In this section it is described various features and functions in the Home page with current date and time. In previous section you learnt how to login. 
+
+
+Let us start with home page through Current date and time. :numref:`navika_home_page_currentdate2` For the purpose of clarity and ease standard map is used throughout the documentation. The functions and features will remain same. In preceding sections covers each menu and components of the Live map.
+
+ .. _navika_home_page_currentdate2:
+
+ .. figure:: img/description/navika_home_page_currentdate2.png
+     :align: center
+     :figwidth: 60% 
+      
+     navika home page with current date and time
+
+In the Navigation Bar has the following components for you to access the request, change the theme, logout.
+
+- Navigational bar
+	#. User profile
+	#. Theme
+	#. User role
+	#. Request Queue
+	#. Logout
+	#. Search
+	#. Plot clock
+	#. Set date and time
+	#. Play history
+	#. Ship Map
+	#. Dashboard
+	
+In the :numref:`User_profile` you can observe in this dropdown menu your name and role, theme and logout.
+
+If your role is Admin, "Admin" is diplayed, else L1, L2, Analyst :numref:`User_profile` It is for Admin only.
+
+ .. _User_profile:
+ 
+ .. figure:: img/description/User_profile.png
+     :align: center
+     :figwidth: 60%
+     
+     User profile
+
+In the :numref:`Nav_bar-Current_date-time-p27` explained the naviagtion bar and its feature briefly.
+
+#. User profile
+#. Search
+#. Plot clock
+#. Set date and time
+#. Play history
+#. Ship Map
+#. Dashboard
+	
+ .. _Nav_bar-Current_date-time-p27:
+ 
+ .. figure:: img/description/Nav_bar-Current_date-time-p27.png
+     :align: center
+     :figwidth: 60%
+	
+     Navigation bar application is set with current date & time     
+
+The figure :numref:`Role-L1-p24`, you are logged in with Role L1. This is stored in the user table in the server, where Admin is authorized to approve the new account and provide the assitance during and after user details are modified or forgotten username and password. Kindly refer section Registration section on the account activation and login crdentials.The role of the user has protocol to follow for the access to the certain features in the Navika application. 
+
+ .. _Role-L1-p24:
+ 
+ .. figure:: img/description/Role-L1-p24.png
+     :align: center
+     :figwidth: 60%
+     
+     Role L1
+
+Subsequently the figure :numref:`Role-L2-p25` and the figure :numref:`Role-analyst-p26` where the user is logged in with their credentials with respect to the roles as indicated in the profile.
+
+ .. _Role-L2-p25:
+
+ .. figure:: img/description/Role-L2-p25.png
+     :align: center
+     :figwidth: 60%
+     
+     Role L2
+
+
+ .. _Role-analyst-p26:
+
+ .. figure:: img/description/Role-analyst-p26.png
+     :align: center
+     :figwidth: 60%
+     
+     Role Analyst
+     
+
+You can change the theme of the application in the user profile. In the :numref:`Selection-of_theme` 
+
+
+ .. _Selection-of_theme:
+ 
+ .. figure:: img/description/Selection-of_theme.png
+     :align: center
+     :figwidth: 60%
+     
+     
+     Selection of theme
+
+In the :numref:`navy_theme` you have selected on navy theme
+
+
+ .. _navy_theme:
+ 
+ .. figure:: img/description/navy_theme.png
+     :align: center
+     :figwidth: 60%
+     
+     Navy theme
+
+     
+In the :numref:`Gray_theme` you have selected on gray theme
+
+ .. _Gray_theme:
+ 
+ .. figure:: img/description/Gray_theme.png
+     :align: center
+     :figwidth: 60%
+     
+     Gray theme
+
+
+Now you are logged into the application, the role as indicated in the previous sections of this manual. See Login page section will be described with all the components associated in the navika home page 
+
+Now you are in home page, ships are not plotted in the current date and time. You can adjust date and time by selecting the history date, for example it is 01-Apr-2018 / 05:30:00 is set. Will cover later in this next section. Click on the set adjusted button.
+ 
+In the :numref:`Login_with_current_date-1` home page without any ships are plotted, due to no data is available in the server for date and time to plot.
+
+
+- Navigational bar 
+	You have logged in first time, home page is in default current date and time. Below is basic features are accessible.
+	
+	- User profile and Logout
+	- plot clock
+	- Set date and time
+	- Play history
+	- Ship Map
+	- Dashboard
+
+ .. _Login_with_current_date-1:
+ 
+ .. figure:: img/description/Login_with_current_date-1.png
+     :align: center
+     :figwidth: 60%
+     
+     Login with current date
+
+	
+In the :numref:`Nav_bar_adjusted-date-speed-p29` navigation bar is with user adjusted date and time. The functions are additon to the current date and time.
+
+You have option to set the date and time by clicking the set date and time button in the navigation bar as indicated in figure :numref:`Nav_bar_adjusted-date-speed-p29`
+
+	- User profile and Logout
+	- plot clock
+	- Set date and time
+	- clock speed set
+	- Play and pause of the set clock
+	- Play history
+	- Ship Map
+	- Dashboard
+
+ .. _Nav_bar_adjusted-date-speed-p29:
+ 
+ .. figure:: img/description/Nav_bar_adjusted-date-speed-p29.png
+     :align: center
+     :figwidth: 60%
+     
+     Navigation bar with user adjusted date and time
+     
+For example, you can set the date and time to 01-Apr-2018 05:30 Hrs, by clicking the adjust date and time, a field will pop-up calendar for user to click and select desired date and click on set button as indicated in the 
+
+
+In the :numref:`Menu_p57` by clicking on the humberger menu, menu will open. These functions will be covered in section Ships of Interest and others.
+
+
+- Menu
+	#. Vessel Filters
+	#. Ships of interest
+	#. Region of Interest
+	#. Density Map
+
+ .. _Menu_p57:
+ 
+ .. figure:: img/description/Menu_p57.png
+     :align: center
+     :figwidth: 60%
+     
+     Menu with 4 functions
+
+
+- Graticule
+
+In the :numref:`graticule-p59` Graticule is imaginary lines which globe is drawn, these lines are called Latitude and Longitude;
+
+ .. _graticule-p59:
+ 
+ .. figure:: img/description/graticule-p59.png
+     :align: center
+     :figwidth: 60%
+     
+     Graticule
+ 
+ In the :numref:`graticule-p62-lat-long` Latitude for lines drawn from east to west that is parallel to equator of the earth, where as Longitude is drawn from north pole to south pole. Graticule is useful to note the particular ship or location on the globe for the plotted.  Regarding LAT/LONG, please refer in the section acronyms.
+ 
+ .. _graticule-p62-lat-long:
+ 
+ .. figure:: img/description/graticule-p62-lat-long.png
+     :align: center
+     :figwidth: 60%
+     
+     Graticule latitude and longitude
+ 
+
+- Layers and maps
+	- Map types 
+	- Layers
+		- Ports
+		- Anchors
+			- Known anchors
+			- Predicted anchors
+			
+In the figure :numref:`maps_types_layers-p63` you can choose the maps by click to select subsequently radio button will be highlighted with yellow.
+
+
+ .. _maps_types_layers-p63:
+ 
+ .. figure:: img/description/maps_types_layers-p63.png
+     :align: center
+     :figwidth: 60%
+     
+     Maps types 
+  
+In the :numref:`standard-map-p67` is a default map, means once you login to the navika application home page will be in the standard map, 
+
+
+it is political map with international borders and territorial waters
+
+ .. _standard-map-p67:
+ 
+ .. figure:: img/description/standard-map-p67.png
+     :align: center
+     :figwidth: 60%
+     
+     Standard map
+
+
+In the :numref:`satellite-map-p68` This map is a basically as name indicates, it is satellite view of the earth with physical features.
+
+ .. _satellite-map-p68:
+ 
+ .. figure:: img/description/satellite-map-p68.png
+     :align: center
+     :figwidth: 60%
+     
+     satellite-map-p68.png
+     
+     
+In the :numref:`nautical-map-p69` [ with respect to nautical map it is under development ], the details will be updated on this map type later in the development.
+
+ .. _nautical-map-p69:
+ 
+ .. figure:: img/description/nautical-map-p69.png
+     :align: center
+     :figwidth: 60%
+     
+     Nautical map    			
+			
+
+- Layers
+	- Ports
+	- Anchors
+		
+		- Known anchors
+		- Predicted anchors
+		- Lighthouse
+
+As we are understanding the Navika application details what are and how to access the data with respect to the ships, so the ships requires the ports as an essential part.
+
+In the :numref:`Ports-with-currentDate-p73` is plotted on the map, when hover he mouse over the any port icon(anchor symbol) in the :numref:`Ports-with-currentDate-p73` there is no ships to get polloted.
+
+ .. _Ports-with-currentDate-p73:
+ 
+ .. figure:: img/description/Ports-with-currentDate-p73.png
+     :align: center
+     :figwidth: 60%
+     
+     Ports with current Date
+    
+As you are aware with ports, it for the loading and unloading of the goods, apart from the passengers and other crew and maintenance personal to communte. Anchors are very important for the ships to park until other ships are debark or unload activity. currently we bifircated into two category of Anchors Know and predicted anchors. In the :numref:`Kown_anchors_with-pop-Up-p76` if you hover the mouse coursor the anchore details with tool tip pop-up will be displayed.
+
+ .. _Kown_anchors_with-pop-Up-p76:
+ 
+ .. figure:: img/description/Kown_anchors_with-pop-Up-p76.png
+     :align: center
+     :figwidth: 60%
+     
+     Kown anchors
+
+
+In the :numref:`predicted_anchors-p78` predicted anchors with AI / ML principles, it will be briefed later in this manual about AI/ML, you can hover the mouse cursor over the icon, tool-tip will pop-up with details of ID and status of the anchor will be dislayed.
+
+ .. _predicted_anchors-p78:
+ 
+ .. figure:: img/description/predicted_anchors-p78.png
+     :align: center
+     :figwidth: 60%
+     
+     Predicted anchors
+
+During the time of documentation the :numref:`Lighthouse-p82` it is under development, Documentation will be updated once the update version is released.
+
+
+ .. _Lighthouse-p82:
+ 
+ .. figure:: img/description/Lighthouse-p82.png
+     :align: Center
+     :figwidth: 60%
+     
+     Lighthouse
+     
+In the home page :numref:`LKP-ships_qty-p95` indicate the number of ships plotted at the date and time in the plot clock.
+
+ .. _LKP-ships_qty-p95:
+ 
+ .. figure:: img/description/LKP-ships_qty-p95.png
+     :align: center
+     :figwidth: 60%
+     
+     Last Known Positions of ships & number of ships
+
+--------
+ 
+In this :numref:`Nav_bar_adjusted-date-speed-p30` has shown all the functions in the navigation bar to adjust the Date and time.
+
+Until this we are in current date and time, in this scenario, there is no Live data is streaming to plot the ships on the Live map. 
+You can set the date and time, for example it is 01-Apr-2018 / 05:30:00 is set as in the :numref:`from-current-time-to-adj-Time-p91` 
+
+
+ .. _Nav_bar_adjusted-date-speed-p30:
+ 
+ .. figure:: img/description/Nav_bar_adjusted-date-speed-p30.png
+     :align: center
+     :figwidth: 60%
+     
+     Navigation bar for Adjusting Date and Time
+
+--------
+
+
+ .. _from-current-time-to-adj-Time-p91:
+ 
+ .. figure:: img/description/from-current-time-to-adj-Time-p91.png
+     :align: center
+     :figwidth: 60%
+     
+     Current time to Adjusted Time plot
+    
+     
+This section closes here. 

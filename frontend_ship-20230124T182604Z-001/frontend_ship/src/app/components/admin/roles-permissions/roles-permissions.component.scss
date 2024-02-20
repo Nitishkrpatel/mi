@@ -1,0 +1,109 @@
+.title-admin {
+    font-family: 'Charlie Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.01em;
+}
+
+.sub-title-admin {
+    font-family: 'CharlieText-bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 10px;
+    // text-transform: uppercase;
+}
+
+.add-button, .cancel-button {
+    border-radius: 4px;
+    font-family: CharlieText-Bold;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 16px 0px;
+    padding: 12px;
+}
+
+.cancel-button {
+    margin-left: 5px;
+}
+
+.margin-top1em {
+    margin-top: 1em !important;
+}
+
+
+.search-users  .form-control:focus {
+    background-color: transparent !important;
+    border-color: none !important;
+    box-shadow: none !important;
+}
+  
+
+.search-users {
+    /* border: 1px solid #B4B1B1; */
+    border-radius: 50px;
+    padding-left: 1em;
+}
+    
+.search-users input{
+    font-family: Charlie Text;
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    margin-left:5px;
+}
+
+.dashboard-table th {
+    font-family: CharlieText-Bold;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin: 0px 8px;
+}
+
+.dashboard-table td {
+    font-family: Charlie Text;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+::ng-deep .mat-sort-header-arrow {
+    color: white !important;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+.queue-requests-tab .nav-link.active{
+    font-family: 'CharlieText-bold';
+    background-color: transparent !important;
+    font-weight: bolder;
+    border-radius: 0px;
+}
+
+.queue-requests-tab .nav-link {
+    font-family: 'Charlie Text';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.nav-link-count {
+    font-family: 'Charlie Text';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;    
+    color: #FFFFFF;
+    margin: 0px 8px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 12px;
+}

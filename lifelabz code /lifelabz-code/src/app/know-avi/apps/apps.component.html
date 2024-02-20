@@ -1,0 +1,39 @@
+<app-know-avi></app-know-avi>
+<div class="container section">
+    <div class="row">
+        <div data-aos="fade-up" data-aos-delay="300">
+            <h2 class="heading-top">It is always under your control!</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 col-sm-12 col-lg-8" data-aos="fade-up" data-aos-delay="500">
+            <h5 class="heading-middle">It is always under your control!</h5><br>
+            <h4><strong>The App</strong></h4>
+            <p class="app-desc">Lifelabz app is a platform where all smart devices designed, developed and deployed by Lifelabz are connected to the internet which makes it possible for the device and the App to stay connected at all times enabling the user to effectively
+                monitor and manage the chosen device.</p>
+        </div>
+
+        <div class="col-md-4 col-sm-12 col-lg-4">
+            <div class="horizontal-container" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="stretch" fxFlex="auto">
+
+                <div fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto">
+                    <swiper class="swiper-container" [config]="config" fxFlex="auto">
+                        <div *ngFor="let slide of slideArray" class="swiper-slide">
+                            <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+                                <img src="assets\apps\{{slide}}.png" class="" alt="slice_03_c">
+
+                            </div>
+                        </div>
+                    </swiper>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <img src="assets\apps\apps_btns.svg" alt="" class="mobile-app">
+    </div>
+</div>
+<br>
+<app-add-on-section></app-add-on-section>

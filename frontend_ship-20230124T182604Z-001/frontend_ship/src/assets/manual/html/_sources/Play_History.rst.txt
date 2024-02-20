@@ -1,0 +1,62 @@
+*************
+Play_History
+*************
+
+In the Navika Application, one of the feature is to check the ships / vessels history of the trajectory to be viewed for analysis.
+
+So Playhistory feature supports the trajectory plot along with particular Ship name / MMSI / IMO.
+
+Follow the method to use the Playhistory feature. Login as indicated in the :numref:`Play_History-Login-page` 
+
+ .. _Play_History-Login-page:
+
+ .. figure:: img/Play_History/Play_History-Login-page.png
+     :align: center
+     :figwidth: 75%
+     
+     Play_History-Login-page
+     
+
+Once you have logged into the Navika application in current date / Server time as indicated in the :numref:`Play_History-home-page-currentDate`
+
+ .. _Play_History-home-page-currentDate:
+
+     
+ .. figure:: img/Play_History/Play_History-home-page-currentDate.png
+     :align: center
+     :figwidth: 75%
+     
+     Home page in current Date
+     
+Click on the play history button in the navigation Bar as indicated in the :numref:` Play_History-currentDate-Click-on-PH` This will direct to the play history page, where the you can observe, In the Navigation bar only search field and profile is diplayed. Side Bar and Maps / Layers are hidden. since this feature are not used in the Play history. In the Play history Panel you can use the search function instead of Global search. As Global search function searches over the map. 
+
+So you have use the historical data of the ships.      
+     
+ .. _Play_History-currentDate-Click-on-PH:
+
+ .. figure:: img/Play_History/Play_History-currentDate-Click-on-PH.png
+     :align: center
+     :figwidth: 75%
+     
+     Play_History Click     
+     
+Click on the Play history panel as indicated in the :numref:`Play_History-Ship-search` , you an option to search Ship name / MMSI / IMO.     
+     
+ .. _Play_History-Ship-search:
+
+ .. figure:: img/Play_History/Play_History-Ship-search.png
+     :align: center
+     :figwidth: 75%
+     
+     Play_History-Ship-search     
+
+It is not mandatory to searched MMSI / Ships to be tracked, you have option to select the particular vessels to plot the trajectory. As indicated in the :numref:`Play_History-Ship-Choose-Vessels_to-Track`
+
+ .. _Play_History-Ship-Choose-Vessels_to-Track:
+
+ .. figure:: img/Play_History/Play_History-Ship-Choose-Vessels_to-Track.png
+     :align: center
+     :figwidth: 75%
+     
+     Choose-Vessels_to-Track
+     

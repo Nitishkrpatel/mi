@@ -1,0 +1,225 @@
+
+
+<div *ngIf="updateNewUserDetails === false && updateTempPassword === false">
+    <link rel="stylesheet" *ngIf="theme == 'grey'" href="/../../../assets/css/grey.css">
+    <link rel="stylesheet" *ngIf="theme == 'navy'" href="/../../../assets/css/navy.css">
+    <div class="container-fluid">
+        <button type="button" class="btn btn-primary display-none" id="adjustedModel" data-toggle="modal"
+            data-target="#restingmodel"> reset model</button>
+        <div class="row">
+    
+            <div class="col-xl-3" style="min-height: 100vh">
+                <nav class="navbar navbar-expand-lg navbar-light" style="text-align: center;">
+                    <img src="../../../../assets/CAIR_logo_2020.png" alt="LOGO" class="img_cairLogo">
+                </nav>
+                <h2 class="application_name"> <img src="../../../../assets/LogoMark-DualColour.png" alt="LOGO" width="20%"
+                        style="margin-right: 10px;"> NAVIKA</h2>
+                <p id='alert-message' class="alert-message display-none">
+                    <img style="padding-right: 5px;" class="img-vertical-align" src='../../../../assets/login/alert.svg'
+                        alt="alert" /> {{ errorMessage }}
+                </p>
+                <form [formGroup]="loginForm" noValidate>
+    
+                    <mat-form-field appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input type="text" id="userid" formControlName="userid"
+                            [ngClass]="{ 'is-invalid': submitted && f.userid.invalid }" matInput
+                            placeholder="Enter your username">
+                        <mat-icon matSuffix><img class="img-vertical-align" src='../../../../assets/login/username.svg'
+                                alt="username" /></mat-icon>
+                        <mat-hint class="danger" *ngIf="submitted && f.userid.errors?.required">Username is required.
+                        </mat-hint>
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input type="password" id="password" formControlName="password"
+                            [ngClass]="{ 'is-invalid': submitted && f.password.invalid }" matInput
+                            placeholder="Enter your password">
+                        <mat-icon matSuffix class="showPassword" (click)="showPassword()">
+                            <img class="img-vertical-align" src='{{"../../../../assets/login/" + passwordicon +".svg"}}'
+                                alt="password" />
+                        </mat-icon>
+                        <mat-hint class="danger" *ngIf="submitted && f.password.errors?.required">Password is required.
+                        </mat-hint>
+                    </mat-form-field>
+                    <p class="forgot-password"><a routerLink="/Forgot-password">FORGOT PASSWORD?</a></p>
+    
+                    <button mat-flat-button (click)="login()" [ngClass]="{ 'login-button-enable': loginForm.valid }"
+                        class="login-button">
+                        <mat-icon matSuffix>
+                            <img class="img-vertical-align"
+                                [src]="loginForm.valid? '../../../../assets/login/signin-after.svg' : '../../../../assets/login/signin-before.svg' "
+                                alt="password" />
+                        </mat-icon>
+                        SIGN IN
+                    </button>
+    
+                </form>
+                <p class='account-request'><span>Don't have an account yet? </span>
+                    <a routerLink="/Register">SEND REQUEST <img src='../../../../assets/login/right-arrow.svg' alt="arrow"
+                            width="15px" /></a>
+                </p>
+            </div>
+    
+            <div class="col-xl-9"
+                style="background: url('../../../../assets/loginpage/Login_Splash_1200x1000_02.png');background-size: cover;">
+            </div>
+        </div>
+    
+        <div class="modal" id="restingmodel" *ngIf=true>
+            <div class="modal-dialog modal-sm modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <!-- Modal body.. -->
+                        <p>You are in <b>Adjusted Date & Time</b>.<br/><b> Do you want to continue? </b> </p>
+                        <button class="btn btn-dark cancel-button width100" id="closerestingmodel" data-dismiss="modal"
+                            type="button" (click)="continueInAdjustedTime()">Yes</button>
+                        <button class="btn btn-light add-button width100" type="submit"
+                            (click)="resetToCurrentTime()">No</button>
+                        <button class="btn btn-dark cancel-roi-button display-none" id="closerestingmodelbutton"
+                            data-dismiss="modal" type="button">yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="updateNewUserDetails === true && updateTempPassword === false">
+    <div class="container">
+        <app-navbar></app-navbar>
+        <div class="row">
+            <!-- <div class="col-sm-3"></div> -->
+            <div class="col-sm-12">
+                <div class='row' >
+                    <div class="col-sm-9">
+                       <h1 class="title-admin">
+                            Update your details.
+                       </h1> 
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <form [formGroup]="updateUserDetailsForm">
+                            <h4>Security Questions<span class="security-note" style="color: red;font-weight: bold;"> (Required:
+                                any one question only.)</span></h4>
+                            <ul class="all_quesions">
+                        
+                                <li class="security-question-answer" id=li_{{i}}
+                                    *ngFor="let q of securityquestions; index as i">
+                                    <p>Q{{i+1}} . {{q}}</p>
+                                    <input (click)="disableOtherInputs(i)" type="text" id={{i}} value={{q}}
+                                        formControlName="se_ans" placeholder="Type your answer here"
+                                        class="form-control disableOtherInputs"
+                                        >
+                                    <!-- <div *ngIf="u.se_ans.invalid" class="invalid-feedback"> -->
+                                        <!-- <div style="color: red;" *ngIf="u.se_ans.errors.req">Answer is required.</div> -->
+                                    <!-- </div> -->
+    
+                                    <mat-hint class="danger"
+                                        *ngIf="u.se_ans.errors?.req">
+                                        Answer is required.
+                                    </mat-hint>
+                                </li>
+                                </ul>
+    
+                                <mat-form-field style="width: inherit;" appearance="outline">
+                                    <mat-label>Password *</mat-label>
+                                    <input maxlength='12' type="password" id="password" formControlName="pwd" matInput >
+                                    <mat-icon matSuffix class="showPassword" (click)="showPassword()">
+                                        <img class="img-vertical-align"
+                                            src='{{"../../../../assets/login/" + passwordicon +".svg"}}'
+                                            alt="password" />
+                                    </mat-icon>
+                                    <mat-hint class="danger"
+                                        *ngIf="updateSubmitted && u.pwd.errors?.required"> password is
+                                        required.
+                                    </mat-hint>
+                                    <mat-hint class="danger"
+                                        *ngIf="u.pwd.errors?.minlength">
+                                        password should be atleast 6 characters.
+                                    </mat-hint>
+                                </mat-form-field>
+    
+                                <button mat-flat-button (click)="submitNewUserDetails()" class="submit-button submitNewUserDetails">
+                                    Submit
+                                </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-sm-3"></div> -->
+        </div>
+       
+    </div> 
+</div>
+
+<div *ngIf="updateNewUserDetails === false && updateTempPassword === true">
+    
+    <div class="container">
+        <app-navbar></app-navbar>
+        <!-- <div class="col-sm-3"></div> -->
+        <div class="col-sm-12">
+            <div class='row' >
+                <div class="col-sm-9">
+                   <h1 class="title-admin">
+                        Change Password.
+                   </h1> 
+                </div>
+            </div>
+            <hr/> 
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <form [formGroup]="updateUserDetailsForm">
+                            <mat-form-field style="width: inherit;" appearance="outline">
+                                <mat-label>Password *</mat-label>
+                                <input maxlength='12' type="password" id="password" formControlName="pwd" matInput >
+                                <mat-icon matSuffix class="showPassword" (click)="showPassword()">
+                                    <img class="img-vertical-align"
+                                        src='{{"../../../../assets/login/" + passwordicon +".svg"}}'
+                                        alt="password" />
+                                </mat-icon>
+                                <mat-hint class="danger"
+                                    *ngIf="updateSubmitted && u.pwd.errors?.required"> password is
+                                    required.
+                                </mat-hint>
+                                <mat-hint class="danger"
+                                    *ngIf="u.pwd.errors?.minlength">
+                                    password should be atleast 6 characters.
+                                </mat-hint>
+                            </mat-form-field>
+
+                            <button mat-flat-button (click)="submitDetails()" class="submit-button">
+                                Submit
+                            </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <!-- <div class="col-sm-3"></div> -->
+    
+    </div> 
+</div>
+
+<button type="button" class="btn btn-primary display-none" id="notificationModal" data-toggle="modal"
+data-target="#loginNotificationModal"> reset model</button>
+<div class="modal" id="loginNotificationModal" *ngIf=true>
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal body -->
+            <div class="modal-body">
+                <!-- Modal body.. -->
+                <p>Your Details had been updated. Please login again using your new credentials.</p>
+                <button class="btn btn-dark cancel-button width100 goBackToLogin" id="closeloginNotificationModal" data-dismiss="modal"
+                    type="button" (click)="goBackToLogin()">Okay</button>
+             
+            </div>
+        </div>
+    </div>
+</div>

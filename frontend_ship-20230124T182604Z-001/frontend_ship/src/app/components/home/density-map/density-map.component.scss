@@ -1,0 +1,54 @@
+.dm {
+    height: calc(100vh - 100px);
+    padding: 1em;
+}
+
+.dm h3 {
+    font-family: Charlie Display;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+}
+
+.top {
+    padding:10px 24px;
+}
+
+.duration-input {
+    background-color: transparent !important;
+    color: white !important;
+}
+
+.ship_types, .label {
+    font-family: Charlie Text;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.density-submit-btn {
+    font-family: CharlieText-Bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px !important;
+    padding: 10px;
+    margin-top: 1em;
+    width: 100%;
+}
+
+.soi-header{
+    font-family: CharlieText-Bold;
+}
+
+.cust-accordian {
+    margin-bottom: 10px;
+}

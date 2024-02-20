@@ -1,0 +1,403 @@
+**************************************
+Ships Of Interest & Group of Interest 
+**************************************
+
+This chapter requires basic knowledge of Global Search.  
+
+Search feature in this application enables you to find a ship of interest based on shipname(even a partial shipname),  MMSI, IMO.
+ 
+- Navika application has an option to have your own set of list, ships of interest (any category, type). It is defined as Ships of Interest and Ship-Group of Interest in this documentation and application.
+
+- If ship is found of your choice, it is highlighted. So you have can click on the ship icon highlighted. As indicated in the :numref:`SOI-GSOI-Searched-MMSI-Mouse-click-pop-up` 
+
+- Other option to identify the ship or MMSI is to hover the Mouse coursor over the ship icon. Tooltip pop-up indicate the basic information of ship MMSI details.(MMSI,Latitude,Longitude, Time stamp)
+
+- This option is randomly viewing the ship as there is no other method to find.
+
+- After search, if you have found, it will be highlighted with flashing indication.  You can hover the mouse cursor over the highlighted MMSI/ship, Tool tip will display the basic details of the ships. That is Latitude and Longitude, MMSI, and DTG. 
+  Left click on the ship icon and pop-up menu will display. 
+  
+- In this pop-up menu you can observe the details and paramters of the ship.
+
+- These data are from AIS data received from the individual ship.
+
+
+(Regarding AIS refer faq's in this documentation). 
+
+
+- Briefing on the Search function with which the continuation of the Ships Of Interest and Ships-Group of Interest.
+
+We have to login in the Adjusted Date and time, currently the documentation is referred with historical AIS data. So in the :numref:`SOI-GSOI-Login` you login to your account
+
+
+ .. _SOI-GSOI-Login:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Login.png
+     :align: center
+     :figwidth: 75%
+     
+     Login into your Account
+     
+
+In the web page select Adjusted Date and Time option to login, since you have the historical AIS data. As indicated in the :numref:`SOI-GSOI-Login-in-Adjusted-Date`. Once you have logged in, Plot clock is paused, the page will never refresh and there is no movement of the ship, so that you had selected for the SOI - Ships of Interest. After you have added to SOI list. This will be discussed later in this section.
+
+ .. _SOI-GSOI-Login-in-Adjusted-Date:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Login-in-Adjusted-Date.png
+     :align: center
+     :figwidth: 75%
+     
+     Login to Adjusted Date and Time
+
+Once you have logged into the Adjusted date and time, as indicated in the :numref:`SOI-GSOI-Login-in-Adjusted-Date-with-Alertmessage` message will confirm your are in **Adjusted Time** 
+
+
+ .. _SOI-GSOI-Login-in-Adjusted-Date-with-Alertmessage:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Login-in-Adjusted-Date-with-Alertmessage.png
+     :align: center
+     :figwidth: 75%
+     
+     Login with Adjusted Time Alert message
+     
+
+In the :numref:`SOI-GSOI-Search-MMSI` you can view the details of the ships you had searched. (regarding search, please refer Global Search chapter in this documentation)
+
+ .. _SOI-GSOI-Search-MMSI:
+
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Search-MMSI.png
+     :align: center  
+     :figwidth: 75%
+
+     Process to Search MMSI
+     
+Once you have searched the and pressed Enter key the searched MMSI indicated as in the :numref:`SOI-GSOI-Searched-MMSI-flashing`
+
+ .. _SOI-GSOI-Searched-MMSI-flashing:
+
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Searched-MMSI-flashing.png
+     :align: center  
+     :figwidth: 75%
+
+     Searched_MMSI
+
+You will view pop-up menu by clicking on the ship icon flashing, as you view in the :numref:`SOI-GSOI-Searched-MMSI-Mouse-click-pop-up`, even when you hover the mouse cursor over the ship icon, a tool tip as indicated in the :numref:`SOI-GSOI-Searched-MMSI-Mouse-hover-tooltip` provides you the basic details of the Ship
+
+ .. _SOI-GSOI-Searched-MMSI-Mouse-hover-tooltip:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Searched-MMSI-Mouse-hover-tooltip.png
+     :align: center
+     :figwidth: 75%
+     
+     Searched MMSI with Mouse hover tooltip 
+     
+In the :numref:`SOI-GSOI-Searched-MMSI-Mouse-click-pop-up` indicates, when you mouse click over the ship Icon, a pop-up menu is displayed.
+
+ .. _SOI-GSOI-Searched-MMSI-Mouse-click-pop-up:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Searched-MMSI-Mouse-click-pop-up.png
+     :align: center
+     :figwidth: 75%
+     
+     Searched MMSI by Mouse click pop-up menu   
+     
+In the :numref:`SOI-GSOI-Searched-MMSI-To-add-to-SOI-2` indicated the complete details of the ships you had selected, that is **Overview** column and **Tabular Form** and you have observed the **crosshair** which is in Colour in Black. As selected ship is not yet added.
+
+
+ .. _SOI-GSOI-Searched-MMSI-To-add-to-SOI-2:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Searched-MMSI-To-add-to-SOI-2.png
+     :align: center
+     :figwidth: 75%
+     
+     Searched MMSI To add to SOI
+
+
+A now proceed with how to add this ship to an Individual Ship (Ship Of Interest)
+ 
+By clicking on the crosshair in the :numref:`SOI-GSOI-Searched-MMSI-To-add-to-SOI` indicate how to add the ship to the list.
+
+ .. _SOI-GSOI-Searched-MMSI-To-add-to-SOI:
+
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Searched-MMSI-To-add-to-SOI.png
+     :align: center  
+     :figwidth: 60%
+
+     MMSI add to SOI
+     
+When you add to an individual ships list, crosshair will be RED, default is BLACK. In the :numref:`SOI-GSOI-Crosshair-added-with-RED` indicate crosshair has changed from default black to RED.
+
+After you have clicked on the Crosshair, Track computation alert message is diplayed, process will take 10 minutes. As indicated :numref:`SOI-GSOI-Searched-MMSI-To-added-SOI` Since this duration will compute all the required information and stores in the server. Later if you want to check the trajectory. This will be discussed later in this chapter.
+
+
+ .. _SOI-GSOI-Crosshair-added-with-RED:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Crosshair-added-with-RED.png
+     :align: center
+     :figwidth: 75%
+     
+     Crosshair in RED
+      
+ .. _SOI-GSOI-Searched-MMSI-To-added-SOI:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Searched-MMSI-To-added-SOI.png
+     :align: center
+     :figwidth: 75%
+     
+     MMSI is added to Ships of Interest - with Compute alert
+
+One more example for the Adding the ship to the group, in the :numref:`SOI-GSOI-Click-Crosshair-Menu-Add-to-SOI` indicate the ship is been added, you can observe that the crosshair changed the colour from balck to Blue, as explained in this chapter.
+
+ .. _SOI-GSOI-Click-Crosshair-Menu-Add-to-SOI:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Click-Crosshair-Menu-Add-to-SOI.png
+     :align: center
+     :figwidth: 80%
+     
+     Ship is Added to Existing Group 
+     
+The Crosshair has different colour indication for the particular function, In the :numref:`SOI-GSOI-Crosshair-colour-and-indication` indicated, details as below
+
+
+1. Crosshair on the Menu - Navy Blue colour is indication to open Ship of Interest.
+2. Crosshair on the menu - Yellow colour indicated that you have selected Ships of Interest.
+3. Crosshair on the Pop-up menu for Individual ship it is default black colour. The selected ship is not in the Ships of Interest or Group of Ships.
+4. Crosshair is in Red colour indicate that the selected ship is added to Ships of Interest (individual)
+5. Crosshair is in Green colour indicate that the selected ship is added to Ships of Interest and Group of Ships. Both individual and in Group.
+6. Crosshair is in Blue colour indicate that the selected ship is added to Group of Ships only and not in individual list.
+
+
+ .. _SOI-GSOI-Crosshair-colour-and-indication:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Crosshair-colour-and-indication.png
+     :align: center
+     :figwidth: 25%
+     
+     Crosshair colour and indication
+
+In the :numref:`SOI-GSOI-Click-Crosshair-Menu-open` indicate the Crosshair in yellow colour. Ship of Interest menu is opened along with Track and Anomaly Info panel is minimized.
+
+ .. _SOI-GSOI-Click-Crosshair-Menu-open:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Click-Crosshair-Menu-open.png
+     :align: center
+     :figwidth: 75%
+     
+     Ship of Interest Menu is opened with Crosshair colour indication
+ 
+As you have learnt how to add the ship to Individual and Group of Ships. Further to the SOI and GOI, will get familiar with Trajectory information and Anomaly. In the :numref:`SOI-GSOI-Menu-open-with-plotclock-currentTime` indicate option to get into the SOI and GOI - track info panel.
+
+ .. _SOI-GSOI-Menu-open-with-plotclock-currentTime:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Menu-open-with-plotclock-currentTime.png
+     :align: center
+     :figwidth: 75%
+     
+     SOI GSOI Menu open with plot clock in current Time
+ 
+ You have observed no ships are plotted in the current dat and time. Navika application is progressing to complete the Live streaming of the data and plot over the map.
+ 
+ Lets get into the SOI, in the :numref:`SOI-GSOI-Menu-TRackInfo-not-visible` there is no Track Info panel. As you have not yet select the ship you have added to Individual ships. 
+ 
+ 
+  .. _SOI-GSOI-Menu-TRackInfo-not-visible:
+  
+  .. figure:: img/Ships_of_Interest/SOI-GSOI-Menu-TRackInfo-not-visible.png
+     :align: center
+     :figwidth: 75%
+     
+     Track Info panel not visible
+  
+In the below :numref:`SOI-GSOI-Menu-TRackInfo-displayed-Selected-ship-only` indicates with track info panel. Since one ship is selected in the Individual ships.
+
+ .. _SOI-GSOI-Menu-TRackInfo-displayed-Selected-ship-only:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Menu-TRackInfo-displayed-Selected-ship-only.png
+ 	:align: center
+ 	:figwidth: 75%
+ 	
+ 	Track Info displayed after Selected ship
+
+
+After selecting the a particular ship in Individual ships list, track info panel is minimised. Once you click over the panel, it is pulled up with the details of the ships you had selected. 
+
+As indicated in :numref:`SOI-GSOI-Menu-TRackInfo-displayed-Selected-ship-Current-Time` 
+
+ .. _SOI-GSOI-Menu-TRackInfo-displayed-Selected-ship-Current-Time:
+
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Menu-TRackInfo-displayed-Selected-ship-Current-Time.png
+    :align: center 
+    :figwidth: 75%
+   
+    Track Info panel displayed in Current Time
+
+You have selected the ship, so now you can check the track information of the ship. Even if you are in Adjusted Date and Time, the SOI and GOI is not impacted. As indicated in the :numref:`SOI-GSOI-Menu-TRackInfo-displayed-Selected-ships-Adjusted-Time` The Track Info panel is displayed as per the AIS data received.
+
+
+ .. _SOI-GSOI-Menu-TRackInfo-displayed-Selected-ships-Adjusted-Time:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Menu-TRackInfo-displayed-Selected-ships-Adjusted-Time.png
+     :align: center
+     :figwidth: 60%
+
+     TrackInfo displayed in Adjusted-Time
+
+In the :numref:`SOI-GSOI-Menu-TRackInfoPanel-Ship-Trajectory-details` Trajectory details and contents are displayed. 
+
+ .. _SOI-GSOI-Menu-TRackInfoPanel-Ship-Trajectory-details:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Menu-TRackInfoPanel-Ship-Trajectory-details.png
+ 	:align: center
+ 	:figwidth: 75%
+ 	
+ 	Track Info Panel Ship Trajectory details
+
+Apart from the individual ships are displayed, additional option is you can select the multiple ships to be displayed in the Track Info panel. as indicated in the :numref:`SOI-GSOI-Menu-TRackInfo-displayed-Selected-ships-Listed` 
+
+ .. _SOI-GSOI-Menu-TRackInfo-displayed-Selected-ships-Listed:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Menu-TRackInfo-displayed-Selected-ships-Listed.png
+ 	:align: center
+ 	:figwidth: 75%
+ 	
+ 	Track Info displayed with Multiple ships Listed
+ 	
+ 	
+One of the feature in the Navika application is to plot and display the Anomaly / Deviation of the ship. The behaviour of the ships are analysed.
+
+In navika application it has 4 anomaly / deviations as categorised:
+
+#. Path deviation
+#. Destination deviation
+#. Ship type deviation
+#. Choice of Anchorage
+ 
+The following explained in details of the anomaly info: 
+
+1. Path deviation:
+-------------------
+
+In the :numref:`SOI-GSOI-Menu-Anomaly-Path-Deviaiton` this indicates as it is under development. So in the :numref:`anomaly_info_pathDeviation` is the model for the trajectory where the anomaly occurred, 
+in the panel details of the track info is dipalyed and you can observe the path deviation.
+
+- You can select by clicking on the Anomaly Info
+- Click on the button to plot the trajectory, for individual ship
+- This is the typical path the ship has to pass, but deviated the path. You can observe the path deviation in the break lines.
+- You can observe Departure location to Destination location representation for you to understand the Deviation path.
+
+ .. _SOI-GSOI-Menu-Anomaly-Path-Deviaiton:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Menu-Anomaly-Path-Deviaiton.png
+     :align: center
+     :figwidth: 75%
+     
+     Anomaly Path Deviaiton
+
+ .. _anomaly_info_pathDeviation:
+
+ .. figure:: img/Ships_of_Interest/anomaly_info_pathDeviation.png
+     :align: center
+     :figwidth: 75%
+
+     Anomaly info of path Deviation
+     
+
+2. Destination deviation:
+-------------------------
+
+In the :numref:`Destination_deviation` model indicates trajectory with anomaly occurred, the trajectory is plotted and you can observe the Destination deviation.
+
+ .. _SOI-GSOI-Menu-Anomaly-Destination-Deviaiton:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Menu-Anomaly-Destination-Deviaiton.png
+     :align: center
+     :figwidth: 75%
+     
+     Anomaly Destination Deviaiton - under development
+ 	
+
+ .. _Destination_deviation:
+ 
+ .. figure:: img/Ships_of_Interest/Destination_deviation.png
+     :align: center
+     :figwidth: 75%
+     
+     Destination_deviation
+
+
+3. Ship type deviation
+-----------------------
+
+In the :numref:`SOI-GSOI-Menu-Anomaly-Ship-type-Deviaiton` trajectory indicates where the anomaly occurred, 
+in the panel details of the track info is displayed and you can observe the Destination deviation.
+
+- You can select by clicking on the Anomaly Info, and select by clicking on the type deviation, if deviation occurred only it will display the anomaly
+- Observe Departure point to Destination point graphical representation to you understand the Deviation, but not to scale length indicated.
+- You can observe the ship type declared in the point of location indicated as an alert.
+- This is the Ship type deviation.
+ 
+ .. _SOI-GSOI-Menu-Anomaly-Ship-type-Deviaiton:
+
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Menu-Anomaly-Ship-type-Deviaiton.png
+     :align: center
+     :figwidth: 75%
+
+     Anomaly Ship type Deviaiton
+     
+In the Ship Type deviation you can observe the panel which has complete details of the ship. In the :numref:`SOI-GSOI-Menu-Anomaly-Ship-type-Deviaiton-Panel`
+
+
+ .. _SOI-GSOI-Menu-Anomaly-Ship-type-Deviaiton-Panel:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Menu-Anomaly-Ship-type-Deviaiton-Panel.png
+ 	:align: center
+ 	:figwidth: 75%
+ 	
+ 	Anomaly Ship type Deviaiton Panel
+      
+In the :numref:`SOI-GSOI-Menu-Anomaly-Ship-type-Deviaiton-with-traj-tooltip` indicate when the ship has deviated the Ship type as per the AIS data. When you hover the mouse cursor over the Black Triangle, notice that the ship has changed the type at the particular DTG
+
+
+ .. _SOI-GSOI-Menu-Anomaly-Ship-type-Deviaiton-with-traj-tooltip:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Menu-Anomaly-Ship-type-Deviaiton-with-traj-tooltip.png
+ 	:align: center
+ 	:figwidth: 75%
+ 	
+ 	Anomaly Ship type Deviaiton with trajectory & tooltip
+ 	
+In the :numref:`SOI-GSOI-Menu-Anomaly-Ship-type-Deviaiton-with-changed-DTG` indicate the panel and Trajectory along Anomaly of Ship type deviation occurred.
+
+ .. _SOI-GSOI-Menu-Anomaly-Ship-type-Deviaiton-with-changed-DTG:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Menu-Anomaly-Ship-type-Deviaiton-with-changed-DTG.png
+ 	:align: center
+ 	:figwidth: 75%
+ 	
+ 	Anomaly Ship type Deviaiton with changed type & DTG
+  	
+ 	
+
+4. Choice of Anchorage
+-----------------------
+
+In the :numref:`Unkown_anchorage_Anomaly` for representation only (refer :numref:`SOI-GSOI-Menu-Anomaly-ChoiceOf-Anchorage`) trajectory indicates where the anomaly occurred, in the panel details of the track info is displayed and you can observe the unknown anchor. 
+
+ .. _Unkown_anchorage_Anomaly:
+ 
+ .. figure:: img/Ships_of_Interest/Unkown_anchorage_Anomaly.png
+ 	:align: center
+ 	:figwidth: 75%
+ 	
+ 	Unkown Anchorage Anomaly
+ 	
+ 
+ .. _SOI-GSOI-Menu-Anomaly-ChoiceOf-Anchorage:
+ 
+ .. figure:: img/Ships_of_Interest/SOI-GSOI-Menu-Anomaly-ChoiceOf-Anchorage.png
+ 	:align: center
+ 	:figwidth: 75%
+ 	
+ 	Anomaly Choice Of Anchorage
+
+     

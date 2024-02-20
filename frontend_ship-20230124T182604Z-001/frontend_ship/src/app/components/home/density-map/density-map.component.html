@@ -1,0 +1,76 @@
+<div *ngIf="featureSelectedDM == 'true' && featureSelectedDMSidenav == true" class='dm'>
+    <h3>Density Map</h3>
+
+    <div class="top cust-accordian">
+        <div class="row">
+            <div class="col-sm-2 padding-lr-0 padding-left-4px">
+                <img src="../../../assets/densitymap/shipicon.svg" alt="shipicon">
+            </div>
+            <div class="col-sm-8 padding-lr-0 label soi-header">Top 10 Ports</div>
+            <div class="col-sm-2 padding-lr-0">
+                <img value=off class="showtop" id="showtop" (click)=showtop() width=30px alt="switch"
+                    src="../../../assets/densitymap/switch-off.svg">
+            </div>
+        </div>
+    </div>
+
+    <mat-accordion>
+        <mat-expansion-panel class="cust-accordian">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <div class="col-sm-2 padding-lr-0 padding-left-4px">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="active-images" fill-rule="evenodd" clip-rule="evenodd" d="M13.3333 1.66653C13.7435 1.66682 14.165 1.94054 14.1658 2.30702L14.1667 3.34174C16.4622 3.52165 17.4885 4.67584 17.4909 7.07463L17.5 14.0961C17.5033 16.7115 15.8602 18.3207 13.2265 18.3248L6.79324 18.3332C4.176 18.3365 2.51235 16.689 2.50906 14.0661L2.50001 7.12711C2.49672 4.71248 3.54293 3.56246 5.83847 3.35173L5.83764 2.31702C5.83682 1.95053 6.25513 1.66705 6.66665 1.6665C7.07834 1.66596 7.49669 1.94887 7.49752 2.31535L7.49834 3.30842L12.5 3.30176L12.4992 2.30869C12.4984 1.9422 12.9222 1.66624 13.3333 1.66653ZM12.5017 4.99322L7.5 4.99989L7.50083 6.03187C7.50083 6.39086 7.076 6.66846 6.66667 6.66655C6.26036 6.66467 5.84095 6.39253 5.84095 6.03354L5.84013 4.99322C5 4.99989 4.16664 5.41655 4.16664 7.12544V9.16656H15.8333V7.08319C15.8333 5.41655 15 4.99322 14.175 4.99989L14.1692 6.02435C14.1692 6.3825 13.7484 6.66528 13.3383 6.66655C12.9271 6.66784 12.5025 6.38417 12.5025 6.02602L12.5017 4.99322ZM5.83333 13.3332C5.83333 13.7935 6.20643 14.1666 6.66667 14.1666C7.1269 14.1666 7.5 13.7935 7.5 13.3332C7.5 12.873 7.1269 12.4999 6.66667 12.4999C6.20643 12.4999 5.83333 12.873 5.83333 13.3332ZM10.8333 13.3332C10.8333 12.873 11.2064 12.4999 11.6667 12.4999H13.3333C13.7936 12.4999 14.1667 12.873 14.1667 13.3332C14.1667 13.7935 13.7936 14.1666 13.3333 14.1666H11.6667C11.2064 14.1666 10.8333 13.7935 10.8333 13.3332Z" fill="white"/>
+                        </svg>
+                            
+                    </div>
+                    <div class="col-sm-10 padding-lr-0 soi-header">
+                        Duration Range
+                    </div>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <form [formGroup]="DurationForm">
+                <input id="destinationdeviation-event" class="form-control duration-input"
+                    formControlName="fromandtodate" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1"
+                    [selectMode]="'range'" placeholder="Select Range">
+                <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+            </form>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="cust-accordian">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <div class="col-sm-2 padding-lr-0 padding-left-4px">
+                        <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="active-images" d="M5.65611 0.879031L3.19535 3.82569C2.63618 4.49528 2.14373 5.23369 1.72704 6.02739C0.705907 7.9724 0.166504 10.198 0.166504 12.4663V16.3332C0.166504 16.8855 0.61422 17.3332 1.1665 17.3332C4.38873 17.3332 7.61095 17.3332 10.8332 17.3332C11.3855 17.3332 11.8332 16.8855 11.8332 16.3332V12.4663C11.8332 10.198 11.2938 7.9724 10.2726 6.02739C9.85595 5.23369 9.3635 4.49528 8.80433 3.82569L6.34357 0.879031C6.15373 0.595661 5.84594 0.595661 5.65611 0.879031Z" fill="white"/>
+                        </svg>
+                            
+                    </div>
+                    <div class="col-sm-10 padding-lr-0 soi-header">
+                        Ship Types
+                    </div>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <label class="ship_types">
+                <input [checked]="selectallcat" type="checkbox"
+                    (change)="onSelectAllCat($event)" />
+                Select / Clear All
+            </label>
+
+            <div style="max-height: 200px; overflow-y: auto; overflow-x: hidden;" class="scroll">
+                <div class="row" *ngFor="let c of allCategory">
+                    <div class="col-sm-9 padding-0">
+                        <label class="ship_types">
+                            <input type="checkbox" [checked]=selectedcat[c.vessel_category] [value]="c.vessel_category"
+                                (change)="shiptypeCheckboxChange($event)" />
+                            <span id={{c.vessel_category}}> </span> {{c.vessel_category}}
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </mat-expansion-panel>
+
+    </mat-accordion>
+    <button class="btn density-submit-btn" (click)="showDensity();getShips();">  Submit</button>
+</div>

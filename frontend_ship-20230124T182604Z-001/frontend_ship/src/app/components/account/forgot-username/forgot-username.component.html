@@ -1,0 +1,97 @@
+<div class="container">
+    <app-navbar></app-navbar>
+    <div *ngIf="sendrequest == 'true'" class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 forgot-password">
+            <h2>Forgot username</h2>
+            <p>Don't worry, we all forget. We'll send your request to the admin to reset. </p>
+            <p id='alert-message' class="alert-message display-none">
+                <img class="img-vertical-align padding-right5px" src='../../../../assets/login/alert.svg' alt="alert" />
+                {{ errorMessage }}
+            </p>
+            <form [formGroup]="usernameForm" noValidate>
+                <div class="row">
+                    <div class="col-sm-6 padding-0px">
+                        <mat-form-field appearance="outline">
+                            <!-- <mat-label>First name * </mat-label> -->
+                            <input type="text" id="firstname" formControlName="firstname"
+                                [ngClass]="{ 'is-invalid': usernameformSubmitted && u.firstname.invalid }" matInput
+                                placeholder="First name *">
+                            <mat-icon matSuffix></mat-icon>
+                            <mat-hint class="danger" *ngIf="usernameformSubmitted && u.firstname.errors?.required">First
+                                name is required.
+                            </mat-hint>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-6 padding-0px">
+                        <mat-form-field appearance="outline">
+                            <input type="text" id="lastname" formControlName="lastname"
+                                [ngClass]="{ 'is-invalid': usernameformSubmitted && u.lastname.invalid }" matInput
+                                placeholder="Last name *">
+                            <mat-icon matSuffix></mat-icon>
+                            <mat-hint class="danger" *ngIf="usernameformSubmitted && u.lastname.errors?.required">Last
+                                name is required.
+                            </mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 padding-0px">
+                        <mat-form-field appearance="outline">
+                            <input type="email" id="email" formControlName="email"
+                                [ngClass]="{ 'is-invalid': usernameformSubmitted && u.email.invalid }" matInput
+                                placeholder="Email address * ">
+                            <mat-icon matSuffix>
+                                <img class="img-vertical-align" src='../../../../assets/login/email.svg' alt="email" />
+                            </mat-icon>
+                            <mat-hint class="danger" *ngIf="usernameformSubmitted && u.email.errors?.required">Email
+                                address is required.
+                            </mat-hint>
+                            <mat-hint class="danger" *ngIf="u.email.errors?.email">Email address is in wrong format.
+                            </mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="security-answer dashedline " id="input-line">
+                    <h4>Answer the Security Question</h4>
+                    <div id="security-question-answer" class="security-question-answer">
+                        <div class="form-group">
+                            <p class="security-question">
+                                <select class="form-control" formControlName="security_quest">
+                                    <option value="" disabled>Choose your security question</option>
+                                    <option *ngFor="let s of securityquestions; let i = index" [ngValue]="s">{{s}}
+                                    </option>
+                                </select>
+
+                            </p>
+                            <div class="red"
+                                *ngIf="usernameformSubmitted && u.security_quest.invalid && u.security_quest.errors.required">
+                                Select one question.</div>
+                        </div>
+                        <input type="text" id="sq_answer" formControlName="sq_answer"
+                            placeholder="Type your answer here" class="form-control"
+                            [ngClass]="{ 'is-invalid': usernameformSubmitted && u.sq_answer.invalid }">
+                        <div *ngIf="usernameformSubmitted && u.sq_answer.invalid" class="invalid-feedback">
+                            <div *ngIf="u.sq_answer.errors.required">Answer is required.</div>
+                        </div>
+                    </div>
+                    <button mat-flat-button (click)="forgotUserName()" class="login-button forgotUsername-button">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div *ngIf="sendrequest == 'false'" class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 success_message">
+            <i class="material-icons">check_circle</i>
+            <h2>Request Sent</h2>
+            <p>We have sent your request to the <b class="boldFont">Administrator</b>
+                to send your username.</p>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>

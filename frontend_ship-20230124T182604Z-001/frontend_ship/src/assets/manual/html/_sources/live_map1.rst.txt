@@ -1,0 +1,118 @@
+*********
+Live map 
+*********
+
+When you login to NAVIKA application, you will be in the LIVE page. In the :numref:`Login-current-date` for login refer the section "Login".
+
+Live map features and functions are covered in this section. 
+
+We assume you are familiar with the Navigation bar, menu and other features. Refer section Description in this manual 
+
+ .. _Login-current-date:
+ 
+ .. figure:: img/live_map1/Login-current-date.png
+     :align: center
+     :figwidth: 60%
+     
+     Navika Login page with current time
+     
+Let us start with Live map functions, begin with Search functions, since we are in Current date and time, 
+
+
+In the :numref:`Current_date-search` you can search Ship name, MMSI, IMO, COO, End port function. Note, you can refer section on Search for complete details.
+
+ .. _Current_date-search:
+ 
+ .. figure:: img/live_map1/Current_date-search.png
+     :align: center
+     :figwidth: 60%
+     
+     Search function in Current Time
+     
+As on this date and time there is no data available for the ships to be plotted. As we are not started yet with LIVE data streaming for the plotting of the ships in this application release. 
+
+In the :numref:`Current_date-search-alertMessage-noresults` you can observe the alert message.  Note, you can refer section on Search for complete details.
+
+ .. _Current_date-search-alertMessage-noresults:
+ 
+ .. figure:: img/live_map1/Current_date-search-alertMessage-noresults.png
+     :align: center
+     :figwidth: 60%
+     
+     With Current date Alert Message for search
+
+In the :numref:`Click_to_adjust_time` indicate the how you can start to Adjust Time
+
+ .. _Click_to_adjust_time:
+ 
+ .. figure:: img/live_map1/Click_to_adjust_time.png
+     :align: center
+     :figwidth: 60%
+     
+     Click the button to adjust time
+     
+In the :numref:`Set_Adjusted_time_p10` provide the steps to adjust the time. For ease of example, 01-Apr-2018 05:30 is used. After you click on the button you will observe "Set adjusted time" field
+Click once again on the field, calendar appear in the your current date and time. Follow the step 2 as per the :numref:`Set_Adjusted_time_p10`
+
+ .. _Set_Adjusted_time_p10:
+ 
+ .. figure:: img/live_map1/Set_Adjusted_time_p10.png
+     :align: center
+     :figwidth: 60%
+     
+     Steps to Adjust time 
+
+In the :numref:`plot_clock_Play_mode` indicate after you have set the date and time. Observe the alert message pop-up. the plot clock is in play state. In this page there is no ships plotted.
+
+ .. _plot_clock_Play_mode:
+ 
+ .. figure:: img/live_map1/plot_clock_Play_mode.png
+     :align: center
+     :figwidth: 60%
+     
+     Plot clock is in play mode
+ 
+You have observed after set the adjusted time, plot clock is in play mode, as indicated in :numref:`plot_clock_Play_mode-p21`
+
+ .. _plot_clock_Play_mode-p21:
+ 
+ .. figure:: img/live_map1/plot_clock_Play_mode-p21.png
+     :align: center
+     :figwidth: 60%
+     
+     Plot clock is in Play mode
+     
+In the :numref:`plot_clock_Pause_mode-p22` you click on the button to pause the plot clock, so you observe the there is no refresh at this instance. 
+Regarding rate of refresh of the application will be explained in the speed set topic in this section.
+
+ .. _plot_clock_Pause_mode-p22:
+ 
+ .. figure:: img/live_map1/plot_clock_Pause_mode-p22.png
+     :align: center
+     :figwidth: 60%
+     
+     Plot clock is in Pause mode
+     
+In this :numref:`ship_plotted_as-per_plot_clock-p23` you observe the ships are plotted with pause state, as there is no trajectory of any ships. 
+
+The plotted ships are Last Known Postion at the time set by you. The position is indicated is 30 minutes prior to the plot clock time, 
+
+means time is 01-Apr-2018 05:30:38 Last known Positions of the ship is 01-Apr-2018 05:00:38.
+
+
+The web page will be refreshed every 30 seconds. Web Refresh will be explained with plot clock in the play mode in preceding section.
+
+ .. _ship_plotted_as-per_plot_clock-p23:
+ 
+ .. figure:: img/live_map1/ship_plotted_as-per_plot_clock-p23.png
+     :align: center
+     :figwidth: 60%
+     
+     Ship plotted as per plot clock Time
+ 
+
+     
+ 
+
+
+

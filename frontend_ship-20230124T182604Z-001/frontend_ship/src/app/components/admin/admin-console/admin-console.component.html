@@ -1,0 +1,66 @@
+<div *ngIf="loginStatus == 'true' && isAdmin == true">
+    <app-main-navbar></app-main-navbar>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-2 sidenav">
+                <p class="admin-profile">
+                    <svg width="80" height="88" viewBox="0 0 80 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path id="imageColors" d="M0 40C0 17.9086 17.9086 0 40 0V0C62.0914 0 80 17.9086 80 40V40C80 62.0914 62.0914 80 40 80V80C17.9086 80 0 62.0914 0 40V40Z"/>
+                        <path d="M40 46.3478C48.6773 46.3478 56 47.7578 56 53.1979C56 58.6399 48.6292 59.9999 40 59.9999C31.3247 59.9999 24 58.5899 24 53.1499C24 47.7078 31.3708 46.3478 40 46.3478ZM40 19.9999C45.8782 19.9999 50.588 24.708 50.588 30.582C50.588 36.4561 45.8782 41.1662 40 41.1662C34.1238 41.1662 29.412 36.4561 29.412 30.582C29.412 24.708 34.1238 19.9999 40 19.9999Z" fill="white"/>
+                        <path id="imageColors" d="M16.5 77.5C16.5 72.8056 20.3056 69 25 69H55C59.6944 69 63.5 72.8056 63.5 77.5V77.5C63.5 82.1944 59.6944 86 55 86H25C20.3056 86 16.5 82.1944 16.5 77.5V77.5Z" fill="#343232"/>
+                        <path d="M27.5 81L27.13 79.76H24.41L24.03 81H22.4L24.55 74.43H27L29.13 81H27.5ZM26.73 78.44L25.77 75.24L24.81 78.44H26.73ZM32.5132 75.81H31.3932V79.62H32.5632C33.1699 79.62 33.6265 79.4567 33.9332 79.13C34.2399 78.7967 34.3932 78.34 34.3932 77.76C34.3932 77.1267 34.2399 76.6433 33.9332 76.31C33.6265 75.9767 33.1532 75.81 32.5132 75.81ZM29.8732 81V74.43H32.5532C33.1132 74.43 33.6032 74.51 34.0232 74.67C34.4499 74.83 34.7999 75.0533 35.0732 75.34C35.3532 75.6267 35.5632 75.9733 35.7032 76.38C35.8432 76.7867 35.9132 77.2367 35.9132 77.73C35.9132 78.2233 35.8432 78.6733 35.7032 79.08C35.5632 79.4867 35.3532 79.8333 35.0732 80.12C34.7999 80.4 34.4499 80.6167 34.0232 80.77C33.6032 80.9233 33.1132 81 32.5532 81H29.8732ZM39.26 78.09L38.57 75.61V81H37.08V74.43H39.63L40.46 77.11L41.02 79.31L41.6 77.11L42.45 74.43H44.92V81H43.36V75.68L42.72 78.09L41.74 81H40.21L39.26 78.09ZM46.5917 74.43H48.1117V81H46.5917V74.43ZM54.1751 74.43H55.6651V81H53.9251L52.1551 77.96L51.2751 76.16V81H49.7851V74.43H51.8251L53.3651 77.05L54.1751 78.74V74.43Z" fill="white"/>
+                        <path d="M25 71H55V67H25V71ZM55 84H25V88H55V84ZM25 84C21.4101 84 18.5 81.0899 18.5 77.5H14.5C14.5 83.299 19.201 88 25 88V84ZM61.5 77.5C61.5 81.0899 58.5899 84 55 84V88C60.799 88 65.5 83.299 65.5 77.5H61.5ZM55 71C58.5899 71 61.5 73.9101 61.5 77.5H65.5C65.5 71.701 60.799 67 55 67V71ZM25 67C19.201 67 14.5 71.701 14.5 77.5H18.5C18.5 73.9101 21.4101 71 25 71V67Z" fill="#E6E5E5"/>
+                    </svg>       
+                </p>
+                <p class="admin-username">{{ userName }}</p>
+                <p class="admin-userid">{{ userId }}</p>
+                <!-- <p>Admin Console</p> -->
+                <ul class="admin-console"  >
+                    <li id={{a.img}} *ngFor="let a of adminConsoleData" class="changeConsole" (click)="changeConsole(a.name)">
+                        <img id={{a.img}}_img *ngIf="theme=='grey'" style="margin-right: 10px;" class="img-vertical-align"
+                        src='{{"../../../../assets/admin/" + a.img + ".svg"}}' width="20px">
+
+                        <img id={{a.img}}_img *ngIf="theme=='navy'" style="margin-right: 10px;" class="img-vertical-align"
+                        src='{{"../../../../assets/admin/navy/" + a.img + ".svg"}}' width="20px">
+                        {{ a.name }} </li>
+                </ul>
+            </div>  
+    
+            <div class="col-xl-9 " style="min-height: calc(100vh - 100px);">
+                <app-queue-requests></app-queue-requests>
+                <app-manage-users></app-manage-users>
+                <app-roles-permissions></app-roles-permissions>
+                <app-manage-ships></app-manage-ships>
+                <app-audit-logs></app-audit-logs>
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+<!-- If the user is not logged in -->
+<div *ngIf="loginStatus == ''" class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 success_message">
+      <i class="material-icons">sentiment_very_dissatisfied</i>
+      <p>You have been logged out from the session. Please <b
+          style="color: black!important;font-family: CharlieText-Bold!important;"><a routerLink="/">LOGIN AGAIN <img
+              src='../../../assets/arrow.png' alt="arrow" width="15px" /></a></b></p>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+  <!-- End if the user is not logged in -->
+
+
+  <!-- If the user is not logged in -->
+<div *ngIf="isAdmin == false " class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 success_message">
+      <i class="material-icons">sentiment_very_dissatisfied</i>
+      <p>You Dont have access to admin console. <b
+          style="color: black!important;font-family: CharlieText-Bold!important;"><a routerLink="/">GO BACK <img
+              src='../../../assets/arrow.png' alt="arrow" width="15px" /></a></b></p>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+  <!-- End if the user is not logged in -->

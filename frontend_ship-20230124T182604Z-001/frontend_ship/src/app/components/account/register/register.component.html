@@ -1,0 +1,194 @@
+<div class="container">
+    <app-navbar></app-navbar>
+    <div *ngIf="sendrequest == 'true'" class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 account-request">
+            <h2>Send account request</h2>
+            <mat-horizontal-stepper [linear]="isLinear">
+                <mat-step aria-selected="true" [stepControl]="personalinfoForm">
+                    <h4>Personal Info</h4>
+                    <form style="padding-left: 15px;" [formGroup]="personalinfoForm">
+                        <ng-template class="stepper-heading" matStepLabel>Personal Info</ng-template>
+                        <div class="row">
+                            <div class="col-sm-6 padding-0px">
+                                <mat-form-field appearance="outline">
+                                    <input type="text" id="firstname" formControlName="firstname"
+                                        [ngClass]="{ 'is-invalid': personalformsubmitted && p.firstname.invalid }"
+                                        matInput placeholder="First name *">
+                                    <mat-icon matSuffix></mat-icon>
+                                    <mat-hint class="danger"
+                                        *ngIf="personalformsubmitted && p.firstname.errors?.required">First name is
+                                        required.
+                                    </mat-hint>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-6 padding-0px">
+                                <mat-form-field appearance="outline">
+                                    <input type="text" id="lastname" formControlName="lastname"
+                                        [ngClass]="{ 'is-invalid': personalformsubmitted && p.lastname.invalid }"
+                                        matInput placeholder="Last name *">
+                                    <mat-icon matSuffix></mat-icon>
+                                    <mat-hint class="danger"
+                                        *ngIf="personalformsubmitted && p.lastname.errors?.required">Last name is
+                                        required.
+                                    </mat-hint>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6 padding-0px">
+                                <mat-form-field appearance="outline">
+                                    <!-- <mat-label>Email address * </mat-label> -->
+                                    <input type="email" id="email" formControlName="email" class="checkForEmailId-input"
+                                        [ngClass]="{ 'is-invalid': personalformsubmitted && p.email.invalid }" matInput
+                                        placeholder="Email address * " (keyup)="checkForEmailId()">
+                                    <mat-icon matSuffix>
+                                        <img class="img-vertical-align" src='../../../../assets/login/email.svg'
+                                            alt="email" />
+                                    </mat-icon>
+                                    <mat-hint class="danger" *ngIf="personalformsubmitted && p.email.errors?.required">
+                                        Email address is required.
+                                    </mat-hint>
+                                    <mat-hint class="danger" *ngIf="p.email.errors?.email">Email address is in wrong
+                                        format.
+                                    </mat-hint>
+                                    <mat-hint class="danger" *ngIf="p.email.errors?.duplicate">
+                                        Email ID not available.
+                                    </mat-hint>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-6 padding-0px">
+                                <mat-form-field appearance="outline">
+                                    <input class="mobile-number-input" maxlength='10' (keypress)="onlyNumberKey($event)" type="text"
+                                        id="mobilenumber" formControlName="mobilenumber" matInput
+                                        placeholder="Phone number (option) ">
+                                    <mat-icon matSuffix>
+                                        <img class="img-vertical-align" src='../../../../assets/login/phone.svg'
+                                            alt="phonenumber" />
+                                    </mat-icon>
+
+                                    <mat-hint class="danger" *ngIf="p.mobilenumber.errors?.minlength"> Invalid phone
+                                        number.
+                                    </mat-hint>
+
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12 padding-0px">
+                                <mat-form-field appearance="outline">
+                                    <textarea rows="5" id="message" formControlName="message" matInput
+                                        placeholder="Message (option)">
+                            </textarea>
+
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 padding-0px">
+                                <button class='login-button continueToCredentials' mat-button matStepperNext
+                                    (click)='continueToCredentials()'>CONTINUE</button>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </mat-step>
+                <mat-step aria-selected="true" [stepControl]="credentialsForm" label="">
+                    <ng-template matStepLabel>Credentials</ng-template>
+                    <h4>Preferred Credentials</h4>
+                    <form style="padding-left: 15px;" [formGroup]="credentialsForm">
+                        <div class="row">
+                            <div class="col-sm-6 padding-0px">
+                                <mat-form-field appearance="outline">
+                                    <input class="checkForUserId-input" (keyup)="checkForUserId()" type="text" id="userid" formControlName="userid"
+                                        [ngClass]="{ 'is-invalid': credentialsformsubmitted && c.userid.invalid }"
+                                        matInput placeholder="Username *">
+                                    <mat-icon matSuffix>
+                                        <img class="img-vertical-align" src='../../../../assets/login/grey-username.svg'
+                                            alt="username" />
+                                    </mat-icon>
+                                    <mat-hint class="danger"
+                                        *ngIf="credentialsformsubmitted && c.userid.errors?.required">
+                                        Username is required.
+                                    </mat-hint>
+
+                                    <mat-hint class="danger" *ngIf="c.userid.errors?.duplicate">
+                                        Username not available.
+                                    </mat-hint>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-6 padding-0px">
+                                <mat-form-field appearance="outline">
+                                    <input maxlength='12' type="password" id="password" formControlName="password"
+                                        [ngClass]="{ 'is-invalid': credentialsformsubmitted && c.userid.invalid }"
+                                        matInput placeholder="Password *">
+                                    <mat-icon matSuffix class="showPassword" (click)="showPassword()">
+                                        <img class="img-vertical-align"
+                                            src='{{"../../../../assets/login/" + passwordicon +".svg"}}'
+                                            alt="password" />
+                                    </mat-icon>
+                                    <mat-hint class="danger"
+                                        *ngIf="credentialsformsubmitted && c.password.errors?.required"> password is
+                                        required.
+                                    </mat-hint>
+                                    <mat-hint class="danger"
+                                        *ngIf="c.password.errors?.minlength">
+                                        password should be atleast 6 characters.
+                                    </mat-hint>
+                                </mat-form-field>
+                            </div>
+                            <p class="note"><b>Note:</b> Password must be atleast 6-12 characters long and can contain
+                                numbers or special character.</p>
+                        </div>
+
+                        <div>
+                            <button style="margin-left:-15px" class='login-button continueToSecurity' (click)='continueToSecurity()'
+                                mat-button matStepperNext>Continue</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step aria-selected="true" [stepControl]="securityForm">
+                    <ng-template matStepLabel>Security</ng-template>
+                    <h4>Security Questions<span class="security-note" style="color: red;font-weight: bold;"> (Required:
+                            any one question only.)</span></h4>
+                    <ul class="all_quesions">
+                        <form [formGroup]="securityForm">
+                            <li class="security-question-answer" id=li_{{i}}
+                                *ngFor="let q of securityquestions; index as i">
+                                <p>Q{{i+1}} . {{q}}</p>
+                                <input (click)="disableOtherInputs(i)" type="text" id={{i}} value={{q}}
+                                    formControlName="securityanswer" placeholder="Type your answer here"
+                                    class="form-control"
+                                    [ngClass]="{ 'is-invalid': securitysubmitted && s.securityanswer.invalid }">
+                                <div *ngIf="securitysubmitted && s.securityanswer.invalid" class="invalid-feedback">
+                                    <div *ngIf="s.securityanswer.errors.required">Answer is required.</div>
+                                </div>
+                            </li>
+                        </form>
+                    </ul>
+                    <div>
+                        <button class='login-button register' mat-button (click)="register()">SEND REQUEST</button>
+                    </div>
+                </mat-step>
+
+            </mat-horizontal-stepper>
+        </div>
+
+        <div class="col-sm-2"></div>
+    </div>
+
+
+    <div *ngIf="sendrequest == 'false'" class="row">
+
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 success_message">
+            <img src="../../../../assets/login/check.png" alt="check" />
+            <h2>Request sent</h2>
+            <p>We have sent your request to the <b style="color:black;font-family: CharlieText-Bold;">Administrator</b>
+                with all the details to
+                activate your account.</p>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>

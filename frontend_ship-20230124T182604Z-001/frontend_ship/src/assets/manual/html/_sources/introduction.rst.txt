@@ -1,0 +1,40 @@
+*************
+Introduction
+*************
+
+**NAVIKA** - **NAVal Intelligence and Knowledge Analysis**:
+
+
+Surveillance of the maritime situation is one of the prime responsibilities of
+the Indian naval forces. With a large coastline to monitor and defend, it is
+imperative that technologies need to be established for quicker
+decision making, resulting in a faster action cycle.
+
+Navika is an Artificial Intellligence (AI) driven  system to aid the Indian naval forces 
+to make decisions with respect to anomalous behavior
+of vessel movements, prediction in terms of future positions and situational
+awareness. This will enable quicker decision making cycles and provide an
+overall comprehensive view of waters for strategic decision making.
+
+AIS data is one of the
+most commonly available data which has been used to track the position of
+the vessels out in the seas. Being voluminous in nature, quick analysis of the AIS data for informed decision making is a pressing need. 
+Using state of the art AI technologies, Navika churns AIS data (terrestrial and Satellite), to generate intelligent analysis and prediction for situational awareness. The unique selling point of the AI models deployed with Navika is that the predictions made by the system are supported by explainable cues, which allows the user to understand the AI decision making process. 
+
+
+Navika has been developed to work on live stream of data as well as it enables
+the end-user to analyse the historical data.
+The system intelligently updates anamoly reports based on observed patterns of movement. 
+Additionally features like marking ships and regions of interest allow users to focus on entities of interest.
+
+Visual aids like ship symbology, ports, anchorages, ENC charts have been used extensively in consistency with the cues used in the naval domain.
+The system is architected as N-tier application with the primary user interface being web-browser. 
+This allows multiple users to simulataneoulsy access the system with their specific profiles and preferences.
+PKI has been enabled internally which is consistent with the best practices in the web domain.
+
+This system has been developed by Centre for Artificial Intelligence and Robotics lab of
+Defence Research and Development Organisation (DRDO). 
+The application and the data will be deployed and maintained on the user premises only and this ensures that the user is the sole custodian of their data. 
+
+
+

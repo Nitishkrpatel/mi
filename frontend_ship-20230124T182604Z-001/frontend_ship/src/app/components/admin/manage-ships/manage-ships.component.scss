@@ -1,0 +1,60 @@
+.title-admin {
+    font-family: 'Charlie Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.01em;
+}
+
+.dashboard-table th {
+    font-family: CharlieText-Bold;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin: 0px 8px;
+}
+
+.dashboard-table td {
+    font-family: Charlie Text;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+::ng-deep .mat-sort-header-arrow {
+    color: white !important;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+.search-users  .form-control:focus {
+    background-color: transparent !important;
+    border-color: none !important;
+    box-shadow: none !important;
+}
+  
+
+.search-users {
+    /* border: 1px solid #B4B1B1; */
+    border-radius: 50px;
+    padding-left: 1em;
+}
+    
+.search-users input{
+    font-family: Charlie Text;
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    margin-left:5px;
+}
+.note {
+    font-family: Charlie Text;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    margin: 16px 0px;
+}

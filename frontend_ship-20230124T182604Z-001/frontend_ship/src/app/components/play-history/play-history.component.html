@@ -1,0 +1,397 @@
+<div id="playhistory-Overall" *ngIf="loginStatus == 'true'">
+    <app-main-navbar> </app-main-navbar>
+    <div id="map2" class="map"></div>
+      <div class="ol-custom ol-unselectable ol-control" id="disable-mapevent">
+
+        <div style="float: right;">
+          <!-- <ng-template #Graticule>
+            <p>Show Graticule</p>
+          </ng-template> -->
+          <button id="graticule" [ngClass]="{ 'activebutton': graticule == true}" matTooltip="Show Graticule"
+            matTooltipPosition='left' (click)="showGraticule()" class="ol-zoom-in customZoomIn graticule" type="button">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="imageColors" [ngClass]="{ 'activeImg': graticule == true}" fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M5.83333 0.625C5.25804 0.625 4.79167 1.09137 4.79167 1.66667V4.79167H1.66667C1.09137 4.79167 0.625 5.25804 0.625 5.83333C0.625 6.40863 1.09137 6.875 1.66667 6.875H4.79167V13.125H1.66667C1.09137 13.125 0.625 13.5914 0.625 14.1667C0.625 14.742 1.09137 15.2083 1.66667 15.2083H4.79167V18.3333C4.79167 18.9086 5.25804 19.375 5.83333 19.375C6.40863 19.375 6.875 18.9086 6.875 18.3333V15.2083H13.125V18.3333C13.125 18.9086 13.5914 19.375 14.1667 19.375C14.742 19.375 15.2083 18.9086 15.2083 18.3333V15.2083H18.3333C18.9086 15.2083 19.375 14.742 19.375 14.1667C19.375 13.5914 18.9086 13.125 18.3333 13.125H15.2083V6.875H18.3333C18.9086 6.875 19.375 6.40863 19.375 5.83333C19.375 5.25804 18.9086 4.79167 18.3333 4.79167H15.2083V1.66667C15.2083 1.09137 14.742 0.625 14.1667 0.625C13.5914 0.625 13.125 1.09137 13.125 1.66667V4.79167H6.875V1.66667C6.875 1.09137 6.40863 0.625 5.83333 0.625ZM6.875 13.125V6.875H13.125V13.125H6.875Z" />
+            </svg>
+          </button>
+
+          <ng-template class="popover-color" #anchor>
+            <h4 class='popoverheader'><img src="../../../assets/map/map-type.svg" alt="map-type" />map types
+            </h4>
+            <mat-radio-group>
+              <ul class="popoverul">
+                <li>
+                  <mat-radio-button *ngFor="let f of rolefeatures.Map" [checked]="f.featurename == maptype "
+                    (change)="changeMapType(f.featurename)" [value]="f.featurename" id={{f.featurename}}>
+                    <span [ngClass]="{ 'active_text': maptype == f.featurename }"> {{f.featurename}}</span>
+                  </mat-radio-button>
+
+                </li>
+              </ul>
+            </mat-radio-group>
+
+            <mat-radio-group>
+              <h4 class='popoverheader'>Opacity</h4>
+            <input id="range_bgMapOpacity" type="range" min="0.2" max="1" step=".1" value={{opacitySildervalue}} class ="w-100" (change)="fnChangeMapOpacity($event.target.value)"/>
+          </mat-radio-group>
+
+            <h4 class='popoverheader'><img src="../../../assets/map/layers.svg" alt="layers" />layers</h4>
+            <ul class="popoverul" *ngFor="let f of rolefeatures.layers">
+
+              <li *ngIf="f.featurename == 'Anchors'" id='Anchors' placement="left" [ngbPopover]='Anchors'>
+
+                <svg style="margin-right: 0.5em;" width="20" height="20" viewBox="0 0 10 18" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path id="imageColors"
+                    [ngClass]="{ 'activeImg': checkedknownanchors == true || checkedpredictanchors == true }"
+                    d="M9.50452 2.74415C9.86788 2.25443 9.82801 1.56021 9.38392 1.11612C8.89576 0.627961 8.1043 0.627961 7.61615 1.11612L0.603196 8.12907L0.506544 8.24103L0.495544 8.25585C0.132181 8.74557 0.172058 9.43979 0.616149 9.88388L7.6291 16.8968L7.74106 16.9935L7.75588 17.0045C8.2456 17.3679 8.93982 17.328 9.38392 16.8839L9.39687 16.8709L9.49352 16.759L9.50452 16.7441C9.86788 16.2544 9.82801 15.5602 9.38392 15.1161L3.26812 9L9.39687 2.87093L9.49352 2.75897L9.50452 2.74415Z"
+                    fill="#ffffff" />
+                </svg>
+
+                <svg style="margin-right: 0.5em;" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path id="imageColors"
+                    [ngClass]="{ 'activeImg': checkedknownanchors == true || checkedpredictanchors == true }"
+                    d="M17.2997 10.9318C16.3664 11.3318 15.4331 11.7401 14.4997 12.1401C14.3497 12.2068 14.2497 12.3318 14.2497 12.4985C14.2414 12.6735 14.3414 12.7985 14.4997 12.8818C14.6497 12.9568 14.7997 13.0318 14.9497 13.0985C15.0497 13.1401 15.0497 13.1818 14.9914 13.2651C14.8081 13.5068 14.5997 13.7235 14.3581 13.9068C13.5497 14.4985 12.6248 14.6735 11.6497 14.7151C11.4664 14.7235 11.4081 14.6818 11.4081 14.4818C11.4164 13.0318 11.4164 11.5735 11.4164 10.1235C11.4164 9.99846 11.4164 9.91512 11.2414 9.91512C10.4164 9.92346 9.59975 9.92346 8.77475 9.91512C8.64142 9.91512 8.60808 9.96512 8.60808 10.0901C8.61642 10.8318 8.60808 11.5735 8.60808 12.3151C8.60808 13.0485 8.60808 13.7901 8.60808 14.5235C8.60808 14.6651 8.56642 14.7235 8.42475 14.7151C7.99975 14.6985 7.57475 14.6651 7.15808 14.5651C6.34142 14.3735 5.62475 14.0151 5.09975 13.3401C4.95808 13.1651 4.96642 13.1568 5.15808 13.0651C5.28308 13.0068 5.39975 12.9485 5.52475 12.8901C5.61642 12.8485 5.69142 12.7818 5.73308 12.6901C5.84142 12.4651 5.74142 12.2485 5.46642 12.1318C4.55808 11.7401 3.65808 11.3401 2.74975 10.9568C2.39142 10.7901 2.09975 10.9818 2.10808 11.3651C2.13308 12.1151 2.16642 12.8735 2.19975 13.6235C2.21642 13.9401 2.22475 14.2568 2.24975 14.5651C2.25808 14.7401 2.34975 14.8568 2.51642 14.9068C2.68308 14.9568 2.83308 14.8985 2.94142 14.7651C2.99142 14.7068 3.03308 14.6485 3.06642 14.5818C3.13308 14.4568 3.18308 14.4818 3.25808 14.5818C3.49142 14.9068 3.75808 15.2068 4.04975 15.4901C5.00808 16.4151 6.16642 16.9901 7.41642 17.4068C7.94142 17.5818 8.48308 17.7401 8.94142 18.0568C9.24975 18.2651 9.53308 18.5068 9.64975 18.8818C9.70808 19.0568 9.80808 19.1651 9.99975 19.1651C10.1997 19.1651 10.2998 19.0485 10.3498 18.8735C10.4081 18.6818 10.5081 18.5318 10.6497 18.3901C10.9747 18.0568 11.3748 17.8401 11.8081 17.6818C12.2664 17.5068 12.7414 17.3651 13.1997 17.1901C14.5997 16.6568 15.7998 15.8568 16.7081 14.6485C16.8414 14.4735 16.8414 14.4735 16.9748 14.6568C17.0664 14.7818 17.1498 14.9151 17.3247 14.9401C17.5914 14.9735 17.7498 14.8068 17.7664 14.4568C17.8164 13.4235 17.8581 12.3985 17.8914 11.3651C17.9081 10.9985 17.6164 10.7985 17.2997 10.9318ZM7.56642 9.04012C7.65808 8.95679 7.74975 8.93179 7.86642 8.93179C9.24142 8.93179 10.6081 8.94012 11.9831 8.93179C12.1748 8.93179 12.3247 8.96512 12.4831 9.09846C13.0581 9.56512 13.8748 9.50679 14.4081 8.99846C14.9414 8.49012 15.0164 7.66512 14.5914 7.07346C14.1581 6.46512 13.3414 6.24846 12.6997 6.61512C12.4331 6.76512 12.1831 6.81512 11.8997 6.79846C11.7914 6.79012 11.6748 6.79012 11.5664 6.79846C11.4331 6.80679 11.3831 6.77346 11.3831 6.62346C11.3914 6.10679 11.3914 5.58179 11.3831 5.06512C11.3831 4.95679 11.4248 4.89846 11.4998 4.83179C12.0581 4.31512 12.3164 3.68179 12.2581 2.92346C12.1497 1.47346 10.6748 0.490122 9.29142 0.948455C8.45808 1.22346 7.92475 1.80679 7.74975 2.66512C7.57475 3.50679 7.83308 4.24012 8.46642 4.82346C8.54975 4.89846 8.59142 4.97346 8.59142 5.09012C8.58308 5.34012 8.59142 5.58179 8.59142 5.83179C8.59142 6.08179 8.58308 6.34012 8.59142 6.59012C8.60808 6.74012 8.57475 6.80679 8.40808 6.79012C8.18308 6.77346 7.96642 6.78179 7.74142 6.79012C7.62475 6.79012 7.53308 6.75679 7.43308 6.69012C6.79142 6.24846 5.92475 6.38179 5.43308 6.99012C4.95808 7.58179 5.00808 8.44846 5.54975 8.97346C6.11642 9.52346 6.98308 9.55679 7.56642 9.04012ZM9.99142 2.46512C10.3247 2.46512 10.5914 2.72346 10.5997 3.05679C10.5997 3.39012 10.3331 3.66512 9.99975 3.65679C9.68308 3.65679 9.40808 3.39012 9.39975 3.07346C9.39142 2.74012 9.65808 2.46512 9.99142 2.46512Z"
+                    fill="white" />
+                </svg>
+
+                <span
+                  [ngClass]="{ 'active_text': checkedknownanchors == true || checkedpredictanchors == true }">{{f.featurename}}</span>
+              </li>
+
+
+              <li *ngIf="f.featurename == 'Ports'" id='Ports' (change)="getPorts($event)">
+                <input type="checkbox" class="form-check-input check-box-styling" [checked]="checkedports"
+                  value=f.featurename>
+                <svg style="margin-right: 0.5em;" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path id="imageColors" [ngClass]="{ 'activeImg': checkedports == true }"
+                    d="M14.5807 17.3333C13.7567 17.3333 13.4001 17.0483 12.8611 16.6174C12.2377 16.1197 11.4632 15.5 9.99466 15.5C8.52708 15.5 7.7525 16.1197 7.13008 16.6183C6.592 17.0483 6.23633 17.3333 5.41225 17.3333C4.59 17.3333 4.23433 17.0483 3.69625 16.6183C3.20308 16.2232 2.61553 15.7521 1.66274 15.5735C1.21038 15.4887 0.833496 15.8731 0.833496 16.3333V16.5C0.833496 16.9602 1.22131 17.3024 1.65147 17.4661C1.97712 17.59 2.23178 17.7938 2.55041 18.0483C3.17283 18.547 3.9465 19.1667 5.41225 19.1667C6.87983 19.1667 7.6535 18.547 8.27591 18.0493C8.81491 17.6184 9.17058 17.3333 9.99466 17.3333C10.8197 17.3333 11.1964 17.634 11.7162 18.0493C12.3386 18.547 13.1132 19.1667 14.5807 19.1667C16.0483 19.1667 16.8229 18.547 17.4453 18.0493C17.7556 17.8014 18.0149 17.5943 18.3491 17.4677C18.7794 17.3046 19.1668 16.9602 19.1668 16.5V16.3333C19.1668 15.8731 18.79 15.4888 18.3376 15.5734C17.3834 15.7519 16.7944 16.2229 16.3004 16.6174C15.7614 17.0483 15.4048 17.3333 14.5807 17.3333ZM4.50016 6.79168L4.28373 6.84578C3.39074 7.06903 2.84781 7.97392 3.07106 8.86691L4.50016 14.5833C4.50016 14.5833 5.13083 14.5833 5.41225 14.5833C6.87983 14.5833 7.6535 13.9637 8.27591 13.4659C8.81491 13.0351 9.17058 12.75 9.99466 12.75C10.8197 12.75 11.1964 13.0507 11.7162 13.4659C12.3386 13.9637 13.1132 14.5833 14.5807 14.5833C14.8649 14.5833 15.5002 14.5833 15.5002 14.5833L15.5249 14.4853L16.9293 8.86687C17.1526 7.97389 16.6096 7.06904 15.7166 6.8458L15.5002 6.79168V3.58426C15.5002 3.14609 15.1912 2.77026 14.7632 2.68501L10.9168 1.91593V1.75001C10.9168 1.24375 10.5064 0.833344 10.0002 0.833344C9.4939 0.833344 9.0835 1.24375 9.0835 1.75001V1.91593L5.23716 2.68501C4.80908 2.77026 4.50016 3.14609 4.50016 3.58426V6.79168ZM6.3335 4.33409L10.0002 3.60076L13.6668 4.33409V6.33334L10.0002 5.41668L6.3335 6.33334V4.33409Z" />
+                </svg>
+                <span [ngClass]="{ 'active_text': checkedports == true }">{{f.featurename}}</span>
+              </li>
+
+              <li *ngIf="f.featurename == 'Lighthouses'" id='Lighthouses'>
+                <input type="checkbox" class="form-check-input check-box-styling" value=f.featurename disabled>
+                <svg style="margin-right: 0.5em;" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path id="imageColors"
+                    d="M18.576 18.7542C18.4593 18.3958 18.2427 18.1708 17.7593 18.1792C16.5677 18.1958 15.376 18.1875 14.1843 18.1875C14.076 18.1875 13.9843 18.2042 13.976 18.0375C13.851 16.7458 13.726 15.4625 13.5927 14.1708C13.5677 13.9125 13.5677 13.9125 13.3343 14.0292C11.0427 15.1375 8.75101 16.2542 6.45101 17.3542C6.15101 17.4958 5.99268 17.6625 6.02601 17.9875C6.04268 18.1542 5.95934 18.1875 5.80934 18.1875C4.60101 18.1792 3.38434 18.1875 2.17601 18.1875C1.80101 18.1875 1.58434 18.3458 1.45101 18.6959C1.41768 18.7625 1.39268 18.8375 1.36768 18.9042V19.2958C1.38434 19.3209 1.40101 19.3375 1.40934 19.3625C1.55934 19.8458 1.75934 19.9958 2.25101 19.9958H12.0093C13.9427 19.9958 15.876 19.9958 17.8093 19.9958C17.9677 19.9958 18.1177 19.9792 18.251 19.8875C18.5677 19.6709 18.7177 19.1792 18.576 18.7542ZM7.04268 5.45418C8.95101 5.44585 10.8593 5.45418 12.7593 5.45418C13.1677 5.45418 13.1677 5.45418 13.1677 5.04585C13.1593 3.47085 12.151 2.21251 10.6177 1.88751C10.476 1.85418 10.4427 1.79585 10.4427 1.67085C10.451 1.32918 10.4343 0.979181 10.451 0.637514C10.4677 0.345848 10.376 0.129181 10.1177 0.00418091H9.88434C9.61768 0.129181 9.53434 0.345848 9.54268 0.629181C9.55934 0.970848 9.54268 1.30418 9.55101 1.64585C9.55101 1.78751 9.52601 1.86251 9.35934 1.88751C9.01768 1.94585 8.70101 2.07085 8.40101 2.25418C7.30101 2.94585 6.79268 3.94585 6.82601 5.23751C6.82601 5.40418 6.86768 5.45418 7.04268 5.45418ZM2.18434 2.61251C3.05101 2.90418 3.91768 3.22918 4.78434 3.53751C4.88434 3.57085 4.99268 3.62085 5.10101 3.62085C5.46768 3.64585 5.78434 3.40418 5.88434 3.02918C5.98434 2.62085 5.78434 2.19585 5.40934 2.06251C4.40101 1.68751 3.37601 1.32085 2.35934 0.954181C1.99268 0.829181 1.61768 1.00418 1.45101 1.36251C1.42601 1.42918 1.39268 1.49585 1.36768 1.56251V1.91251C1.50101 2.30418 1.80101 2.47918 2.18434 2.61251ZM2.36768 7.21251C3.36768 6.85418 4.37601 6.49585 5.36768 6.12918C5.82601 5.96251 6.00934 5.51251 5.83434 5.04585C5.66768 4.61251 5.29268 4.45418 4.81768 4.62085C3.90934 4.94585 3.00101 5.28751 2.08434 5.59585C1.73434 5.72918 1.46768 5.91251 1.36768 6.28752V6.60418C1.39268 6.66251 1.41768 6.72918 1.45101 6.79585C1.60934 7.17918 1.97601 7.35418 2.36768 7.21251ZM5.05101 8.07918C5.20934 8.67918 5.75101 9.08751 6.40101 9.08751C7.60101 9.08751 8.79268 9.08751 9.99268 9.08751C11.1927 9.08751 12.401 9.09585 13.601 9.08751C14.3927 9.07918 14.9927 8.48752 14.9843 7.72085C14.9843 6.96252 14.3677 6.37085 13.5843 6.37085C11.1927 6.37085 8.79268 6.37085 6.40101 6.37085C6.14268 6.37085 5.90101 6.42085 5.67601 6.55418C5.15101 6.86251 4.89268 7.48751 5.05101 8.07918ZM6.35934 14.6542C6.30101 15.2542 6.23434 15.8542 6.17601 16.4625C6.25934 16.4708 6.30934 16.4292 6.36768 16.3958C6.76768 16.2042 7.17601 16.0042 7.57601 15.8125C9.48434 14.8875 11.401 13.9625 13.3093 13.0292C13.3927 12.9875 13.4843 12.9708 13.4677 12.8292C13.4093 12.2958 13.3593 11.7708 13.3093 11.2375C13.301 11.1125 13.251 11.1042 13.151 11.1625C12.9843 11.2542 12.801 11.3375 12.626 11.4292C10.5593 12.4625 8.50934 13.5375 6.42601 14.5458C6.37601 14.5625 6.35934 14.6042 6.35934 14.6542ZM13.1927 10.0458C13.1677 9.97085 13.0927 10.0042 13.0427 10.0042C11.026 10.0042 9.00934 10.0042 6.99268 9.99585C6.84268 9.99585 6.81768 10.0542 6.80101 10.1875C6.73434 10.9208 6.65934 11.6542 6.58434 12.3792C6.55101 12.7458 6.51768 13.1125 6.47601 13.5042C6.53434 13.4792 6.57601 13.4708 6.60934 13.4542C8.76768 12.3625 10.926 11.2708 13.0843 10.1792C13.1343 10.1542 13.2177 10.1375 13.1927 10.0458ZM15.1593 3.56251C15.601 3.37918 16.0593 3.23751 16.5177 3.07085C17.0593 2.87918 17.5927 2.68751 18.126 2.48751C18.551 2.32918 18.7343 1.87085 18.5677 1.42085C18.4093 0.987514 18.026 0.812514 17.576 0.979181C16.601 1.32918 15.6343 1.67918 14.6593 2.02918C14.2843 2.16251 14.0927 2.42085 14.0927 2.80418C14.0927 3.32085 14.551 3.81251 15.1593 3.56251ZM15.151 4.62085C14.5843 4.42085 14.101 4.77085 14.101 5.53751C14.101 5.72918 14.251 5.99585 14.576 6.11251C15.601 6.49585 16.6343 6.86251 17.676 7.22085C18.001 7.33751 18.301 7.20418 18.4843 6.92085C18.7927 6.43752 18.601 5.85418 18.0677 5.66251C17.0927 5.31251 16.126 4.97085 15.151 4.62085Z" />
+                </svg>
+                {{f.featurename}}
+              </li>
+            </ul>
+          </ng-template>
+
+          <ng-template #Anchors>
+            <ul class="popoverul">
+              <li id="KnownAnchors">
+                <input type="checkbox" class="form-check-input check-box-styling" [checked]="checkedknownanchors"
+                  (change)="getKnownAnchors($event)">
+                <span [ngClass]="{ 'active_text': checkedknownanchors == true }">Known Anchors</span>
+
+              </li>
+              <li id="PredictedAnchors">
+                <input type="checkbox" class="form-check-input check-box-styling"
+                  [checked]="checkedpredictanchors" (change)="getPredictedAnchors($event)">
+                <span [ngClass]="{ 'active_text':  checkedpredictanchors == true }"> Predicted Anchors</span>
+
+              </li>
+            </ul>
+          </ng-template>
+
+          <button id="mapsAndLayers"
+            [ngClass]="{ 'activebutton': checkedpredictanchors == true || checkedknownanchors == true || checkedports == true}"
+            matTooltip="Map type and Layers" matTooltipPosition='left' class="ol-zoom-in customZoomOut"
+            placement="left" [ngbPopover]="anchor" [autoClose]="false" type="button">
+            <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="imageColors"
+                [ngClass]="{ 'activeImg':  checkedpredictanchors == true || checkedknownanchors == true || checkedports == true}"
+                d="M1.04846 3.23645L5.2122 0.748945V12.8702L1.80019 14.9281C1.29514 15.2167 0.666748 14.852 0.666748 14.2703V3.89421C0.666748 3.62235 0.812419 3.37133 1.04846 3.23645Z" />
+              <path
+                [ngClass]="{ 'activeImg':  checkedpredictanchors == true || checkedknownanchors == true || checkedports == true}"
+                id="imageColors" d="M11.2491 15.2917L6.75103 12.8296V0.708374L11.2491 3.17048V15.2917Z" />
+              <path
+                [ngClass]="{ 'activeImg':  checkedpredictanchors == true || checkedknownanchors == true || checkedports == true}"
+                id="imageColors"
+                d="M12.8116 15.2511L16.9517 12.7636C17.1877 12.6287 17.3334 12.3777 17.3334 12.1058V1.72971C17.3334 1.14803 16.705 0.783353 16.2 1.07195L12.8116 3.1299V15.2511Z" />
+            </svg>
+          </button>
+          <button id="zoomin" matTooltip="Zoom-In" matTooltipPosition='left' class="ol-zoom-in customZoomIn zoomin"
+            (click)="zoomIn()" type="button">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="imageColors"
+                d="M8.16658 4.62501C7.59129 4.62501 7.12492 5.09138 7.12492 5.66668V7.12501H5.66658C5.09129 7.12501 4.62492 7.59138 4.62492 8.16668C4.62492 8.74197 5.09129 9.20834 5.66658 9.20834H7.12492V10.6667C7.12492 11.242 7.59129 11.7083 8.16658 11.7083C8.74188 11.7083 9.20825 11.242 9.20825 10.6667V9.20834H10.6666C11.2419 9.20834 11.7083 8.74197 11.7083 8.16668C11.7083 7.59138 11.2419 7.12501 10.6666 7.12501H9.20825V5.66668C9.20825 5.09138 8.74188 4.62501 8.16658 4.62501Z" />
+              <path id="imageColors" fill-rule="evenodd" clip-rule="evenodd"
+                d="M8.16658 0.458344C3.90939 0.458344 0.458252 3.90948 0.458252 8.16668C0.458252 12.4239 3.90939 15.875 8.16658 15.875C9.91919 15.875 11.536 15.2896 12.8309 14.3041L15.7633 17.2366C16.1701 17.6434 16.8297 17.6434 17.2365 17.2366C17.6433 16.8298 17.6433 16.1702 17.2365 15.7634L14.304 12.831C15.2896 11.5361 15.8749 9.91928 15.8749 8.16668C15.8749 3.90948 12.4238 0.458344 8.16658 0.458344ZM2.54158 8.16668C2.54158 5.06007 5.05998 2.54168 8.16658 2.54168C11.2732 2.54168 13.7916 5.06007 13.7916 8.16668C13.7916 9.67718 13.1967 11.0479 12.2277 12.0588C12.1966 12.0834 12.1668 12.11 12.1383 12.1384C12.1099 12.1669 12.0833 12.1967 12.0587 12.2277C11.0478 13.1968 9.67709 13.7917 8.16658 13.7917C5.05998 13.7917 2.54158 11.2733 2.54158 8.16668Z" />
+            </svg>
+          </button>
+          <button id="zoomout" matTooltip="Zoom-Out" matTooltipPosition='left' class="ol-zoom-in customZoomOut zoomout"
+            (click)="zoomOut()" type="button">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="imageColors"
+                d="M5.66658 7.12501C5.09129 7.12501 4.62492 7.59138 4.62492 8.16668C4.62492 8.74197 5.09129 9.20834 5.66658 9.20834H10.6666C11.2419 9.20834 11.7083 8.74197 11.7083 8.16668C11.7083 7.59138 11.2419 7.12501 10.6666 7.12501H5.66658Z" />
+              <path id="imageColors" fill-rule="evenodd" clip-rule="evenodd"
+                d="M8.16658 0.458344C3.90939 0.458344 0.458252 3.90948 0.458252 8.16668C0.458252 12.4239 3.90939 15.875 8.16658 15.875C9.91919 15.875 11.536 15.2896 12.8309 14.3041L15.7633 17.2366C16.1701 17.6434 16.8297 17.6434 17.2365 17.2366C17.6433 16.8298 17.6433 16.1702 17.2365 15.7634L14.304 12.831C15.2896 11.5361 15.8749 9.91928 15.8749 8.16668C15.8749 3.90948 12.4238 0.458344 8.16658 0.458344ZM2.54158 8.16668C2.54158 5.06007 5.05998 2.54168 8.16658 2.54168C11.2732 2.54168 13.7916 5.06007 13.7916 8.16668C13.7916 9.67718 13.1967 11.0479 12.2277 12.0588C12.1966 12.0834 12.1668 12.11 12.1383 12.1384C12.1099 12.1669 12.0833 12.1967 12.0587 12.2277C11.0478 13.1968 9.67709 13.7917 8.16658 13.7917C5.05998 13.7917 2.54158 11.2733 2.54158 8.16668Z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    <mat-accordion id="bottom-panel">
+        <mat-expansion-panel (click)="changePlayHistryExpandToFalse()" [expanded]=selectVesselExpanded class="bottom-expansion">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="bottom-pannel-header">
+                    Select Vessel
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="bottom-panel-content">
+                <form [formGroup]="searchForm" noValidate>
+                    <div class="row">
+                        <div class="col-sm-8" style="padding: 0px">
+                            <div class="input-group input-search" style="padding-top: 2px;">
+                                <span class="input-group-addon">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path id="imageColors" fill-rule="evenodd" clip-rule="evenodd" d="M7.33317 1.16669C3.92741 1.16669 1.1665 3.9276 1.1665 7.33335C1.1665 10.7391 3.92741 13.5 7.33317 13.5C8.73526 13.5 10.0287 13.0317 11.0646 12.2433L13.4106 14.5893C13.736 14.9147 14.2637 14.9147 14.5891 14.5893C14.9145 14.2638 14.9145 13.7362 14.5891 13.4108L12.2431 11.0648C13.0315 10.0289 13.4998 8.73544 13.4998 7.33335C13.4998 3.9276 10.7389 1.16669 7.33317 1.16669ZM2.83317 7.33335C2.83317 4.84807 4.84789 2.83335 7.33317 2.83335C9.81845 2.83335 11.8332 4.84807 11.8332 7.33335C11.8332 8.54176 11.3573 9.63834 10.582 10.447C10.5572 10.4667 10.5334 10.488 10.5106 10.5108C10.4878 10.5335 10.4666 10.5574 10.4468 10.5822C9.63815 11.3575 8.54157 11.8334 7.33317 11.8334C4.84789 11.8334 2.83317 9.81863 2.83317 7.33335Z"/>
+                                    </svg>
+                                        
+                                    <!-- <img src="../../../assets/playhistory/Search.svg" alt="search" /> -->
+                                </span>
+                                <input formControlName="search_text" id="search" type="text" class="form-control search"
+                                    placeholder="Search Vessel" autocomplete="off"
+                                    (keydown.enter)='onSearchkeyup()' />
+    
+                            </div>
+    
+                            <div id="popup-search-playhistory" class="ol-popup-search-playhistory display-none">
+                                <a id="ol-popup-search-closer-playhistory" (click)=closeSearchPopup() class="ol-popup-search-closer-playhistory"> <b>x</b></a>
+                                <div class="search-result">
+                                  <h5>Search Results</h5>
+                                  <ul class="scroll">
+                                    <li class="cursor-pointer" (click)=selectedOption(d.val1,d.val2,d.val3) *ngFor="let d of searchedData">
+                                        {{d.val1}}
+                                      </li>  
+                                </ul>
+              
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-sm-4" style="padding: 0px">
+                            <div class="select-search">
+                                <select class="form-control" formControlName="criteria" value=criteria id="criteria">
+                                    <option *ngFor="let o of criteriaoptions" value={{o.value}}> {{o.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="row" style="margin-top: 1em;">
+                    <div class="col-sm-8">
+                        <div style="max-height: 150px; overflow-y: auto; overflow-x: hidden;" class="scroll">
+                            <p *ngFor="let s of selectedResult" class="vesselname-border">
+                                <span class="vesselname">{{s.val}} ({{s.shipname}})</span>
+                                <img class="cursor-pointer clearOption" (click)="clearOption(s.val)" src="../../../assets/playhistory/close-white.svg" alt="Close" />
+                            </p>
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-4">
+                        <a (click)="directPlayHistory()">
+                            <img src="../../../assets/playhistory/PlayHistory.svg" alt="Play History" />
+                            <span class="playhistory"> Play History </span>
+                        </a>
+                        
+                    </div> -->
+                    <div class="col-sm-4">
+                      <span class="addToList cursor-pointer" (click)=addToList()>
+                        <img src="../../../assets/playhistory/addToList.svg" alt="Add to list" />
+                        <span  class="addToList cursor-pointer"> Add To List </span>
+                      </span>
+                    </div>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    
+        <mat-expansion-panel (click)="getHistoryList();changePlayHistryExpandToFalse()" class="HistoryList bottom-expansion">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="bottom-pannel-header">
+                    Historylist
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="bottom-panel-content historylist">
+                <p>choose vessel/s to track</p>
+                <div class="scroll" style="height: 140px; overflow-y: auto; overflow-x: hidden;">
+                    <p *ngIf="historylistlength == '0'"> No Ships in history</p>
+                    <span *ngFor="let h of historyList">
+                        <button type="button" id={{h.msi}} class={{h.className}}
+                        (click)='$event.stopPropagation();selectShipInHistoryList(h.msi)'>
+                          {{h.sn}}
+                          <img class="cursor-pointer" style="padding-left:2px;" (click)="deleteFromHistoryList(h.msi)" src="../../../assets/playhistory/close.svg" alt="Close" />
+                        </button>
+                      </span>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    
+        <mat-expansion-panel (click)="changePlayHistryExpandToFalse()" [expanded]=timeframeExpanded class="bottom-expansion">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="bottom-pannel-header">
+                    Timeframe
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="bottom-panel-content">
+    
+                <form [formGroup]="timeFrameForm" noValidate>
+                    <div class="row margin-bottom-10px">
+                        <div class="col-sm-4">
+                            <label class="timeframe-label"> Starting: </label>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="input-group input-fromdate">
+                               <input [max]=today class="form-control" formControlName="from_date" [owlDateTime]="dt1"
+                                [owlDateTimeTrigger]="dt1" placeholder={{startTimePlaceHolder}} >
+                              <owl-date-time #dt1></owl-date-time>
+                                <span style="margin-right: 10px;" class="input-group-addon">
+                                    <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path id="imageColors" fill-rule="evenodd" clip-rule="evenodd" d="M13 3.3237e-05C13.4922 0.000377375 13.998 0.32884 13.999 0.76862L14 2.01028C16.7546 2.22617 17.9862 3.6112 17.9891 6.48976L18 14.9155C18.0039 18.054 16.0322 19.985 12.8718 19.99L5.15189 20C2.0112 20.004 0.0148258 18.027 0.0108765 14.8796L9.25629e-06 6.55272C-0.00393341 3.65518 1.25151 2.27515 4.00616 2.02228L4.00517 0.780615C4.00418 0.340836 4.50616 0.000657151 4.99998 9.45014e-07C5.49401 -0.000653648 5.99603 0.338837 5.99702 0.778616L5.99801 1.9703L12 1.9623L11.999 0.770618C11.998 0.330839 12.5067 -0.000311662 13 3.3237e-05ZM12.002 3.99206L6 4.00006L6.00099 5.23844C6.00099 5.66923 5.4912 6.00234 5 6.00006C4.51243 5.9978 4.00914 5.67123 4.00914 5.24044L4.00816 3.99206C3 4.00006 1.99997 4.50006 1.99997 6.55072V9.00006H16V6.50003C16 4.50006 15 3.99206 14.01 4.00006L14.003 5.22942C14.003 5.6592 13.4981 5.99853 13.0059 6.00006C12.5125 6.0016 12.003 5.6612 12.003 5.23142L12.002 3.99206ZM4 14.0001C4 14.5523 4.44772 15.0001 5 15.0001C5.55228 15.0001 6 14.5523 6 14.0001C6 13.4478 5.55228 13.0001 5 13.0001C4.44772 13.0001 4 13.4478 4 14.0001ZM10 14.0001C10 13.4478 10.4477 13.0001 11 13.0001H13C13.5523 13.0001 14 13.4478 14 14.0001C14 14.5523 13.5523 15.0001 13 15.0001H11C10.4477 15.0001 10 14.5523 10 14.0001Z"/>
+                                    </svg>
+                                        
+                                    <!-- <img  src="../../../assets/playhistory/calendar.svg" alt="calendar" /> -->
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row margin-bottom-10px">
+                        <div class="col-sm-4">
+                            <label class="timeframe-label"> Duration (HRS): </label>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="input-group input-duration">
+                                <input type="number" class="form-control" formControlName="duration"
+                                min="1">
+                            </div>
+                            
+                        </div>
+                    </div>
+    
+                    
+                </form>
+                <!-- <div class="row margin-bottom-10px">
+                    <div class="col-sm-4">
+                        <label class="timeframe-label"> Repeat: </label>
+                    </div>
+                    <div class="col-sm-4">
+                        <img class="toggleRepeat" id="toggleRepeat" (click)="toggleRepeat()" src="../../../assets/densitymap/switch-off.svg" /> 
+                    </div>
+                </div> -->
+            </div>
+        </mat-expansion-panel>
+    
+    
+        <mat-expansion-panel (click)="getPlayHistoryData()" [expanded]=playhistoryExpanded class="PlayHistory bottom-expansion" id="playhistory-pannel">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="bottom-pannel-header">
+                    Play History
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="bottom-panel-content" (click)="$event.stopPropagation()">
+    
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="timeframe-label">Timeframe: {{ timeframe }}</p>
+                    </div>
+                    
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="input-group speed">
+                            <span class="input-group-addon">
+                                <svg style="vertical-align: bottom;" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path id="imageColors" d="M7.00016 0.333496C10.6868 0.333496 13.6668 3.32016 13.6668 7.00016C13.6668 10.6868 10.6868 13.6668 7.00016 13.6668C3.32016 13.6668 0.333496 10.6868 0.333496 7.00016C0.333496 3.32016 3.32016 0.333496 7.00016 0.333496ZM6.76683 3.62016C6.4935 3.62016 6.26683 3.84016 6.26683 4.12016V7.48683C6.26683 7.66016 6.36016 7.82016 6.5135 7.9135L9.12683 9.4735C9.20683 9.52016 9.2935 9.54683 9.38683 9.54683C9.5535 9.54683 9.72016 9.46016 9.8135 9.30016C9.9535 9.06683 9.88016 8.76016 9.64016 8.6135L7.26683 7.20016V4.12016C7.26683 3.84016 7.04016 3.62016 6.76683 3.62016Z"/>
+                                </svg>
+                                    
+                                <!-- <img style="vertical-align: bottom;" src="../../../assets/playhistory/speed.svg" alt="speed" /> -->
+                            </span>
+                            <form [formGroup]="setSpeedForm" noValidate>
+                              <select (change)="setSpeed();$event.stopPropagation()"
+                              (keydown)="$event.stopPropagation()" (click)="$event.stopPropagation()" class="form-control" formControlName="speed" value=speed id="playhistory-speed"
+                                style="color: white;">
+                                <option value="1">Speed (1x) </option>
+                                <option value="2">Speed (2x) </option>
+                                <option value="3">Speed (3x) </option>
+                                <option value="4">Speed (4x) </option>
+                                <option value="5">Speed (5x) </option>
+                                <option value="10">Speed (10x) </option>
+                                <option value="100">Speed (100x) </option>
+                                <option value="1000">Speed (1000x) </option>
+                              </select>
+                            </form>
+                          </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <img style="vertical-align: baseline;" src="../../../assets/playhistory/download.svg" />
+                        <span class="timeframe-label"> Download </span>
+                    </div>
+                    <div class="col-sm-3">
+                        <img class="toggleRepeat" style="width: 25px;" id="toggleRepeat" (click)="toggleRepeat()" src="../../../assets/densitymap/switch-off.svg" /> 
+                        <span class="timeframe-label"> Repeat </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6" >
+                        <input type="checkbox" (click)="$event.stopPropagation()" (change)="showShipNameCheckboxChange($event);$event.stopPropagation()" (keydown)="$event.stopPropagation()"/>
+                        <label style="margin-left: 5px" class="ship_types">Show name</label>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <input type="checkbox" (click)="$event.stopPropagation()" (change)="showTrajectoryCheckboxChange($event);$event.stopPropagation()"
+                            (keydown)="$event.stopPropagation()" [checked]="showShiptraj"/>
+                        <label style="margin-left: 5px" class="ship_types">Show Trajectory</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <mat-slider min={{minDate}} max={{maxDate}} value={{sliderSelectedTimeUnix}} style="width: 100%;"
+                     (input)='sliderMove($event.value)' (change)= 'sliderChanged($event.value)'
+                      (click)="$event.stopPropagation()" ></mat-slider>
+                </div>
+
+                <div>
+                    <a (click)="$event.stopPropagation();play();">
+                        <img *ngIf="playStatus === 'not playing'" src="../../../assets/playhistory/Play.svg" alt="play" />
+                        <img *ngIf="playStatus === 'playing'" src="../../../assets/playhistory/Pause.svg" alt="pause" />
+                        {{ sliderSelectedTime }}
+                    </a>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    
+    </mat-accordion>
+
+      <!-- ports popup -->
+      <div id="portshover" class="ol-popup-hover display-none">
+      </div>
+
+      <!-- known anchors popup -->
+      <div id="knownanchorshover" class="ol-popup-hover display-none">
+      </div>
+
+      <!-- predicted anchors popup -->
+      <div id="predanchorshover" class="ol-popup-hover display-none">
+      </div>
+</div>
+
+
+<!-- If the user is not logged in -->
+<div *ngIf="loginStatus == '' " class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 success_message">
+      <i class="material-icons">sentiment_very_dissatisfied</i>
+      <p>You have been logged out from the session. Please <b
+          style="color: black!important;font-family: CharlieText-Bold!important;"><a routerLink="/">LOGIN AGAIN <img
+              src='../../../assets/arrow.png' alt="arrow" width="15px" /></a></b></p>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+  <!-- End if the user is not logged in -->

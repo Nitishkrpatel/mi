@@ -1,0 +1,94 @@
+<link rel="stylesheet" *ngIf="theme == 'grey'" href="/../../../assets/css/grey.css">
+<link rel="stylesheet" *ngIf="theme == 'navy'" href="/../../../assets/css/navy.css">
+
+<div id="disable-nav">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-navheight top-nav" id="navbar" style="padding: 10px;">
+        <img src="../../../assets/LOGO.png" alt="LOGO" width="60em" />
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+</div>
+
+<div class="container">
+  <div class="dashboard-outerbox">
+    <h4 class='title'>MMSI: {{data.mmsi}}</h4>
+
+    <h4 class='title'> Features: </h4>
+    <div class="" style="margin-left: 5em;">
+      <span class='subtitle' *ngFor="let f of data.features">{{f.ft}}- {{f.val}} <br/></span>
+    </div>
+
+    <h4 class='title'> Prediction: </h4>
+    <div class="" style="margin-left: 5em;">
+      <span class='subtitle' *ngFor="let p of data.prediction">{{p.type}}- {{p.value}} % <br/></span>
+    </div>
+
+    <!-- <p class='subtitle' id="11" style="margin-top: 10px;"> Select Features to give your inputs</p>
+    <div class="row">
+      <div class="col-sm-4">
+        <form [formGroup]="changeFeaturesForm" noValidate>
+          <select (change)="getNewInput()" class="form-control" formControlName="feature" id="feature">
+            <option *ngFor="let fv of featureValuesOptions;" [ngValue]="fv"> {{fv}} </option>
+          </select>
+        </form>
+      </div>
+
+      <div class="col-sm-8">
+        <form id="inputForm" [formGroup]="getUpdatedFeaturesForm" noValidate>
+        </form>
+      </div>
+
+
+
+    </div> -->
+
+    <form [formGroup]="getUpdatedFeaturesForm" noValidate>
+      <div class="row">
+        <div class="col-sm-6">
+          <label style="width:100%">
+            COG: <input formControlName="cog" id="cog" type="text" class="form-control" />
+          </label>
+
+          <label style="width:100%">
+            SOG: <input formControlName="sog" id="sog" type="text" class="form-control" />
+          </label>
+
+          <!-- <label style="width:100%">
+            Length: <input formControlName="length" id="length" type="text" class="form-control" />
+          </label> -->
+
+          <label style="width:100%">
+            Length: <input formControlName="length" id="length" type="text" class="form-control" />
+          </label>
+
+          <label style="width:100%">
+            Width: <input formControlName="width" id="width" type="text" class="form-control" />
+          </label>
+
+          <label style="width:100%">
+            Heading: <input formControlName="heading" id="heading" type="text" class="form-control" />
+          </label>
+
+          <label style="width:100%">
+            Ratio_LW: <input formControlName="Ratio_LW" id="Ratio_LW" type="text" class="form-control" />
+          </label>
+
+          <label style="width:100%">
+            Ratio_WL: <input formControlName="Ratio_WL" id="Ratio_WL" type="text" class="form-control" />
+          </label>
+
+          <label style="width:100%">
+            Area_LW: <input formControlName="Area_LW" id="Area_LW" type="text" class="form-control" />
+          </label>
+
+        <div>
+          <button class="btn dashboard-btn" (click)="updateFeatures()"> Submit</button>
+        </div>
+
+        </div>
+      </div>
+    </form>
+  </div>
+  
+</div>

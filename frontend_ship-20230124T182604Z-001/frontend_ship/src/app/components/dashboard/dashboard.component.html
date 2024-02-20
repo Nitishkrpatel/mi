@@ -1,0 +1,451 @@
+<div *ngIf="loginStatus == 'true'">
+  <app-main-navbar> </app-main-navbar>
+  <div class="container-fluid" style="padding: 2em;">
+    <!-- Ship summary -->
+    <div class="row" id="shipsummary">
+      <div class="col-xl-3">
+        <div class="row dashboard-outerbox">
+          <div class="col-sm-6">
+            <p class='title'>Total # of</p>
+            <h4 class='subtitle'>Ships</h4>
+          </div>
+          <div class="col-sm-6 text-right">
+            <h3 class="value">{{ totalShips }}</h3>
+          </div>
+        </div>
+        <div class="dashboard-outerbox" style="min-height: 23em;">
+          <div class="row">
+            <div class="col-sm-8">
+              <p class='title'>Total # of Ships</p>
+              <h4 class='subtitle'>Neighbouring Countries</h4>
+            </div>
+            <div class="col-sm-4 text-right">
+              <h3 class="value">{{ neighbouringShips }}</h3>
+            </div>
+          </div>
+
+          <div class="scroll neighbouring-scroll">
+            <div *ngFor="let c of neighbouringShipsDetails">
+              <div class="row">
+                <div class="col-sm-8">
+                  <p class="country_name">
+                    {{ c.country }}: </p>
+                </div>
+                <div class="col-sm-4 text-right">
+                  <p class="country_value">{{c.count}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-xl-3 dashboard-outerbox" id="neighbouringCountries-overall" style="margin-left: 15px; margin-right: 15px;">
+        <div class="row">
+          <div class="col-sm-10">
+            <p class='title'>Total # of neighbouring</p>
+            <h4 class='subtitle'>Countries of Origin</h4>
+          </div>
+          <div class="col-sm-2 text-right">
+            <h3 class="value"> {{ totalNeighbouringCountries }}</h3>
+          </div>
+        </div>
+        <div class="scroll coo-scroll">
+          <div class="row" style="margin-right: 10px;">
+
+            <div *ngFor="let c of allNeighbouringCountries" class="col-sm-4">
+              <button (click)='getNeibhouringdetails(c.code, c.country)' id={{c.country}} class={{c.class}}>
+                <h5 class="country_name">{{ c.country }}</h5>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-xl-5">
+        <div class="row dashboard-outerbox w-100">
+          <div class="col-sm-12 h-100" id="highcharts"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Incursion to indian waters -->
+    <!-- <div id="Incursiontoindianwaters">
+        <div class="row">
+          <div class="col-sm-4">
+            <h4 class="subtitle">Incursions Into Indian Waters</h4>
+          </div>
+          <div class="col-sm-3">
+            <form [formGroup]="incursionToIndianWatersTimeForm" noValidate>
+              <input id="incursiontoindianwaters-event" [max]=today class="form-control dashboard-settingbox" formControlName="fromandtodate" [owlDateTime]="dt3"
+                [owlDateTimeTrigger]="dt3" placeholder={{incurstionToIndianWatersRange}} [selectMode]="'range'" (ngModelChange)="setIncursionToIndianWatersTime()">
+              <owl-date-time #dt3></owl-date-time>
+            </form>
+          </div>
+          
+        </div>
+      </div> -->
+    <!--  Ship Type Deviation -->
+    <div id="shiptypedeviation">
+      <div class="row">
+        <div class="col-xl-4 margin-bottom-10px">
+          <h4 class="subtitle">Ship Type Deviation</h4>
+        </div>
+        <div class="col-xl-4 margin-bottom-10px">
+          <div id="shiptypedeviation-event" class="threshold dashboard-settingbox padding-0px"> Threshold (%):
+            <mat-slider min='1' max='100' class="threshold-slider" value={{shipTypeDeviationThreshold}} (input)='sliderMove($event)'
+              (change)='sliderChanged($event)' style="width:70%"></mat-slider> {{shipTypeDeviationThreshold}}%
+          </div>
+        </div>
+        <div class="col-xl-1 margin-bottom-10px">
+          <form [formGroup]="setShowTopForm" noValidate>
+            <div class="threshold dashboard-settingbox" style="padding: 10px 0px;"> Show Top:
+              <select (change)="changedShowTopValue()" formControlName="top" value=top id="top" class="select_showtop"
+                disabled>
+                <option *ngFor="let s of showtopOptions; let i = index" [ngValue]="s.value"> {{s.name}} </option>
+              </select>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-xl-1 margin-bottom-10px">
+          <div class="threshold dashboard-settingbox" style="width: 3em;">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="imageColors"
+                d="M7.47799 0.333496C7.98215 0.333496 8.43863 0.613496 8.69071 1.02683C8.81335 1.22683 8.8951 1.4735 8.87466 1.7335C8.86104 1.9335 8.92235 2.1335 9.03136 2.32016C9.37883 2.88683 10.1487 3.10016 10.7483 2.78016C11.4227 2.3935 12.2744 2.62683 12.6627 3.28683L13.1192 4.0735C13.5143 4.7335 13.2963 5.58016 12.615 5.96016C12.0359 6.30016 11.8315 7.0535 12.179 7.62683C12.288 7.80683 12.4106 7.96016 12.6014 8.0535C12.8399 8.18016 13.0238 8.38016 13.1533 8.58016C13.4053 8.9935 13.3849 9.50016 13.1396 9.94683L12.6627 10.7468C12.4106 11.1735 11.9405 11.4402 11.4568 11.4402C11.2184 11.4402 10.9526 11.3735 10.7346 11.2402C10.5575 11.1268 10.3531 11.0868 10.1351 11.0868C9.46059 11.0868 8.8951 11.6402 8.87466 12.3002C8.87466 13.0668 8.24786 13.6668 7.46436 13.6668H6.53779C5.74747 13.6668 5.12067 13.0668 5.12067 12.3002C5.10705 11.6402 4.54156 11.0868 3.86707 11.0868C3.64224 11.0868 3.43785 11.1268 3.26752 11.2402C3.04951 11.3735 2.77698 11.4402 2.54534 11.4402C2.0548 11.4402 1.5847 11.1735 1.33262 10.7468L0.862517 9.94683C0.610434 9.5135 0.596808 8.9935 0.848891 8.58016C0.9579 8.38016 1.16229 8.18016 1.39393 8.0535C1.5847 7.96016 1.70734 7.80683 1.82316 7.62683C2.16381 7.0535 1.95942 6.30016 1.38031 5.96016C0.705817 5.58016 0.487799 4.7335 0.876143 4.0735L1.33262 3.28683C1.72777 2.62683 2.57259 2.3935 3.2539 2.78016C3.84663 3.10016 4.61651 2.88683 4.96397 2.32016C5.07298 2.1335 5.1343 1.9335 5.12067 1.7335C5.10705 1.4735 5.18199 1.22683 5.31144 1.02683C5.56352 0.613496 6.02 0.346829 6.51735 0.333496H7.47799ZM7.00789 5.12016C5.93824 5.12016 5.07298 5.96016 5.07298 7.00683C5.07298 8.0535 5.93824 8.88683 7.00789 8.88683C8.07754 8.88683 8.92235 8.0535 8.92235 7.00683C8.92235 5.96016 8.07754 5.12016 7.00789 5.12016Z"
+                fill="#343232" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="col-xl-2 margin-bottom-10px">
+          <div class="input-group ship-search">
+            <span class="input-group-addon">
+              <svg style="padding-bottom: 5px;" width="18" height="18" viewBox="0 0 14 14" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path id="imageColors" fill-rule="evenodd" clip-rule="evenodd"
+                  d="M6.33335 0.166626C2.9276 0.166626 0.166687 2.92754 0.166687 6.33329C0.166687 9.73905 2.9276 12.5 6.33335 12.5C7.73544 12.5 9.0289 12.0317 10.0648 11.2433L12.4108 13.5892C12.7362 13.9146 13.2638 13.9146 13.5893 13.5892C13.9147 13.2638 13.9147 12.7361 13.5893 12.4107L11.2433 10.0648C12.0317 9.02883 12.5 7.73538 12.5 6.33329C12.5 2.92754 9.73911 0.166626 6.33335 0.166626ZM1.83335 6.33329C1.83335 3.84801 3.84807 1.83329 6.33335 1.83329C8.81863 1.83329 10.8334 3.84801 10.8334 6.33329C10.8334 7.54169 10.3575 8.63828 9.58221 9.44697C9.5574 9.46667 9.53354 9.48793 9.51076 9.5107C9.48799 9.53348 9.46673 9.55734 9.44703 9.58214C8.63834 10.3574 7.54176 10.8333 6.33335 10.8333C3.84807 10.8333 1.83335 8.81857 1.83335 6.33329Z" />
+              </svg>
+            </span>
+            <form [formGroup]="shiptypeSearchForm" noValidate>
+              <input formControlName="shiptype_search_text" id="shiptype_search" type="text" class="form-control onlyNumberKey search-shiptypedeviation-input"
+                placeholder="Search by mmsi" (keypress)="onlyNumberKey($event)"
+                (ngModelChange)="getSearchResultForShiptypeDeviation($event)" maxlength='9' autocomplete="off"
+                style="padding-bottom: 7px;" />
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-7">
+          <div class="dashboard-outerbox">
+            <table class="table table-responsive dashboard-table sortShipTypeDeviation" matSort (matSortChange)="sortShipTypeDeviationData($event)">
+              <tr class="heading">
+                <th mat-sort-header="mmsi">mmsi</th>
+                <th mat-sort-header="trajid">Trajectory ID</th>
+                <th mat-sort-header="cat">Declared Type</th>
+                <th mat-sort-header="predictiontype0">Predicted Type 01</th>
+                <th mat-sort-header="predictionscore0">Confidence Score 01</th>
+                <th mat-sort-header="predictiontype1">Predicted Type 02</th>
+                <th mat-sort-header="predictionscore1">Confidence Score 02</th>
+                <!-- <th mat-sort-header="predictiontype2">Predicted Type 03</th>
+                <th mat-sort-header="predictionscore2">Confidence Score 03</th> -->
+                <th>Actions</th>
+                <th *ngIf="roleSoiStatus === true">Add to SOI</th>
+              </tr>
+
+              <tr
+                *ngFor="let s of shiptypeDeviationsortedData | paginate: {itemsPerPage: itemsPerPage, currentPage:shiptypecurrentPage, id: 'first'}"
+                class="shiptypedeviationTd">
+                <td>{{s.mmsi}}</td>
+                <td>{{s.trajid}}</td>
+                <td>{{s.cat}}</td>
+                <td>{{s.predictiontype0}}</td>
+                <td>{{s.predictionscore0}}</td>
+                <td>{{s.predictiontype1}}</td>
+                <td>{{s.predictionscore1}}</td>
+                <td> <button class="btn dashboard-btn" id={{s.mmsi}} (click)=getShipTypeDeviationDetails($event,s.mmsi,s.trajid)>
+                    Explain</button></td>
+                <td *ngIf='s.soi !== 1 && roleSoiStatus === true '><img class="heart-img" (click)=addToSoI(s.mmsi)
+                    src='../../../assets/popup/heart.svg' alt='fav' /></td>
+                <td *ngIf='s.soi === 1 && roleSoiStatus === true '><img class="heart-img disabled-img"
+                    src='../../../assets/popup/heart-red.svg' alt='fav' /></td>
+              </tr>
+            </table>
+            <pagination-controls (pageChange)="shiptypecurrentPage = $event" id="first"></pagination-controls>
+          </div>
+
+        </div>
+
+        <div class="col-xl-5 h-100">
+          <div class="dashboard-outerbox h-100">
+            <div class="row">
+              <div class="col-sm-10">
+                <p class='title'>Total # of</p>
+                <h4 class='subtitle'>Ship Type Deviations</h4>
+              </div>
+              <div class="col-sm-2 text-right">
+                <h3 class="value"> {{ totalShiptypeDeviation }}</h3>
+              </div>
+            </div>
+            <div class="row h-100">
+              <div class="col-sm-12">
+                <div id="highcharts_shiptype_deviations"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Destination deviation -->
+    <div id="destinationdeviation">
+      <div class="row">
+        <div class="col-xl-4 margin-bottom-10px">
+          <h4 class="subtitle">Destination Deviation - {{ totalDestinationDeviation }}</h4>
+        </div>
+        <div class="col-xl-5 margin-bottom-10px">
+          <!-- Date time input -->
+          <form [formGroup]="destinationDeviationTimeForm" noValidate>
+            <input id="destinationdeviation-event" [max]=today class="form-control dashboard-settingbox setdestdeviationtime-input"
+              formControlName="fromandtodate" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1"
+              placeholder={{destinationDevationRange}} [selectMode]="'range'"
+              (ngModelChange)="setDestinationDeviaitonTime()">
+            <owl-date-time #dt1></owl-date-time>
+          </form>
+        </div>
+
+        <div class="col-xl-1 margin-bottom-10px" style='margin-top:10px;'>
+          <span class="dashboard-settingbox" >
+            <!-- <img src="../../../assets/dashboard/setting.svg" alt="setting" /> -->
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="imageColors"
+                d="M7.47799 0.333496C7.98215 0.333496 8.43863 0.613496 8.69071 1.02683C8.81335 1.22683 8.8951 1.4735 8.87466 1.7335C8.86104 1.9335 8.92235 2.1335 9.03136 2.32016C9.37883 2.88683 10.1487 3.10016 10.7483 2.78016C11.4227 2.3935 12.2744 2.62683 12.6627 3.28683L13.1192 4.0735C13.5143 4.7335 13.2963 5.58016 12.615 5.96016C12.0359 6.30016 11.8315 7.0535 12.179 7.62683C12.288 7.80683 12.4106 7.96016 12.6014 8.0535C12.8399 8.18016 13.0238 8.38016 13.1533 8.58016C13.4053 8.9935 13.3849 9.50016 13.1396 9.94683L12.6627 10.7468C12.4106 11.1735 11.9405 11.4402 11.4568 11.4402C11.2184 11.4402 10.9526 11.3735 10.7346 11.2402C10.5575 11.1268 10.3531 11.0868 10.1351 11.0868C9.46059 11.0868 8.8951 11.6402 8.87466 12.3002C8.87466 13.0668 8.24786 13.6668 7.46436 13.6668H6.53779C5.74747 13.6668 5.12067 13.0668 5.12067 12.3002C5.10705 11.6402 4.54156 11.0868 3.86707 11.0868C3.64224 11.0868 3.43785 11.1268 3.26752 11.2402C3.04951 11.3735 2.77698 11.4402 2.54534 11.4402C2.0548 11.4402 1.5847 11.1735 1.33262 10.7468L0.862517 9.94683C0.610434 9.5135 0.596808 8.9935 0.848891 8.58016C0.9579 8.38016 1.16229 8.18016 1.39393 8.0535C1.5847 7.96016 1.70734 7.80683 1.82316 7.62683C2.16381 7.0535 1.95942 6.30016 1.38031 5.96016C0.705817 5.58016 0.487799 4.7335 0.876143 4.0735L1.33262 3.28683C1.72777 2.62683 2.57259 2.3935 3.2539 2.78016C3.84663 3.10016 4.61651 2.88683 4.96397 2.32016C5.07298 2.1335 5.1343 1.9335 5.12067 1.7335C5.10705 1.4735 5.18199 1.22683 5.31144 1.02683C5.56352 0.613496 6.02 0.346829 6.51735 0.333496H7.47799ZM7.00789 5.12016C5.93824 5.12016 5.07298 5.96016 5.07298 7.00683C5.07298 8.0535 5.93824 8.88683 7.00789 8.88683C8.07754 8.88683 8.92235 8.0535 8.92235 7.00683C8.92235 5.96016 8.07754 5.12016 7.00789 5.12016Z"
+                fill="#343232" />
+            </svg>
+          </span>
+        </div>
+
+        <div class="col-xl-2 margin-bottom-10px">
+          <div class="input-group ship-search">
+            <span class="input-group-addon">
+              <svg style="padding-bottom: 5px;" width="18" height="18" viewBox="0 0 14 14" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path id="imageColors" fill-rule="evenodd" clip-rule="evenodd"
+                  d="M6.33335 0.166626C2.9276 0.166626 0.166687 2.92754 0.166687 6.33329C0.166687 9.73905 2.9276 12.5 6.33335 12.5C7.73544 12.5 9.0289 12.0317 10.0648 11.2433L12.4108 13.5892C12.7362 13.9146 13.2638 13.9146 13.5893 13.5892C13.9147 13.2638 13.9147 12.7361 13.5893 12.4107L11.2433 10.0648C12.0317 9.02883 12.5 7.73538 12.5 6.33329C12.5 2.92754 9.73911 0.166626 6.33335 0.166626ZM1.83335 6.33329C1.83335 3.84801 3.84807 1.83329 6.33335 1.83329C8.81863 1.83329 10.8334 3.84801 10.8334 6.33329C10.8334 7.54169 10.3575 8.63828 9.58221 9.44697C9.5574 9.46667 9.53354 9.48793 9.51076 9.5107C9.48799 9.53348 9.46673 9.55734 9.44703 9.58214C8.63834 10.3574 7.54176 10.8333 6.33335 10.8333C3.84807 10.8333 1.83335 8.81857 1.83335 6.33329Z" />
+              </svg>
+            </span>
+            <form [formGroup]="destinationSearchForm" noValidate>
+              <input formControlName="destination_search_text" id="destination_search" type="text" class="form-control search-destdeviation-input"
+                placeholder="Search by mmsi" (keypress)="onlyNumberKey($event)"
+                (ngModelChange)="getSearchResultForDestinationDeviation($event)" maxlength='9' autocomplete="off"
+                style="padding-bottom: 7px;" />
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="row dashboard-outerbox">
+        <table class="table table-responsive dashboard-table sortDestinationDeviation" matSort (matSortChange)="sortDestinationDeviationData($event)">
+          <tbody>
+            <tr class="heading" >
+              <th mat-sort-header="st">Status</th>
+              <th mat-sort-header="msi">mmsi</th>
+              <th mat-sort-header="trajid">Trajectory ID</th>
+              <th mat-sort-header="dd">Declared Destination</th>
+              <th mat-sort-header="pd">Predicted Destination</th>
+              <th mat-sort-header="ad">Actual Destination</th>
+              <th mat-sort-header="portname">Port name</th>
+              <th mat-sort-header="tm">Date & Time</th>
+              <th *ngIf="roleSoiStatus === true">Add to SOI</th>
+            </tr>
+
+            <tr
+              *ngFor="let d of destinationDeviationsortedData | paginate: { itemsPerPage: itemsPerPage, currentPage: destinationcurrentPage, id: 'second'  }">
+              <td>{{d.st}}</td>
+              <td>{{d.msi}}</td>
+              <td>{{d.trajid}}</td>
+              <td>{{d.dd}}</td>
+              <td>{{d.pd}}</td>
+              <td>{{d.ad}}</td>
+              <td>{{d.portname}}</td>
+              <td>{{d.tm}}</td>
+              <!-- <td><button class="btn dashboard-btn" (click)=addToSoI(d.msi)> Add</button></td> -->
+
+              <td *ngIf='d.soi !== 1 && roleSoiStatus === true '><img class="heart-img" (click)=addToSoI(d.msi)
+                  src='../../../assets/popup/heart.svg' alt='fav' /></td>
+              <td *ngIf='d.soi === 1 && roleSoiStatus === true '><img class="heart-img  disabled-img"
+                  src='../../../assets/popup/heart-red.svg' alt='fav' /></td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <pagination-controls (pageChange)="destinationcurrentPage = $event" id="second"></pagination-controls>
+      </div>
+    </div>
+
+    <!-- Anchorage Deviation -->
+    <div id="anchoragedeviation">
+      <div class="row">
+        <div class="col-xl-4 margin-bottom-10px">
+          <h4 class="subtitle">Anchorage Deviation - {{ totalAnchorageDeviation }}</h4>
+        </div>
+        <div class="col-xl-5 margin-bottom-10px text-right">
+          <!-- Date time input -->
+          <form [formGroup]="anchorageDeviationTimeForm" noValidate>
+            <input id="anchoragedeviation-event" [max]=today class="form-control dashboard-settingbox"
+              formControlName="fromandtodate" [owlDateTime]="dt2" [owlDateTimeTrigger]="dt2"
+              placeholder={{anchorageDeviationRange}} [selectMode]="'range'"
+              (ngModelChange)="setAnchorageDeviaitonTime()">
+            <owl-date-time #dt2></owl-date-time>
+          </form>
+        </div>
+
+        <div class="col-xl-1 margin-bottom-10px" style='margin-top:10px;'>
+          <span class="dashboard-settingbox" >
+            <!-- <img src="../../../assets/dashboard/setting.svg" alt="setting" /> -->
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="imageColors"
+                d="M7.47799 0.333496C7.98215 0.333496 8.43863 0.613496 8.69071 1.02683C8.81335 1.22683 8.8951 1.4735 8.87466 1.7335C8.86104 1.9335 8.92235 2.1335 9.03136 2.32016C9.37883 2.88683 10.1487 3.10016 10.7483 2.78016C11.4227 2.3935 12.2744 2.62683 12.6627 3.28683L13.1192 4.0735C13.5143 4.7335 13.2963 5.58016 12.615 5.96016C12.0359 6.30016 11.8315 7.0535 12.179 7.62683C12.288 7.80683 12.4106 7.96016 12.6014 8.0535C12.8399 8.18016 13.0238 8.38016 13.1533 8.58016C13.4053 8.9935 13.3849 9.50016 13.1396 9.94683L12.6627 10.7468C12.4106 11.1735 11.9405 11.4402 11.4568 11.4402C11.2184 11.4402 10.9526 11.3735 10.7346 11.2402C10.5575 11.1268 10.3531 11.0868 10.1351 11.0868C9.46059 11.0868 8.8951 11.6402 8.87466 12.3002C8.87466 13.0668 8.24786 13.6668 7.46436 13.6668H6.53779C5.74747 13.6668 5.12067 13.0668 5.12067 12.3002C5.10705 11.6402 4.54156 11.0868 3.86707 11.0868C3.64224 11.0868 3.43785 11.1268 3.26752 11.2402C3.04951 11.3735 2.77698 11.4402 2.54534 11.4402C2.0548 11.4402 1.5847 11.1735 1.33262 10.7468L0.862517 9.94683C0.610434 9.5135 0.596808 8.9935 0.848891 8.58016C0.9579 8.38016 1.16229 8.18016 1.39393 8.0535C1.5847 7.96016 1.70734 7.80683 1.82316 7.62683C2.16381 7.0535 1.95942 6.30016 1.38031 5.96016C0.705817 5.58016 0.487799 4.7335 0.876143 4.0735L1.33262 3.28683C1.72777 2.62683 2.57259 2.3935 3.2539 2.78016C3.84663 3.10016 4.61651 2.88683 4.96397 2.32016C5.07298 2.1335 5.1343 1.9335 5.12067 1.7335C5.10705 1.4735 5.18199 1.22683 5.31144 1.02683C5.56352 0.613496 6.02 0.346829 6.51735 0.333496H7.47799ZM7.00789 5.12016C5.93824 5.12016 5.07298 5.96016 5.07298 7.00683C5.07298 8.0535 5.93824 8.88683 7.00789 8.88683C8.07754 8.88683 8.92235 8.0535 8.92235 7.00683C8.92235 5.96016 8.07754 5.12016 7.00789 5.12016Z"
+                fill="#343232" />
+            </svg>
+          </span>
+        </div>
+        <div class="col-xl-2 margin-bottom-10px">
+          <div class="input-group ship-search">
+            <span class="input-group-addon">
+              <svg style="padding-bottom: 5px;" width="18" height="18" viewBox="0 0 14 14" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path id="imageColors" fill-rule="evenodd" clip-rule="evenodd"
+                  d="M6.33335 0.166626C2.9276 0.166626 0.166687 2.92754 0.166687 6.33329C0.166687 9.73905 2.9276 12.5 6.33335 12.5C7.73544 12.5 9.0289 12.0317 10.0648 11.2433L12.4108 13.5892C12.7362 13.9146 13.2638 13.9146 13.5893 13.5892C13.9147 13.2638 13.9147 12.7361 13.5893 12.4107L11.2433 10.0648C12.0317 9.02883 12.5 7.73538 12.5 6.33329C12.5 2.92754 9.73911 0.166626 6.33335 0.166626ZM1.83335 6.33329C1.83335 3.84801 3.84807 1.83329 6.33335 1.83329C8.81863 1.83329 10.8334 3.84801 10.8334 6.33329C10.8334 7.54169 10.3575 8.63828 9.58221 9.44697C9.5574 9.46667 9.53354 9.48793 9.51076 9.5107C9.48799 9.53348 9.46673 9.55734 9.44703 9.58214C8.63834 10.3574 7.54176 10.8333 6.33335 10.8333C3.84807 10.8333 1.83335 8.81857 1.83335 6.33329Z" />
+              </svg>
+            </span>
+            <form [formGroup]="anchorageSearchForm" noValidate>
+              <input formControlName="anchorage_search_text" id="anchorage_search" type="text" class="form-control search-anchdeviation-input"
+                placeholder="Search by mmsi" (keypress)="onlyNumberKey($event)"
+                (ngModelChange)="getSearchResultForAnchorageDeviation($event)" maxlength='9' autocomplete="off"
+                style="padding-bottom: 7px;" />
+            </form>
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="dashboard-outerbox">
+            <table class="table table-responsive dashboard-table sortAnchorageDeviation" matSort (matSortChange)="sortAnchorageDeviationData($event)">
+              <tbody>
+                <tr class="heading">
+                  <th><input id="anchoragedeviation-input-disabled" [checked]="selectAllAnchorage" type="checkbox"
+                      (change)="onSelectAllAnchorageShips($event)" /></th>
+                  <th mat-sort-header="msi">mmsi</th>
+                  <th mat-sort-header="trajid">Trajectory ID</th>
+                  <th mat-sort-header="tm">Date & Time</th>
+                  <th mat-sort-header="ap">Anchorage Point</th>
+                  <th mat-sort-header="nap">Nearest Anchorage Area</th>
+                  <th mat-sort-header="dis">Area to Point Distance (M/KM)</th>
+                  <th mat-sort-header="occupancy">Occupancy</th>
+                  <th>Actions</th>
+                  <th *ngIf="roleSoiStatus === true">Add to SOI</th>
+                </tr>
+                <tr
+                  *ngFor="let a of anchorageDeviationsortedData | paginate: { itemsPerPage: itemsPerPage, currentPage: anchoragecurrentPage, id: 'third'  }">
+                  <td><input type="checkbox" [checked]=selectedAnchorage[a.msi] [value]="a.msi"
+                      (change)="anchorageDeviationCheckboxChange($event)" /></td>
+                  <td>{{a.msi}}</td>
+                  <td>{{a.trajid}}</td>
+                  <td>{{a.tm}}</td>
+                  <td>{{a.ap}}</td>
+                  <td>{{a.nap}}</td>
+                  <td>{{a.dis}}</td>
+                  <td>{{a.occupancy}}</td>
+                  <td> <button class="btn dashboard-btn"> go to map</button></td>
+
+                  <td *ngIf='a.soi !== 1 && roleSoiStatus === true '><img class="heart-img" (click)=addToSoI(a.msi)
+                      src='../../../assets/popup/heart.svg' alt='fav' /></td>
+                  <td *ngIf='a.soi === 1 && roleSoiStatus === true '><img class="heart-img  disabled-img"
+                      src='../../../assets/popup/heart-red.svg' alt='fav' /></td>
+
+                </tr>
+              </tbody>
+            </table>
+            <pagination-controls (pageChange)="anchoragecurrentPage = $event" id="third"></pagination-controls>
+          </div>
+
+        </div>
+        <div class="col-xl-6 ">
+          <div class="dashboard-outerbox">
+            <div id="map1" class="map-dashboard">
+            </div>
+            <div id="trajhover" class="ol-popup-hover display-none">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ship type deviation explain -->
+    <button class="display-none" id="openExplainforShiptypeDeviaiton" data-toggle="modal"
+      data-target="#explainforShiptypeDeviaiton">Open Soi
+      openExplainforShiptypeDeviaiton</button>
+    <div class="modal" id="explainforShiptypeDeviaiton" *ngIf=true>
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body scroll" style="max-height: 75vh; overflow-y: auto; overflow-x: hidden;">
+            <!-- <iframe style="width: 100%; height: 75vh;" [src]=dataUrl></iframe> -->
+            <h4 class='subtitle'>MMSI: {{selectedshipDeviaitionExplain}}</h4>
+            <div class="row">
+              <div class="col-sm-4">
+                <form [formGroup]="setPredImageForm" noValidate>
+                  <select (change)="setPredImage()" class="form-control" formControlName="predtype" value=predtype
+                    id="predtype">
+                    <option *ngFor="let p of predictionOptions; let i = index" [ngValue]="p.url"> {{p.type}} </option>
+                  </select>
+                </form>
+              </div>
+              <div class="col-sm-4"></div>
+              <div class="col-sm-4"><button class="btn explain-btn input-btn"> <a target="_blank"
+                    routerLink="/UserInput">User inputs</a></button></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <img [src]=dataUrl alt='image' width=100% />
+              </div>
+            </div>
+            <div>
+              <div>
+                <button class="btn btn-light cancel-button" id="closesoiroicomputation" data-dismiss="modal"
+                  type="button">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- End ship type deviation explain  -->
+    </div>
+  </div>
+</div>  
+
+    <!-- If the user is not logged in -->
+    <div *ngIf="loginStatus == '' " class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4 success_message">
+        <i class="material-icons">sentiment_very_dissatisfied</i>
+        <p>You have been logged out from the session. Please <b
+            style="color: black!important;font-family: CharlieText-Bold!important;"><a routerLink="/">LOGIN AGAIN <img
+                src='../../../assets/arrow.png' alt="arrow" width="15px" /></a></b></p>
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+    <!-- End if the user is not logged in -->

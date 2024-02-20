@@ -1,0 +1,197 @@
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6 firsthome-img text-center">
+                <img src="assets\04.png" alt="01_Home-producr" class="img-fuild home-producr image-width ">
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <h1 class="heading animate__animated animate__fadeInUp">The Dispenser</h1>
+                <h2 class="animate__animated animate__fadeInUp second-heading">A smart sanitizer and soap dispenser to keep you extra-safe</h2>
+                <div class="row list">
+                    <div class="col-sm-12 col-md-4 col-lg-4 animate__animated animate__fadeInUp">
+                        <img src="assets\tick.svg" alt="tick" class="img-fuild image-logo ">
+                        <p>Powerful sensor enabled contact-free sanitization</p>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 animate__animated animate__fadeInUp">
+                        <img src="assets\tick.svg" alt="tick" class="img-fuild image-logo ">
+                        <p>Mount it on the wall, place it on the table or on a stand</p>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 animate__animated animate__fadeInUp">
+                        <img src="assets\tick.svg" alt="tick" class="img-fuild image-logo ">
+                        <p>Tested with all standard-grade sanitizing liquids</p>
+                    </div>
+                </div>
+                <button class="btn btn-sm button-buy animate__animated animate__fadeInUp" [routerLink]="['/product/overview/']">DISCOVER OUR PRODUCT</button>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="section2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-sm-12" data-aos="fade-up">
+                    <h6 class="small-heading animate__animated animate__fadeInUp">HOW</h6>
+                    <h2 class="second-heading animate__animated animate__fadeInUp">The Dispenser Works</h2>
+                    <p class="parameter ">Sanitizing becomes completely contactless with our product. A built-in sensor ensures that liquid is dispensed only when required, while an array of systems on the inside track liquid level, raise alerts when the liquid is running
+                        out, and adapt to people’s movement in busy spaces, all while keeping the interaction touch-free.
+                    </p>
+                    <button class="btn button-buy" [routerLink]="['/product/specification/']">MORE ABOUT OUR
+                        PRODUCT</button>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 " data-aos="fade-up" data-aos-delay="300">
+                    <img src="assets\home\homescreen.png" alt="01_Home_slice2_image" srcset="" class="img-fuild image-width">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section3 ">
+        <div class="container ">
+            <h6 class="small-heading">A HOST OF</h6>
+            <h2 class="second-heading">Advanced Features</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-sm-12">
+                    <div class="img">
+                        <img src="assets\home\advancefeture.png" alt="" class="desk-tab">
+                        <img src="assets\home\04.png" alt="" class="mob-tab">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-5 col-sm-12">
+
+                    <div class="row pt-4">
+                        <div class="col-sm-3">
+                            <img src="assets\slice_03_a.png" class="imge" alt="slice_03_a">
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="content">
+                                <h4 class="heading-fouth">Track your sanitization protocol 24X7</h4>
+                                <p> All data is available on the cloud, through your LifeLabz app.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row pt-4">
+                        <div class="col-sm-3">
+                            <img src="assets\slice_03_b.png" class="" alt="slice_03_a">
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="content">
+                                <h4 class="heading-fouth">Fully contactless, and we mean it!</h4>
+                                <p>Add-on features can help track body temperature.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row  pt-4">
+                        <div class="col-sm-3">
+                            <img src="assets\slice_03_c.png" class="" alt="slice_03_c">
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="content">
+                                <h4 class="heading-fouth">Track safety parameters, and more</h4>
+                                <p>It can be customized to track sanitization pattern, attendance and more.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container margin-top">
+        <h4 class="third-heading">Wherever you need it.</h4>
+        <mat-horizontal-stepper appStepperPosition="bottom" labelPosition="bottom" (selectionChange)="selectionChange($event)">
+            <mat-step label="Transportation Facilities" state="circle">
+                <img src="assets\home\Airport_complete.svg" class="desktop transportation">
+                <img src="assets\home\transportation.png" class="mob-devie" width="100%">
+                <div class="desktop Transportation Facilities">
+                    <p [ngClass]="entrance ? 'entrance pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Entrance"></p>
+                    <p [ngClass]="shop ? 'shop pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Shop"></p>
+                    <p [ngClass]="securitycheck ? 'securitycheck pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Security Check"></p>
+                    <p [ngClass]="cafeteria ? 'cafeteria pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Cafeteria"></p>
+                    <p [ngClass]="waiting_area ? 'waiting-area pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Waiting Area"></p>
+                    <p [ngClass]="toilets ? 'toilets pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Toilets"></p>
+                    <p [ngClass]="washroom ? 'washroom pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Washroom"></p>
+                    <p [ngClass]="baggage_pick_up ? 'baggage_pick_up pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Baggage Pick Up"></p>
+                    <p [ngClass]="baggage_check_in ? 'baggage_check_in pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Baggage Check In"></p>
+                    <p [ngClass]="check_in_counter ? 'check_in_counter pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Check In Counter"></p>
+                    <p [ngClass]="payment_counter ? 'payment_counter pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Payment Counter"></p>
+                </div>
+            </mat-step>
+
+            <mat-step label="Malls/Hotels/Commercial Spaces" state="circle">
+                <img src="assets\home\Mall_complete.svg" class="desktop">
+                <img src="assets\home\mallhotel.png" class="mob-devie" width="100%">
+                <div class="desktop Malls/Hotels/Commercial Spaces">
+                    <p [ngClass]="mallentrance ? 'mallentrance pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Entrance"></p>
+                    <p [ngClass]="shopping_carts ? 'shopping_carts pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Shopping Carts"></p>
+                    <p [ngClass]="malltoilets ? 'malltoilets pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Toilets"></p>
+                    <p [ngClass]="restaurant ? 'restaurant pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Restaurant"></p>
+                    <p [ngClass]="mallshop ? 'mallshop pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Shop"></p>
+                    <p [ngClass]="food_court ? 'food_court pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Food Court"></p>
+                    <p [ngClass]="common_area ? 'common_area pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Common Area"></p>
+                    <p [ngClass]="mallshop1 ? 'mallshop1 pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Shop"></p>
+                    <p [ngClass]="movie_theatre ? 'movie_theatre pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Movie Theatre"></p>
+                    <p [ngClass]="ticket_counter ? 'ticket_counter pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Ticket Counter"></p>
+                    <p [ngClass]="escalators ? 'escalators pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Escalators"></p>
+                    <p [ngClass]="elevators ? 'elevators pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Elevators"></p>
+                </div>
+
+            </mat-step>
+
+            <mat-step label="Healthcare/Educational Facilities" state="circle">
+                <img src="assets\home\Hospital_complete.svg" class="desktop">
+                <img src="assets\home\healthcare.png" class="mob-devie" width="100%">
+                <div class="desktop Healthcare/Educational Facilities">
+                    <p [ngClass]="healthWaitingRoom ? 'healthWaitingRoom pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Waiting Room"></p>
+                    <p [ngClass]="healthConsultation_Room ? 'healthConsultation_Room pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Consultation Room"></p>
+                    <p [ngClass]="healthLabs ? 'healthLabs pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Labs"></p>
+                    <p [ngClass]="healthtoilets ? 'healthtoilets pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Toilets"></p>
+                    <p [ngClass]="healthX_Ray ? 'healthX_Ray pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="X-Ray"></p>
+                    <p [ngClass]="healthDiagnostics ? 'healthDiagnostics pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Diagnostics"></p>
+                    <p [ngClass]="healthGeneral_Ward ? 'healthGeneral_Ward pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="General Ward"></p>
+                    <p [ngClass]="healthCabin ? 'healthCabin pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Cabin"></p>
+                    <p [ngClass]="healthReception ? 'healthReception pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Reception"></p>
+                    <p [ngClass]="healthEntrance ? 'healthEntrance pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Entrance"></p>
+                    <p [ngClass]="healthElevators ? 'healthElevators pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Elevators"></p>
+                    <p [ngClass]="healthPrivateRooms ? 'healthPrivateRooms pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Private Rooms"></p>
+                </div>
+
+            </mat-step>
+
+            <mat-step label="Offices/Work Spaces" state="circle">
+                <img src="assets\home\Office_complete.svg" class="desktop">
+                <img src="assets\home\officework.png" class="mob-devie" width="100%">
+
+                <div class="desktop Offices/Work Spaces">
+                    <p [ngClass]="training_room ? 'training_room pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Training Room"></p>
+                    <p [ngClass]="officeWashroom ? 'officeWashroom pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Washroom"></p>
+                    <p [ngClass]="conference_room ? 'conference_room pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Conference Room"></p>
+                    <p [ngClass]="officereception ? 'officereception pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Reception"></p>
+                    <p [ngClass]="officeworkspace ? 'officeworkspace pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Workspace"></p>
+                    <p [ngClass]="entertainmentArea ? 'entertainmentArea pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Entertainment Area"></p>
+                    <p [ngClass]="officeCabin ? 'officeCabin pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Cabin"></p>
+                    <p [ngClass]="officeCafeteria ? 'officeCafeteria pin' : 'pinblock'"><img src="assets\pin.svg" tooltipClass="my-custom-class" ngbTooltip="Cafeteria"></p>
+                </div>
+            </mat-step>
+
+            <ng-template matStepperIcon="edit">
+                <mat-icon>album</mat-icon>
+            </ng-template>
+            <ng-template matStepperIcon="done">
+                <img src="assets\home\dot.svg">
+            </ng-template>
+
+        </mat-horizontal-stepper>
+    </div>
+
+
+
+
+
+
+</div>
+
+
+<app-add-on-section></app-add-on-section>

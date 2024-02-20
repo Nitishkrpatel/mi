@@ -1,0 +1,127 @@
+.section {
+    margin-top: 10%;
+}
+
+.artical {
+    padding-bottom: 2em;
+    margin: 1em;
+    border-bottom: 1px solid #cbcbcb;
+}
+
+.articalsecond {
+    padding-bottom: 2em;
+    margin: 1em;
+}
+
+.image {
+    height: 550px;
+    width: auto!important;
+}
+
+.heading-text {
+    font-weight: 500;
+    max-width: 500px;
+    /* margin-top: 1.5em; */
+    font-size: 2.0517578125rem;
+    line-height: 1.1;
+}
+
+.heading-textt {
+    font-weight: 700;
+    margin-top: 2em;
+    font-size: 2.44140625rem;
+}
+
+.smaill-text {
+    margin: 1em 0!important;
+    max-width: 600px;
+}
+
+.sectionspacse {
+    margin: 2em 0;
+}
+
+.submit-button {
+    background-color: #4D4D4F;
+    text-align: center;
+    margin-top: .25em;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-color {
+    color: white;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.amazone {
+    /* margin: -21px -23px -13px;
+    padding: 49px 4px 4px 3px; */
+    cursor: pointer;
+}
+
+.flipkart {
+    cursor: pointer;
+}
+
+.sectionbuy {
+    background: #F5F5F5;
+    border-radius: 30px;
+    margin: 3em;
+    padding-top: 12em;
+    border-radius: 30px!important;
+}
+
+.image-width {
+    width: 128%;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 767px) {
+    .imgage-bootom {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .sectionbuy {
+        margin: 1em;
+        padding: 2em 0;
+        border-radius: 30px;
+        position: relative;
+    }
+}
+
+
+/*****Media Query****/
+
+@media only screen and (max-width: 988px) and (min-width: 601px) {
+    .article-without-boder {
+        padding-bottom: 2em;
+        margin: 1em;
+        border-bottom: 1px solid #cbcbcb;
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width:640px) {
+    .article-without-boder {
+        padding-bottom: 2em;
+        margin: 1em;
+        border-bottom: 1px solid #cbcbcb;
+    }
+    .section {
+        margin-top: 24%;
+    }
+}
+
+@media only screen and (min-width: 641px) and (max-width:1055px) {
+    .section {
+        margin-top: 19%;
+    }
+    .section1 {
+        width: 50%;
+    }
+}

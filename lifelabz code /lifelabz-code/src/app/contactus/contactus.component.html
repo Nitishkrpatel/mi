@@ -1,0 +1,86 @@
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="300">
+                <h2 class="heading-text">How can we help you?</h2><br>
+                <h3 class="heading-textt">Contact Us</h3>
+                <p>If you have any queries, or need assistance,<br>we’re always around to assist you.</p>
+            </div>
+
+
+            <!-- <div class="col-md-3 col-sm-12" data-aos="fade-up" data-aos-delay="500">
+                <h6 class="header">Phone</h6>
+                <p></p>
+                <p>+91 95133 12291</p>
+                <p></p>
+            </div>
+            <div class="col-md-3 col-sm-12" data-aos="fade-up" data-aos-delay="700">
+                <h6 class="header">emailID</h6>
+                <p></p>
+                <p>contact@life9sys.com</p>
+                <p></p>
+            </div> -->
+        </div>
+        <div class="row top-boder">
+            <!-- <div class="col-md-9 col-sm-12">
+                <iframe style="border: 0;" tabindex="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.4044881281166!2d77.60223651475852!3d13.073531916170895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae172970b6041b%3A0xf2192e22bdf3b650!2sLife9%20Systems%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1598610277202!5m2!1sen!2sin"
+                    width="100%" height="100%" frameborder="0" allowfullscreen="allowfullscreen" aria-hidden="false"></iframe>
+            </div> -->
+
+            <div class="col-md-4 col-sm-12" data-aos="fade-up" data-aos-delay="500">
+                <h6 class="header">Phone</h6>
+                <p></p>
+                <p>+91 95133 12290</p>
+                <p></p>
+            </div>
+            <div class="col-md-4 col-sm-12" data-aos="fade-up" data-aos-delay="700">
+                <h6 class="header">emailID</h6>
+                <p></p>
+                <p>lifelabzsupp@life9sys.com</p>
+                <p></p>
+            </div>
+            <div class="col-md-4 col-sm-12" data-aos="fade-up" data-aos-delay="900">
+                <h6 class="header">Quick support</h6>
+                <p></p>
+                <form [formGroup]="contactusForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="name" placeholder="Contact Name" [ngClass]="{ 'is-invalid': submitted && q.name.invalid }">
+                        <div *ngIf="submitted && q.name.invalid" class="invalid-feedback">
+                            <div *ngIf="q.name.errors.required">This feild is required.</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="organization" placeholder="Organization">
+
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+                            <ngx-intl-tel-input [cssClass]="'custom-phone'" [preferredCountries]="preferredCountries" [enableAutoCountrySelect]="true" [enablePlaceholder]="false" [searchCountryFlag]="true" [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                                [selectFirstCountry]="false" [selectedCountryISO]="CountryISO.India" [maxLength]="15" [tooltipField]="TooltipLabel.Name" [phoneValidation]="true" [separateDialCode]="true" [numberFormat]="PhoneNumberFormat.National" name="mobileNumber"
+                                formControlName="mobileNumber" [ngClass]="{ 'is-invalid': submitted && q.mobileNumber.invalid } "></ngx-intl-tel-input>
+                            <div *ngIf="submitted && q.mobileNumber.invalid " class="invalid-feedback">
+                                <div *ngIf="q.mobileNumber.errors">Invalid Phone Number</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group ">
+                        <input type="email" class="form-control " formControlName="emailID" placeholder="Email " [ngClass]="{ 'is-invalid': submitted && q.emailID.invalid } ">
+                        <div *ngIf="submitted && q.emailID.invalid " class="invalid-feedback ">
+                            <div *ngIf="q.emailID.errors.required ">This feild is required.</div>
+                            <div *ngIf="q.emailID.errors.email">Please, enter valid Email ID .</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" formControlName="queryDescription" placeholder="Query" rows="6"></textarea>
+                    </div>
+                    <div class="submit-button" (click)="suumit()">
+                        <button type="button" value="" class="btn btn-color">SEND</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-add-on-section></app-add-on-section>

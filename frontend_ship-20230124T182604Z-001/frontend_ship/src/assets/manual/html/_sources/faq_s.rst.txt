@@ -1,0 +1,114 @@
+***************************
+Frequently Asked Questions
+***************************
+
+- Frequently Asked Questions:
+
+#. What is the web address / URL / link address to open Navika application ?
+    * Answer : https://navika.ai
+
+#. Can I open and use the application on Smart cell phone or any other devices?
+    * Answer : No, you cannot access the application outside the network of your team.
+
+#. How can i use and work on Navika application?
+    * Answer : You can refer the "System Requirements" chapter. It will provide all the hardware and software required to work and use the application.
+
+#. What is AIS data ? also explain briefly. 
+    * Answer : The AIS (Automatic Identification System) is an automated tracking system which is extensively used in the maritime world. 
+               	Thanks to this system, vessels' information and positional data can be electronically exchanged between AIS stations
+               	For abbrevations you refer the "acronyms" for more details. 
+
+
+
+
+#. What is difference between ship and vessel, Boat?
+    * Answer : Essential Meaning of vessel 
+
+            1. Formal : a ship or large boat a fishing/sailing vessel
+            2. Ship or vessel which is afloat on the water and can steerable and carry cargo or passengers, fishing.
+            3. Boat is rowboat, will be steerable manually and transportation with minimum of passengers and load of materials
+
+#. What is COG - Course over Ground ?
+    * Answer : The direction of the track that a vessel has actually made, measured clockwise from north through 360°. 
+                Course Over Ground is the actual direction of progress of a vessel, between two points, with respect to the surface of the earth. 
+                The vessel's Heading may differ from the Course over ground due to the effects of wind, Tide and currents.
+
+#. What is SOG - Speed over Ground ?
+    * Answer : Speed over ground is the speed of the ship with respect to the ground or any other fixed object such as fixed buoy or island.
+                A ship with her engine stopped in water with 2 knots currents will have zero speed through water but will have 2 knots speed over ground.
+
+#. What is MMSI - Maritime Mobile Service Identity
+    * Answer : A Maritime Mobile Service Identity (MMSI) is a nine-digit number, similar to a cell phone number, that identifies your vessel or boat. 
+                It's programmed into your digital maritime radio, and used to contact other vessels directly, such as boats, and may also send a signal for help in an emergency.
+                A Maritime Mobile Service Identity is a series of nine digits which are sent in digital form over a radio frequency channel in order to uniquely identify ship stations, 
+                ship earth stations, coast stations, coast earth stations, and group calls.
+
+#. What is the Difference between IMO and MMSI Number?
+    * Answer : In 1987 the IMO (International Maritime Organization) introduced its ship identification system to improve maritime safety and to prevent maritime fraud. 
+                A unique reference number is assigned to each ship for identification purposes. 
+                It is assigned by IHS Maritime when constructed. That number is permanently associated to the hull, so it would never change regardless of a change in the ships name, owner or flag. 
+                The IMO number consists of the three letters "IMO" followed by a seven-digit number and is never reassigned to another ship.
+
+#. Which Data is AIS-transmitted ?
+    * Answer : Vessels transmit several data fields via AIS. The information in each AIS message can be divided into two categories:
+                Static and Voyage related information is provided by the crew of the vessel and is transmitted every 6 minutes.
+            
+                - IMO number: a unique reference that is linked to the hull and never changes in one vessel's lifetime, regardless of a change in owner, flag or name.
+
+                - Callsign: international radio call sign assigned by national licensing authorities.
+
+                - Name: name of the vessel, maximum 20 characters.
+
+                - Type: The AIS ship type consists of two digits. The first digit represents the category of the vessel and the second digit provides information about the vessel's type of cargo.
+
+                - Dimensions: indicates the dimensions of the vessel to the nearest meter
+
+                - Location of the positioning system's antenna on board the vessel: distance from bow, stern, port and starboard sides in meters
+
+                - Type of positioning system: GPS, DGPS, Loran-C, GLONASS, etc.
+
+                - Draught: vertical distance between the waterline and the keel (bottom of the hull) - 0.1 to 25.5 meters
+
+                - Destination: max. 20 characters
+
+                - ETA (Estimated Time of Arrival) at destination: UTC month/date hours:minute
+
+            
+            ##Please note that above-mentioned information is correct as long as the vessels' crew provides the system with the correct information.##
+
+            
+            Dynamic information is automatically transmitted depending on the vessels' speed and course while underway every 2 to 10 seconds and while a vessel is at anchor every 6 minutes. This applies to Class A transponders.
+
+                - MMSI number: unique identification number with nine digits
+
+                - AIS Navigational Status: manually set by the crew, e.g. "under way using engine", "at anchor", "not under command", "moored", "underway sailing", 
+                
+                - Rate of Turn: right or left (from 0 to 720 degrees per minute)
+
+                - Speed over Ground: from 0 to 102 knots (189 km/h) with 0.1-knot resolution (0.19 km/h)
+
+                - Positional accuracy: longitude and latitude
+
+                - Course over Ground: the actual path of a vessel between two points with respect to the seabed - relative to true north to 0.1°
+
+                - Heading: compass direction in which the vessel's bow is pointed - 0 to 359 degrees
+
+                - UTC seconds: the seconds' field of the UTC time when these vessels' data were generated
+
+                - Class B transponders, compared to Class A transponders, send less data (not included are IMO number, Draught, Destination, ETA, Rate of Turn, Navigational Status) and the transmitting intervals are rarer.
+                
+                
+#. What is a secure connection?
+   * Answer : A secure connection is an encrypted exchange of information between the website you are visiting and Internet Explorer. Encryption is provided through a document the website provides called a 			certificate. When you send information to the website, it is encrypted at your computer and decrypted at the website. Under normal circumstances, the information cannot be read or tampered 			with while it is being sent, but it's possible that someone might find a way to crack the encryption.
+   
+		Even if the connection between your computer and the website is encrypted, it does not guarantee that the website is trustworthy. Your privacy can still be compromised by the way the website 			uses or distributes your information.
+		
+#. Are secure connections private?
+   * Answer : Not necessarily. Even though the information you are sending and receiving is encrypted (encoded), an intermediate party might be able to see the website you are connecting to. By knowing the 			website you are connecting to, the other party might have a pretty good idea what you are doing on that site. For example, if you're looking for a new job using a computer at work, your 			company might watch for key words in websites or keep a log of visited sites. If you upload a resume to a job website, the document might be encrypted, but your company would still know 			you're looking for a new job.		
+
+
+                
+                
+
+
+

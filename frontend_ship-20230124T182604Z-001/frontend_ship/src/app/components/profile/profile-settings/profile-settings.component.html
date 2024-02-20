@@ -1,0 +1,46 @@
+<!-- <p>profile-settings works!</p> -->
+<div *ngIf="loginStatus == 'true'">
+    <app-main-navbar></app-main-navbar>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-2 sidenav">
+                <p class="admin-profile">
+                    <svg width="80" height="88" viewBox="0 0 80 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path id="imageColors" d="M0 40C0 17.9086 17.9086 0 40 0V0C62.0914 0 80 17.9086 80 40V40C80 62.0914 62.0914 80 40 80V80C17.9086 80 0 62.0914 0 40V40Z"/>
+                        <path d="M40 46.3478C48.6773 46.3478 56 47.7578 56 53.1979C56 58.6399 48.6292 59.9999 40 59.9999C31.3247 59.9999 24 58.5899 24 53.1499C24 47.7078 31.3708 46.3478 40 46.3478ZM40 19.9999C45.8782 19.9999 50.588 24.708 50.588 30.582C50.588 36.4561 45.8782 41.1662 40 41.1662C34.1238 41.1662 29.412 36.4561 29.412 30.582C29.412 24.708 34.1238 19.9999 40 19.9999Z" fill="white"/>
+                    </svg>       
+                </p>
+                <p class="admin-username">{{ userName }}</p>
+                <p class="admin-userid">{{ userId }}</p>
+                <ul class="admin-console"  >
+                    <!-- (click)="changeProfile(a.name)" -->
+                    <li id={{a.img}}  [ngClass]=a.img *ngFor="let a of profileSettingData" >
+                        <img id={{a.img}}_img *ngIf="theme=='grey'" style="margin-right: 10px;" class="img-vertical-align"
+                        src='{{"../../../../assets/profile/" + a.img + ".svg"}}' width="20px">
+
+                        <img id={{a.img}}_img *ngIf="theme=='navy'" style="margin-right: 10px;" class="img-vertical-align"
+                        src='{{"../../../../assets/profile/navy/" + a.img + ".svg"}}' width="20px">
+                        {{ a.name }} </li>
+                </ul>
+            </div>  
+    
+            <div class="col-xl-9" style="height: calc(100vh - 100px);">
+                <app-edit-profile></app-edit-profile>
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+<!-- If the user is not logged in -->
+<div *ngIf="loginStatus == ''" class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 success_message">
+      <i class="material-icons">sentiment_very_dissatisfied</i>
+      <p>You have been logged out from the session. Please <b
+          style="color: black!important;font-family: CharlieText-Bold!important;"><a routerLink="/">LOGIN AGAIN <img
+              src='../../../assets/arrow.png' alt="arrow" width="15px" /></a></b></p>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+  <!-- End if the user is not logged in -->

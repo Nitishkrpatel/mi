@@ -1,0 +1,48 @@
+.heading-top {
+    font-weight: 700;
+    max-width: 500px;
+    margin-top: 1.5em;
+    font-size: 3.0517578125rem;
+}
+
+.heading-middle {
+    font-weight: 700;
+    margin-top: .8em;
+    line-height: 1.1;
+    font-size: 1.5625rem;
+}
+
+.app-desc {
+    margin: 1em 0 0;
+    max-width: 450px;
+}
+
+.imge {
+    width: 80%;
+}
+
+.mobile-app {
+    max-width: 150px;
+}
+
+@media only screen and (max-width: 600px) {
+    .mobile-app {
+        width: 150px;
+        margin: 30px auto;
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width:640px) {
+    .section {
+        margin-top: 8%;
+        padding-top: 10%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width:1000px) {
+    .section {
+        margin-top: 8%;
+        padding-top: 10%;
+    }
+}

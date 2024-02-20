@@ -1,0 +1,110 @@
+.soi {
+    height: calc(100vh - 100px);
+    padding: 1em;
+}
+
+.soi h3 {
+    font-family: Charlie Display;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+}
+
+.shipname {
+    font-family: Charlie Text;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: white;
+}
+
+.soi_scroll {
+    max-height: 12em;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+  
+.soi-header{
+    font-family: CharlieText-Bold;
+}
+  
+// SOI
+
+.trackinfo-panel {
+    /* left: 30em; */
+    bottom: 0;
+    position: fixed;
+    font-family: Charlie Text !important;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+#Track-expansion{
+    width:  75em;
+    bottom: 0;    
+    margin-left: 15px;
+    // overflow-y: scroll;
+}
+
+.trackinfoheading {
+    font-family: CharlieText-Bold;
+}
+.trackinfodetails {
+    font-family: Charlie Text;
+    font-size: 12px;
+}
+.trackinfoindex {
+    font-family: Charlie Text;
+    font-size: 12px;
+}
+
+.trackandanomaly-header {
+    font-size: 20px;
+    font-family: CharlieText-Bold;
+}
+  
+.trackandanomaly .nav-pills {
+    font-family: Charlie Text;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 16px;
+}
+  
+.anomalyinfo .nav-pills {
+    font-family: Charlie Text;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+}
+  
+.trackandanomaly .nav-pills .nav-link.active, .anomalyinfo .nav-pills .nav-link.active {
+    background-color: transparent;
+    border-radius: 0px; 
+    font-family: CharlieText-Bold;
+}
+
+.padding-lr-0 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.dotted_wrap {
+    width: 95%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.goi_scroll_limits {
+    max-height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+  // End Soi

@@ -1,0 +1,194 @@
+.account-request h2 {
+  font-family: Charlie Display;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 64px;
+  letter-spacing: -0.015em;
+  color: #343232;
+  // margin: 24px 0px;
+}
+.mat-form-field {
+    width:100% !important;
+  }
+
+.success_message {
+  text-align: center;
+  margin-top: 20%;
+}
+
+.success_message h2 {
+  font-family: Charlie Display;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 64px;
+  text-align: center;
+  letter-spacing: -0.015em;
+  color: #343232;
+  // margin: 24px 0px;
+}
+
+.success_message i {
+  font-size: 40px;
+}
+.success_message p {
+  font-family: Charlie Text;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #827D7D;
+  margin: 24px 0px;
+}
+
+// .ng-star-inserted {
+//   font-family: CharlieText-Bold!important;
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 16px;
+//   line-height: 24px;
+//   color: #343232!important;
+// }
+
+.account-request h4 {
+  font-family: CharlieDisplay-Bold;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  color: #343232;
+  margin: 32px 0px;
+}
+
+.padding-0px {
+  padding-left : 0px;
+}
+
+.login-button {
+  font-family: CharlieText-Bold;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  background:black;
+  border-radius: 4px;
+  order: 2;
+  margin: 3em 0px;
+}
+
+.account-request input::-webkit-input-placeholder , textarea::-webkit-input-placeholder {
+  font-family: Charlie Text;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #CDCBCB;
+  margin: 6px 0px;
+}
+
+.note {
+  font-family: Charlie Text;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 14px;
+  color: #686464;
+  margin: 16px 0px;
+}
+
+.security-note {
+  font-family: Charlie Text;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 28px;
+  color: #827D7D;
+}
+
+.all_quesions {
+  font-family: Charlie Text;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #343232;
+  // margin: 0px 16px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+.security-question-answer{
+  border: 1px solid #CDCBCB;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  border: 1px solid black;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.security-question-answer input {
+  border: none;
+  border-bottom: 2px dashed #CDCBCB ;
+}
+
+.highlight input {
+  border: none;
+  border-bottom: 2px solid black ;
+  border-radius: 0px;
+}
+
+::ng-deep .mat-step-header[aria-selected="true"]  {
+  border-bottom: 1px solid black;
+}
+
+::ng-deep .mat-horizontal-stepper-header-container {
+  border-bottom: solid 1px black; 
+}
+
+::ng-deep  .mat-stepper-horizontal-line{
+  border-top-style: none!important;
+}
+
+::ng-deep .mat-step-icon{
+  background-color: white!important;
+  color: black!important;
+  border: 1px solid black!important;
+}
+
+::ng-deep .mat-step-icon-selected{
+  background-color: black!important;
+  color: white!important;
+}
+
+::ng-deep .mat-horizontal-content-container{
+  padding: 0px!important;
+}
+
+::ng-deep .mat-step-text-label {
+  font-family: CharlieText-Bold!important;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: #343232;
+}
+
+input:hover, 
+input:active,
+input:focus {
+    outline:0px !important;
+    -webkit-appearance:none;
+    box-shadow: none !important;
+}

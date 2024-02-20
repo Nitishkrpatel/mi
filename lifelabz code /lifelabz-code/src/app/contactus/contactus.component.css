@@ -1,0 +1,53 @@
+.section {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.heading-text {
+    font-weight: 700;
+    font-size: 3.0517578125rem;
+}
+
+.heading-textt {
+    font-weight: 700;
+    max-width: 350px;
+    font-size: 2.44140625rem;
+}
+
+.header {
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.top-boder {
+    margin-top: 62px;
+}
+
+.submit-button {
+    background-color: #4D4D4F;
+    text-align: center;
+    margin-top: .25em;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-color {
+    color: white;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+@media only screen and (min-width: 200px) and (max-width:640px) {
+    .section {
+        margin-top: 8em;
+    }
+}
+
+@media only screen and (min-width: 641px) and (max-width:1024px) {
+    .section {
+        margin-top: 8em;
+    }
+}

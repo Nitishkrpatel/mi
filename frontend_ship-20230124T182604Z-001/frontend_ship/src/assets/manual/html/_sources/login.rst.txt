@@ -1,0 +1,130 @@
+*****
+Login
+*****
+
+1. User Login and Browser web page
+----------------------------------
+
+To access NAVIKA application, you can follow these steps:
+
+Open the browser as shown in the :numref:`Google_web_page`. Type the URL Address - "https://navika.ai" in the address bar :numref:`Browser_with_Projected_URL`
+
+In the Browser screen :numref:`Google_web_page`, in this user manual google chrome browser used in this documentation. You can use FireFox browser also
+
+ .. _Google_web_page:
+
+ .. figure:: img/Login/Google_web_page.png
+     :align: center
+     :figwidth: 50%
+
+     Google web page
+
+ :term:`Click here for more information on NAVIKA <NAVIKA>`	
+
+In the address bar you type in the URL address as **"https://navika.ai"**, as indicated in the :numref:`Browser_with_Projected_URL`. Kindly note that you cannot use the Navika URL address outside the intranet network.
+
+ .. _Browser_with_Projected_URL:
+ 
+ .. figure:: img/Login/Browser_with_Projected_URL.png
+     :align: center
+     :figwidth: 60%
+          
+     Browser with an URL
+
+ :term:`Click here for more information on URL <URL>`
+ 
+ :term:`Click here for more information on https <https>`
+ 
+2. Your connection is not private
+---------------------------------- 
+
+In the :numref:`https_warning-1-google` after entering the URL address in the address bar and press enter key, it will directed to **Your connection is not private** is diplayed, because the application is installed in **https** server for secure and safe. 
+
+Follow the instructions to open the login page 
+
+ .. _https_warning-1-google:
+ 
+ .. figure:: img/Login/https_warning-1-google.png
+     :align: center
+     :figwidth: 75%
+
+     https warning
+     
+In the :numref:`https-warning-2-google`, continue as per the instructions indicated in the figure.
+
+ .. _https-warning-2-google:
+ 
+ .. figure:: img/Login/https-warning-2-google.png
+     :align: center
+     :figwidth: 60%     
+     
+     https warning google browser
+
+After clicking on **accept the risk and continue**, you will be re-directed to the Login page :numref:`https-login_page-google`
+
+ .. _https-login_page-google:
+ 
+ .. figure:: img/Login/https-login_page-google.png
+     :align: center
+     :figwidth: 60%     
+     
+     https login page-google
+
+3. Navika Login page
+---------------------
+     
+The Login page has the following information and details as indicated in the :numref:`navika_login_page_components` buttons and fields for you to access the application.
+
+- NAVIKA and CAIR logo
+- *username and password* User input fields 
+- *Forgot password* - you can reset the password 
+- *Send Request* - you can send request by clicking over the **Send Request** which will re-directed to Request Sheet and you can type in the personal details for the new account creation in this module.
+
+Other functions like forgot password and send request will be explained in the section New user Registration in this user manual. Once the you have received the Login Credentials along with Role. 
+
+ .. _navika_login_page_components:
+
+ .. figure:: img/Login/navika_login_page_components.png
+     :align: center
+     :figwidth: 60%
+     
+     Navika login page components
+     
+In the login page, type in your credentials, that is valid username and password in fields provided. Username and password are verified and stored in user profile table in the server including the user roles.
+ 
+Figure :numref:`username_pw_eye_openclose` provides the option to visualise the type-in password, by clicking over the EYE icon. 
+
+ .. _username_pw_eye_openclose:
+ 
+ .. figure:: img/Login/username_pw_eye_openclose.png
+     :align: center
+     :figwidth: 60%
+     
+     Hide and Show the Password 
+
+- For new user Click over the **Send Request** for registration of new user and for activating the account and provide the login credentials with username and password. Regarding the new registration will be explained in the section New User Registration in this User Manual.
+
+- NAVIKA home page: :numref:`navika_home_page_currentdate`
+
+You are ready to login to the Navika Application, once you type in the valid credentials that is username and password and click on sign-in button. Web page will be directed to Navika home page. Figure :numref:`navika_home_page_currentdate`
+
+Since you are login for the first time, Navika application will be opened in the current date and time. The plot clock is not user configurable, plot clock is server data and Time. 
+
+Web page is refreshed every that is 30 seconds. In the current scenario there is no Live data streaming, so the ships are not plotted over the map.
+
+4. Navika Home page
+-------------------
+
+You can able to see an Satellite view of Standard map (Default map) of the world. In Navika Application you are viewing India and neighbouring countries.
+
+ .. _navika_home_page_currentdate:
+
+ .. figure:: img/Login/navika_home_page_currentdate.png
+     :align: center
+     :figwidth: 60% 
+      
+     navika home page with current date and time
+     
+ 
+In Subsequent chapters will cover other details.
+

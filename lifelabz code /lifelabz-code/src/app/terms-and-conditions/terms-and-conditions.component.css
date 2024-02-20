@@ -1,0 +1,21 @@
+.section-top {
+    margin-top: 10%;
+}
+
+@media only screen and (min-width: 250px) and (max-width:350px) {
+    .section-top {
+        margin-top: 45%;
+    }
+}
+
+@media only screen and (min-width: 350px) and (max-width:640px) {
+    .section-top {
+        margin-top: 26%;
+    }
+}
+
+@media only screen and (min-width: 640px) and (max-width:1200px) {
+    .section-top {
+        margin-top: 20%;
+    }
+}

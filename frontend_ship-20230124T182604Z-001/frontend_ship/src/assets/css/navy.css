@@ -1,0 +1,360 @@
+.top-nav {
+    background-color: #091E34 !important;
+}
+
+.nav-link, .input-search input::placeholder  {
+    color: white!important;
+}
+
+.navbar-nav .active .nav-link  , .active_text{
+    color: #FFBE3D!important;
+    font-family: CharlieText-Bold !important;
+    
+}
+
+.profile-dropdown a:hover {
+    background-color: #D1DBE6;
+}
+
+.active-background {
+    background-color: #174C83;
+    opacity: 0.8 !important;
+}
+
+.set-clock, .digitaltime, .digitaldate  {
+    border: 2px solid #45709C !important;
+}
+
+.speed, #sidenavbar-cust, .activebutton, #trackinfo-content{
+    background: #0E2E4F !important;
+}
+
+.input-search, .select-search, .vesselname-border, .historyList_button,
+.input-fromdate, .input-duration {
+    border: 1px solid #45709C !important;
+}
+
+.vf-search {
+    border-bottom: 1px solid #45709C !important;
+}
+
+#imageColors , .defaultshipImg {
+    fill: #45709C;
+}
+#arrowImage{
+    fill: #0E2E4F;
+}
+#strokecolor{
+    stroke: #0D5B99;
+}
+
+.activeImg, .activeshipImg {
+    fill: #FFBE3D !important;
+}
+
+.btn-dark {
+    background: #1598FF !important;
+}
+
+
+#popup-content #shipname, #popup-content #ship-category, #popup-content #country , .navrow  .nav-pills .nav-link, .createheader {
+    color: #123D69 !important;
+}
+
+/* , .nav-pills .nav-link.active, .nav-pills .show>.nav-link, .nav-link */
+#popup-content #shipmmsi,.roiinfopannel .shipcountheading {
+    color: #117ACC!important;
+}
+
+.fav, .select-search select option {
+    background-color: #7494B5;
+}
+
+.navrow {
+    background: #D1DBE6;
+}
+
+#overview h5{
+    color: #123D69;
+}
+
+#overview h4 , .addfav, .togroup{
+    color: #45709C;
+}
+
+#overview p{
+    color: #1598FF;
+}
+
+.font-black h5{
+    color: #117ACC!important;
+}
+
+.popup-footer{
+    color: #FFFFFF;
+}
+
+.popup-footer .b2{
+    background: #0D5B99;
+    border: 1px solid white !important;
+}
+
+.popup-footer .b1{
+    background: #0D5B99;
+    border: 1px solid white !important;
+}
+
+.fav-content:hover,.togroup-ele:hover {
+    background-color: #D1DBE6;
+}
+
+.popover, .popover-body, .mat-tooltip {
+    background-color: #174C83!important;
+}
+
+::ng-deep .popover,::ng-deep .popover-body {
+    background-color: #174C83!important;
+}
+
+.popover-color{
+    background-color: #174C83!important;
+}
+
+
+.togroup::-webkit-scrollbar, .scroll_soi::-webkit-scrollbar, .roiinfomainpannel::-webkit-scrollbar,.trackinfopanel::-webkit-scrollbar, .scroll::-webkit-scrollbar,.roiinfomainpannel::-webkit-scrollbar,.scroll::-webkit-scrollbar, .roitimelinepannel::-webkit-scrollbar  {
+    width: 10px;
+    /* border-radius: 50px; */
+  }
+  
+/* Track */
+.togroup::-webkit-scrollbar-track, .scroll_soi::-webkit-scrollbar-track, .roiinfomainpannel::-webkit-scrollbar-track , .trackinfopanel::-webkit-scrollbar-track, .scroll::-webkit-scrollbar-track, .roitimelinepannel::-webkit-scrollbar-track {
+    /* background: #0D5B99;
+     */
+     box-shadow: inset 0 0 5px #117ACC;
+     border-radius: 10px;
+}
+
+/* Handle */
+.togroup::-webkit-scrollbar-thumb, .scroll_soi::-webkit-scrollbar-thumb , .roiinfomainpannel::-webkit-scrollbar-thumb, .trackinfopanel::-webkit-scrollbar-thumb, .scroll::-webkit-scrollbar-thumb, .roitimelinepannel::-webkit-scrollbar-thumb {
+    background: #0D5B99;
+    border-radius: 10px;
+}
+
+.soi_scroll::-webkit-scrollbar {
+    width: 10px;
+}
+
+.soi_scroll::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #117ACC;
+    border-radius: 10px;
+}
+
+.soi_scroll::-webkit-scrollbar-thumb {
+    background: #0D5B99;
+    border-radius: 10px;
+}
+
+.search-result ul li:hover {
+    background-color: #D1DBE6;
+}
+
+.tableheader {
+    font-family: CharlieText-Bold ;
+    color: #117ACC!important;
+}
+.tablecontent {
+    color: #117ACC!important;
+}
+.roi, .soi , .vf, .dm {
+    background: #174C83;
+}
+.cust-accordian, .bottom-expansion{
+    background-color: #123D69;
+    color: white;
+}
+.inner-accordian{
+    background-color: #0E2E4F !important;
+}
+#Track-expansion{    
+    color: white;
+    background-color: #0E2E4F;      
+}
+#markarea-color, .density-submit-btn, .VF-submit-btn {
+    background-color: #1598FF;
+    color: #FFFFFF;
+}
+
+.selected-markarea-button, .active-btn {
+    color: #FFBE3D !important;
+}
+.roi .regionlist, .roistatsbackground {    
+    background: #0E2E4F;
+}
+.roipannel #roipannel-header, .vfpannel #vfpannel-header {    
+    background-color: #0E2E4F;            
+}
+.roiinfopannel {
+    background: #123D69;
+}
+.timelineinfo_category, .tracks_category {
+    background-color: #0E2E4F;
+    border: 1px solid #117ACC;
+    color: #FFFFFF;
+}
+
+.no_tracks {
+    background: #117ACC;
+}
+  
+.timelineinfo_category_active {
+    background-color: #1598FF ;
+    border: 1px solid #117ACC;
+    color: #FFBE3D;
+}  
+  
+#vf-accordion {
+    background-color: #123D69;
+}
+.vf-add-btn {
+    background-color: #1598FF; 
+}
+
+.activebg{
+    background-color: #afd2ec;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+    background-color: transparent !important; 
+    border-color: #FFBE3D !important;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle{
+    background-color: #FFBE3D !important; 
+}
+
+.mat-radio-outer-circle {
+    background-color: #FFFFFF !important; 
+    border-color: #FFFFFF !important;
+}
+.example-card{
+    color: white;
+    background-color: #123D69 !important;
+}
+.goitrack{
+    background-color: #174C83 !important;
+    color: #FFFFFF;
+}
+.trackinfoheading{
+    color: #1598FF;
+}
+
+.trackandanomaly .nav-pills , .anomalyinfo .nav-pills   {
+    color: white !important;
+}
+
+.trackandanomaly .nav-pills .nav-link.active, .anomalyinfo .nav-pills .nav-link.active {
+    color: #FFBE3D !important; 
+}
+
+.timelineinfo_category:hover {
+    background-color: #1598FF;    
+}
+
+/* Dashboard */
+
+.dashboard-table .heading {
+    background-color: #174C83;
+}
+
+.dashboard-btn, .ngx-pagination .current, .selected, .explain-btn  {
+    background-color: #1598FF !important;
+}
+
+.mat-accent .mat-slider-track-fill, .mat-accent .mat-slider-thumb {
+    background-color: #1598FF !important;
+}
+
+.subtitle, .value, .country_value, .notselected .country_name, .select_showtop { 
+    color: #174C83;
+}
+
+.title, .country_name, .threshold, .dashboard-table td, .ngx-pagination a {
+    color: #117ACC;
+}
+
+.ngx-pagination .disabled {
+    color: #cfe8fc !important;
+}
+
+.dashboard-outerbox, .dashboard-settingbox, .ship-search  {
+    box-shadow: 0px 1px 4px #a2d5fb;
+    border: none !important;
+    border-radius: 0px;
+}
+
+.table td {
+    border-bottom: 1px solid #a2d5fb;
+}
+
+.notselected {
+    border: 1px solid #c5e1f6;
+}
+
+.title-admin, .content, .time, .note,  .queue-requests-tab .nav-link, .search-users input {
+    color: #174C83 !important;
+}
+
+.sub-title-admin, .search-users input::placeholder {
+    color: #117ACC;
+}
+
+.notification-image {
+    background-color: #c1ddf1;
+}
+
+.admin-button, .search-users {
+    color: #174C83;
+    border: 1px solid #174C83;
+ }
+
+.forgotusername-name {
+    border: 1px dashed #117ACC;
+}
+
+.queue-requests-tab .nav-link.active {
+    color: #174C83 !important;
+    border-bottom: 3px solid #174C83;;
+}
+
+.search-users input::placeholder {
+    color: #a8d2f1;
+}
+
+.nav-link-count {
+    background: #174C83;
+}
+
+.admin-console li:hover, .admin-active-background {
+    background-color: #117ACC;
+}
+
+.sidenav {
+    background: #0E2E4F !important;
+}
+
+.admin-console li, .admin-username, .admin-userid  {
+    color: white;
+}
+
+.admin-active-background  {
+    color: #FFBE3D !important;
+}
+
+
+.mat-expanded .mat-expansion-panel-header-title, .mat-expanded > .mat-expansion-indicator::after {
+    color: #FFBE3D !important;
+}
+
+.mat-expanded .active-images {
+    fill: #FFBE3D !important;
+}

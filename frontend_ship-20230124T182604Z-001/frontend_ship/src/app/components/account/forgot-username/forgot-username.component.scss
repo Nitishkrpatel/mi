@@ -1,0 +1,164 @@
+.forgot-password h2 {  
+    font-family: Charlie Display;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 64px;
+    letter-spacing: -0.015em;  
+    color: #343232;
+    margin: 16px 0px;
+}
+  
+.forgot-password> p {  
+  font-family: Charlie Display;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: #9B9797;
+  margin: 16px 0px;
+}
+  
+.mat-form-field {
+    width:100% !important;
+}
+  
+.forgot-username {
+  text-align: right;
+}
+  
+.forgot-username a {
+  text-decoration: none!important;
+  color: #343232;
+  font-weight: bold;
+  font-family:  CharlieText-Bold;  
+  font-size: 14px;
+  line-height: 16px;
+}
+  
+.login-button {
+  font-family: CharlieText-Bold;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  background:black;
+  border-radius: 4px;
+  order: 2;
+  margin: 64px 8px;
+}
+  
+.margin-0 {
+  margin:0px 8px!important;
+}
+
+.security-answer h4 {
+  font-family: CharlieDisplay-Bold;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  color: #343232;
+  margin: 24px 0px;
+}
+  
+.security-answer p {
+  font-family: CharlieText-Bold;
+  font-style: normal;
+  // font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: #343232;
+  margin: 0px 16px;
+}
+
+.dashedline input {
+  border: none;
+  border-radius: 0px;
+  border-bottom: 2px dashed #CDCBCB;
+}
+  
+.solidline input {
+  border: none;
+  border-radius: 0px;
+  border-bottom: 2px solid black;
+}
+
+.security-answer input::-webkit-input-placeholder {
+  font-family: Charlie Text;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #CDCBCB;
+  margin: 6px 0px;
+}
+  
+.security-question-answer {
+  border: 1px solid #CDCBCB;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.security-question-answer-highlight {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.success_message {
+  text-align: center;
+  margin-top: 20%;
+}
+    
+.success_message h2 {
+  font-family: Charlie Display;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 64px;
+  text-align: center;
+  letter-spacing: -0.015em;
+  color: #343232;
+  // margin: 24px 0px;
+}
+
+.success_message i {
+  font-size: 40px;
+}
+.success_message p {
+  font-family: Charlie Text;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #827D7D;
+  margin: 24px 0px;
+}
+  
+input:hover, 
+input:active,
+input:focus {
+  outline:0px !important;
+  -webkit-appearance:none;
+  box-shadow: none !important;
+}
+
+.security-question select {
+  border: none;
+}
+
+.security-question select:focus {
+  border:none !important;
+  box-shadow: none !important;
+}
+
+.padding-right5px {
+  padding-right: 5px;
+}

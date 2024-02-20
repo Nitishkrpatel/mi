@@ -1,0 +1,160 @@
+**********
+Acronyms
+**********
+
+ .. Glossary:: 
+ 
+ 	
+ 	NAVIKA
+ 	 NAVIKA = NAvigational Intelligence and Knowledge Analysis
+ 	
+ 	MMSI
+ 	 MMSI
+ 	 = Maritime mobile service identity
+	
+	COO
+	 COO = Country of Origin
+	 
+	ROI
+	 ROI
+	 = Region of Interest 
+	
+	RAM
+	 RAM = **Random Access Memory** it is hardware component required for the computer to store while booting the system. Based on this, Computer system 
+	 
+	Giga Byte
+	 Giga Byte  = unit of memory storage in the computer. One character occupies 1 Byte of memory. So 1 Giga Byte contains  10,00,000 characters 
+	  
+	Memory
+	  Memory = Data Storage inside the hardware of the computer
+	  
+	URL
+	 URL = Universal Resouce Locator
+	 
+	https
+	 https = Hyper Text Transfer Protocol Secure - standard and secured procedure for the browser.
+	
+Abbreviations
+
+The following abbreviations are used in this manuscript and documentations:
+
+    #. AIS                      = Automatic identification system
+    #. AtoN                     = Aids to navigation
+    #. COG                      = Course over ground
+    #. COTS                     = Commercial off-the-shelf
+    #. DST                      = Destination
+    #. EMSA                     = European Maritime Safety Authority
+    #. GNSS                     = Global navigation satellite system
+    #. GPS                      = Global positioning system
+    #. HE                       = Heading
+    #. IMO                      = International Maritime Organization
+    #. MMSI                     = Maritime mobile service identity
+    #. NAVIKA                   = Navigational Intelligence and Knowledge Analysis
+    #. PO                       = Position
+    #. ROT                      = Rate of turn
+    #. ROI                      = Region of Interest
+    #. S-AIS                    = Satellite-based AIS
+    #. SOI                      = Ships of Interest
+    #. SAR                      = Search and rescue
+    #. SOG                      = Speed over ground
+    #. SOLAS                    = Safety of life at sea
+    #. STA                      = Status
+    #. TDMA                     = Time-division multiple access
+    #. T-AIS                    = Territial-based AIS
+    #. VHF                      = Very high frequency
+    #. VTS                      = Vessel traffic service
+    #. Adjusted date & Time     = User can set date and time to analyse historical data
+    #. CSV                      = Comma-separated values
+    #. UTC                      = Coordinated Universal Time
+
+
+The following terminology is used in this documentation:
+
+- IMO = International Maritime Organisation
+- COG = Course Over the Ground – Degrees 
+- SOG = Speed Over the Ground – Nautical miles per hour
+- Latitude = Position in Degrees
+- Longitude = Position in Degrees
+- Length = Vessel Length in Meters
+- Width = Vessel Width in Meters
+- Transceiver Class =  A, B, C based on the AIS data received and type of vessel
+- DTG – Date and Time group = YYYY/MM/DD HH:MM:SS
+- keel - 
+- 
+
+Navigational Terms
+-------------------
+
+#. Direction on Earth 
+    * Answer : In navigation, direction is expressed as the angular difference in degrees from a reference direction, usually true North - for absolute direction - or the ship's heading (keel line) - for relative direction.
+
+The following navigational terms are related with directions as used in maritime navigation.
+
+#. North :          
+    * Definition : While handling with a magnetic compass, the nautical navigator must distinguish.
+
+    The following three different kind of North directions:
+
+        - True North corresponds to the direction pointing towards the geographical North Pole. This is equivalent with the "upward" direction of the local meridian.
+
+        - Magnetic North is the (horizontal) direction of the local magnetic flux lines. This is not necessarily the direction of the magnetic north pole. Even in moderate latitudes, the difference between 			the magnetic North direction and true North may be up to 20 degrees.
+
+        - Compass North is the geographical direction the north side of the compass needle points to. This is basically the same direction as magnetic North with some additional component which depend on 			the magnetic environment of the compass.
+
+        - The difference between true North and magnetic North is called variation. Variation is different for each location on the Earth and is mentioned on the compass rose on each nautical chart. The 			amount of variation slightly changes with time due to the slow migration of the Earth's magnetic poles. The annual change of variation is also recorded on the nautical chart.
+
+        - The difference between magnetic North and compass North is called deviation. Deviation is the magnetic influence of the immediate environment upon the compass. It is usually caused by the steel or 			iron aggregates installed on the ship. Especially on steel ships the deviation may be considerable.
+
+        - The deviation also depends on the orientation of the ship within the earth magnetic field. Practically, the compass deviation depends on the heading of the ship. Therefore, a "Deviation Table" 			should be elaborated for each permanently installed compass showing the compass deviation for different headings or courses (0° through 360°).
+
+ .. _north:
+
+ .. figure:: img/acronyms/north.png
+     :align: center  
+     :figwidth: 100%
+
+#. North:
+    * Definition : 
+        - The difference between true North and magnetic North is called variation. 
+        
+        - Variation is different for each location on the Earth and is mentioned on the compass rose on each nautical chart. 
+        
+        - The amount of variation slightly changes with time due to the slow migration of the Earth's magnetic poles. The annual change of variation is also recorded on the nautical chart.
+
+        - The difference between magnetic North and compass North is called deviation. 
+        
+        - Deviation is the magnetic influence of the immediate environment upon the compass. 
+            It is usually caused by the steel or iron aggregates installed on the ship. Especially on steel ships the deviation may be considerable.
+            The deviation also depends on the orientation of the ship within the earth magnetic field. Practically, the compass deviation depends on the heading of the ship. 
+            Therefore, a "Deviation Table" should be elaborated for each permanently installed compass showing the compass deviation for different headings or courses (0° through 360°).
+
+#. Heading: 
+    * Definition : Heading (Hdg) or keel line is the direction in which a vessel is pointed, expressed as angular distance from 000° (North) clockwise through 360°.
+        Heading differs from course in that heading constantly changes as a vessel yawls back and forth across the course due to sea, wind and steering error. 
+        In this sense, course is the "mean" value of the constantly changing heading. 
+
+#. Nautical mile:
+    * Definition :  Bessel found that the Earth circumference around the Poles was 40 003 km, yielding 1.851991 km for a nautical mile: 
+                    - 1 nm = 40 003 km / (360*60') = 1.851991 km
+                    - Later, more precise measurements disclosed the oblateness of the Earth and as a consequence, 
+                    - the length of a sea mile varies from about 1855.3 metres at the equator to about 1849.1 metres at the poles, with a mean value of 1852.3 metres.
+
+#. The Nautical Chart: in the :numref:`The_Nautical_Chart`
+    * Definition : The Nautical Chart is one of the most fundamental tools available to the mariner. 
+
+            It is a graphical image of the marine environment containing basic information on:
+                    - Water depth and configuration of the sea bottom,
+                    - A description of the shoreline, adjacent land and topographic features
+                    - Locations of navigational hazards and navigational aids, such as buoys and beacons, lighthouses, shipping channels and restricted areas.
+                    - Tides and resulting currents,
+                    - The characteristics of the Earth's magnetism.
+
+ .. _The_Nautical_Chart:
+
+ .. figure:: img/acronyms/The_Nautical_Chart.png
+     :align: center  
+     :figwidth: 100%
+
+     The Nautical Chart
+
+

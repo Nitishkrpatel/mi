@@ -1,0 +1,22 @@
+
+
+<router-outlet>
+      <!-- edit model  -->
+      <div class="modal" id="idlestateModel" *ngIf=true>
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+          <div class="modal-content">
+            <!-- Modal body -->
+            <div class="modal-body">
+              <!-- Modal body.. -->
+              <p>{{idleState}}</p>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-light cancel-button display-none" id="closeidlestateModel" data-dismiss="modal" type="button">CANCEL</button>
+      </div>
+
+      <button type="button" class="btn btn-primary display-none" id="openidlestateModel" data-toggle="modal"
+      data-target="#idlestateModel"> TEST</button>
+
+</router-outlet>
+

@@ -1,0 +1,97 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h5 style="text-align: center;"><strong>Get in touch with us for any queries</strong></h5>
+        <p style="text-align: center;"></p>
+        <button type="button" class="close" class="btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="queriesForm" (ngSubmit)="postdata()">
+
+            <div class="form-group">
+                <label for="model" class="text-color">Your Name (required)*</label>
+                <input formControlName="name" id="model" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && m.name.invalid }">
+                <div *ngIf="submitted && m.name.invalid" class="invalid-feedback">
+                    <div *ngIf="m.name.errors.required">Name is required.</div>
+                </div>
+            </div>
+
+            <div class="form-group ">
+                <label for="subject" class="text-color">Email(required)*</label>
+                <input type="email" class="form-control " formControlName="emailID" [ngClass]="{ 'is-invalid': submitted && m.emailID.invalid } ">
+                <div *ngIf="submitted && m.emailID.invalid " class="invalid-feedback ">
+                    <div *ngIf="m.emailID.errors.required ">This feild is required.</div>
+                    <div *ngIf="m.emailID.errors.email">Please, enter valid Email ID .</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="subject" class="text-color">Subject</label>
+                <input formControlName="subject" id="subject" type="text" class="form-control">
+
+            </div>
+
+            <div class="form-group">
+                <label for="message" class="text-color">Your Message</label>
+                <textarea name="your-message" formControlName="message" cols="40" rows="5" id="message" type="text" class="form-control"></textarea>
+            </div>
+
+            <button type="submit" class="btn button-buy">SEND</button>
+            <div class="response-output" role="alert" style="display:none">One or more fields have an error. Please check and try again.</div>
+        </form>
+    </div>
+</ng-template>
+
+<div class="footer">
+    <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row ">
+                        <div class="col-md-4 col-sm-4 col-lg-4 align-left">
+                            <ul>
+                                <li><a [routerLink]="['/product/overview/']" class="green">PRODUCT</a>
+                                    <div class="sub-menu">
+                                        <li><a [routerLink]="['/product/overview/']">Overview</a></li>
+                                        <li><a [routerLink]="['/product/features/']">Features</a></li>
+                                        <li><a [routerLink]="['/product/apps/']">Apps</a></li>
+                                        <li><a [routerLink]="['/product/specification/']">Specification</a></li>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-8 text-uppercase">
+                            <ul>
+                                <li><a [routerLink]="['/pricing']">Pricing</a></li>
+                                <li><a [routerLink]="['/faqs']">Support</a></li>
+                                <li><a [routerLink]="['/about-us']">About Us</a></li>
+                                <li><a [routerLink]="['/contact-us']">Contact US</a></li>
+                                <li><a [routerLink]="['/terms-and-conditions']">Terms & Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="sociallink">
+                        <p class="followus mr-3 text-uppercase">Follow Us</p>
+                        <div class="row social-icon">
+                            <!-- <a href=""><img src="assets\social-media\facebook.svg" alt="fb" width="40px"></a> -->
+                            <a href="https://www.instagram.com/life9systems" target="_blank"><img src="assets\social-media\instagram.svg" alt="insta" width="40px"></a>
+                            <a href="https://www.linkedin.com/company/lifelabz" target="_blank"><img src="assets\social-media\linkedin.svg" alt="insta" width="40px"></a>
+                            <a href="https://twitter.com/labz_life" target="_blank"><img src="assets\social-media\twitter.svg" alt="insta" width="40px"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mr-0">
+                <button class="btn btn-sm button-buy" (click)="open(content)">QUERIES ?</button>
+            </div>
+            <hr>
+            <div class="copyright">
+                <p>©2020, LifeLabz. All Rights Reserved.</p>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,356 @@
+#bottom-panel {
+    bottom: -7em;
+    position: fixed;
+    font-family: Charlie Text !important;
+    left: 30%;
+    transform: translate(-50%, 0%);
+    width: 60%;
+    display: block;
+    transform-origin: top left;
+    transform: rotate(-90deg); /* rotate and position it; translateX value corresponds to panel height */
+    width: 100px; /* this will be the height of the accordion (inversed due to rotation) */
+    height: 100px;
+}
+
+.bottom-expansion {
+    width:  15em;
+    bottom: 0;    
+    margin: 0px;
+}
+
+.bottom-pannel-header {
+    font-family: CharlieText-Bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    padding: 20px;
+}
+
+.bottom-panel-content {
+    transform-origin: top left;
+    transform: rotate(90deg); /* rotate back */
+    margin-left: 100%; /* position it */
+    height: 600px; /* real height of the content */
+    width: 400px; /* real width of the content */
+}
+
+.input-search {
+    border-radius:  50px 0px 0px 50px;
+    padding-left: 1em;
+ }
+  
+.input-search input {
+    font-family: Charlie Text;
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    margin-left:5px;
+}
+
+.input-search span {
+    margin-top: 0.5em;
+}
+
+.input-search input:hover,
+.input-search  input:active,
+.input-search input:focus,
+.input-fromdate input:focus,
+.input-duration input:focus {
+  outline:0px !important;
+  -webkit-appearance:none;
+  box-shadow: none !important;
+}
+
+.input-group-addon {
+    margin-top: 5px;
+}
+
+.mat-expansion-panel {
+    max-height: 500px; /* this will be the width of the panel (inversed due to rotation) */
+}
+
+.ol-popup-search-playhistory {
+    position: fixed;
+    width: 290px;
+    height: 145px;
+    border-radius: 5px;
+    background-color: white;
+    z-index: 1000;
+}
+
+.ol-popup-search-closer-playhistory {
+    text-decoration: none;
+    position: absolute;
+    top: 2px;
+    right: 8px;
+}
+
+
+.search-result h5 {
+    font-family: CharlieText-Bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 10px;
+    text-transform: uppercase;
+    margin: 16px;
+}
+
+.search-result ul {
+    max-height: 100px;
+    overflow-y: auto;
+    padding-left: 10px;
+}
+
+.search-result li {
+    list-style-type: none;
+    font-family: Charlie Text;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0px 5px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.select-search select {
+    font-family: Charlie Text;
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    margin-left:5px;
+    color: white;
+    width: 7em;
+}
+
+// .select-search select option {
+//     background-color: transparent;
+// }
+
+.select-search {
+    border-radius:  0px 50px 50px 0px;
+    padding-left: 1em;
+    padding-bottom: 2px;
+}
+
+.select-search select:hover,
+.select-search  select:active,
+.select-search select:focus {
+  box-shadow: none !important;
+}
+
+.playhistory, .addToList, .vesselname {
+    font-family: CharlieText-Bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 10px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin: 0px 2px;
+    line-break: anywhere;
+}
+
+.vesselname {
+    font-size: 10px !important; 
+}
+
+.vesselname-border {
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.historylist p{
+    font-family: CharlieText-bold;
+    font-size: 10px;
+    line-height: 10px;
+    text-transform: uppercase;
+    margin: 18px 0px;
+ }
+
+ .historyList_button {
+    border-radius: 4px;
+    font-family: Charlie Text;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 5px;
+    color: white;
+  }
+  
+  .historyList_button:focus, .historyList_button_active:focus {
+    box-shadow: none !important;
+  }
+  
+//   .historyList_button:hover, .historyList_button_active:hover {
+//     color: white !important;
+//   }
+  
+.historyList_button_active {
+    background: white;
+    border: 1px solid #686464;
+    color: black;
+    border-radius: 4px;
+    // margin-bottom: 5px;
+    font-family: Charlie Text;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 5px;
+}
+
+.timeframe-label {
+    font-family: Charlie Text;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 32px;
+    color: #FFFFFF;
+}
+
+.input-fromdate, .input-duration {
+    padding-left: 1em;
+    border-radius: 5px;
+}
+
+
+.input-fromdate input, .input-duration input {
+    font-family: Charlie Text;
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    color: white;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+   opacity: 1;
+}
+
+.margin-bottom-10px {
+    margin-bottom: 10px;
+}
+
+.speed select{
+    font-family: Charlie Text;
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 0px;
+}
+
+.speed .form-control:focus {
+    background-color: transparent !important;
+    border-color: none !important;
+    box-shadow: none !important;
+}
+
+.ship_types, .label {
+    font-family: Charlie Text;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+// side buttons on map
+.ol-custom{
+    position: fixed;
+    z-index: 1000;
+    bottom: 1em;
+    right: 1em;
+    background-color: transparent;
+    }
+    
+    
+    .ol-custom button {
+    color: #827D7D;
+    background-color: black;
+    padding: 20px;
+    border-radius: 5px;
+    //margin: 1em;
+    }
+    
+    .ol-custom button :focus {
+      border: none !important;
+      outline: none !important;
+    }
+    
+    .ol-custom button svg {
+    margin-top: -10px;
+    margin-left: -10px;
+    }
+    
+    .customZoomIn {
+    border-radius: 5px 5px 0px 0px!important;
+    margin-bottom: 2px!important;
+    }
+    
+    .customZoomOut {
+    border-radius: 0px 0px 5px 5px!important;
+    margin-top: 0.1em!important;
+    }
+    
+    
+    // side buttons on map
+
+    // popover om map
+::ng-deep .popover,::ng-deep .popover-body{
+    width: 180px!important;
+    // background-color: black!important;
+    color: white !important;
+    border-radius: 10px!important;
+    top: -1.8em !important;
+  }
+  
+  ::ng-deep .popover .arrow {
+  display: none!important;
+  }
+  
+  .popoverheader {
+  font-family: CharlieText-Bold;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 10px;
+  text-transform: uppercase;
+  // color: #827D7D;
+  color: white;
+  // margin-top: 2em;
+  }
+  .popoverheader img {
+  padding-right: 5px;
+  }
+  .popoverul {
+  padding-left: 0px!important;
+  margin-bottom: 0px!important;
+  }
+  .popoverul li {
+  font-family: Charlie Text;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #FFFFFF;
+  list-style-type: none;
+  }
+  
+  .popoverul li img{
+  padding-right:0.5em;
+  }
+  
+  .popoverul li input{
+  vertical-align: bottom;
+  }
+  .check-box-styling {
+  height: 20px;
+  width: 20px;
+  margin: 0px;
+  position: unset;
+  margin-right: 0.5em;
+  }

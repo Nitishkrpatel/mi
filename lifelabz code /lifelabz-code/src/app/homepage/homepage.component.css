@@ -1,0 +1,227 @@
+.section {
+    margin-top: 8em;
+}
+
+.heading {
+    font-weight: 600;
+    color: #54ae65;
+    font-size: 3.814697265625rem;
+    margin-top: .8em;
+    margin-bottom: .75em;
+    line-height: 1.1;
+}
+
+.second-heading {
+    font-weight: 700;
+    font-size: 2.9em;
+}
+
+.small-heading {
+    margin: 0;
+    font-weight: 700;
+    margin-top: 5em;
+    font-size: 1.25rem;
+}
+
+.image-logo {
+    width: 25px;
+    display: block;
+}
+
+.parameter {
+    margin: 2em 0!important;
+    max-width: 500px;
+}
+
+.section2 {
+    /* /* background-image: url(/assets/home/01_Home_slice2_bg.svg); */
+    margin: 3em 0 0;
+    background-attachment: scroll;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    background-image: url(/assets/home/01_Home_slice2_bg.svg);
+    height: 100%;
+    padding-bottom: 12em;
+    padding-top: 8em;
+}
+
+.section3 {
+    background-image: url(/assets/home/01_Home_slice3_bg.svg);
+    background-attachment: scroll;
+    background-size: cover;
+    border-radius: 30px;
+    background-repeat: no-repeat;
+    padding: 20em 0 5em;
+    -webkit-transform: translateY(-250px);
+    transform: translateY(-250px);
+    position: relative;
+    z-index: -1;
+    margin: 3em;
+    width: 94%;
+    color: #f2f2f2;
+}
+
+.mob-tab {
+    display: none;
+    width: 220px!important;
+    margin: 0 auto!important;
+}
+
+.section3 .content {
+    color: #f2f2f2;
+    /* margin: 2em 3em; */
+}
+
+.third-heading {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.953125rem;
+}
+
+.fourth-heading {
+    font-weight: 500;
+    font-size: 1.953125rem;
+    margin-top: .8em;
+    margin-bottom: .75em;
+    line-height: 1.1;
+    color: inherit;
+}
+
+.img {
+    width: 100%;
+}
+
+.desk-tab {
+    width: 100%;
+    margin: 3em 1em;
+    max-width: 600px;
+}
+
+.mob-tab {
+    display: none;
+    width: 220px!important;
+    margin: 0 auto!important;
+}
+
+.heading-fouth {
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.1;
+    font-size: 1.953125rem;
+}
+
+.image-width {
+    width: 80%;
+}
+
+.section4 {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-selected {
+    background-color: #47bb1d;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-state-edit {
+    background-color: #47bb1d;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-state-done {
+    background-color: #47bb1d;
+}
+
+::ng-deep .mat-step-header .mat-step-icon {
+    background-color: #a3eb8f;
+}
+
+::ng-deep .mat-stepper-horizontal-line {
+    border-top-color: black;
+}
+
+::ng-deep .mat-horizontal-stepper-header::after {
+    border-top-color: black;
+}
+
+::ng-deep .mat-horizontal-stepper-header::before {
+    border-top-color: black;
+}
+
+::ng-deep.mat-step-header .mat-step-label.mat-step-label-active {
+    color: rgba(0, 0, 0, .87);
+}
+
+.mob-devie {
+    display: none;
+}
+
+.margin-top {
+    margin-top: -200px;
+    position: relative;
+}
+
+@media only screen and (max-width: 600px)and (min-width: 250px) {
+    .image-width {
+        width: 100%;
+        padding: 5em 0;
+    }
+    .section2 {
+        background-size: cover;
+    }
+    .section3 {
+        margin: 0;
+        width: 100%;
+    }
+    .imge {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 601px) {
+    .section2 {
+        background-size: cover;
+    }
+    .section3 {
+        margin: 0;
+        width: 105%;
+    }
+}
+
+@media only screen and (max-width: 1020px) and (min-width: 768px) {
+    .section2 {
+        background-size: cover;
+    }
+    .section3 {
+        margin: 0;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 250px) and (max-width:640px) {
+    .mob-tab {
+        display: block;
+    }
+    .desk-tab {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 641px) and (max-width:1024px) {
+    .mob-tab {
+        display: block;
+    }
+    .desk-tab {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 200px) and (max-width:1009px) {
+    .desktop {
+        display: none;
+    }
+    .mob-devie {
+        display: block
+    }
+}
